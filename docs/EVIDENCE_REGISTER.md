@@ -2,6 +2,12 @@
 
 This register records candidate evidence and what it can support. The originating agency source is the authority for dataset facts. Datatrove and AI-generated summaries help discover and organize sources; they do not independently validate the underlying data. Confirm exact versions, fields, retrieval dates, and page references before submission.
 
+## Governing challenge source and requirement baseline
+
+| Source | Source-reported requirement or context | Project use | Limit / validation state |
+|---|---|---|---|
+| [2026 DHS AI Challenge Submission PDF](https://haic.hawaii.gov/wp-content/uploads/2026/10/HAIC_AI-Challenge_Submission_DHS_Disaster_2026.pdf), pp. 1–8 | Sections 5–7 identify four core hazards (hurricane, wildfire, tsunami, flood), five CMIST dimensions, three work areas (population mapping, resource identification, coordinated response), county-led mass care with State assistance, and hazard-specific maps for every county with a target of 100% of census tracts. Section 6 prohibits PII, individual registries/tracking, replacing agency plans or alerting, and production deployment into DHS systems during the challenge. | Governing source for the working requirement baseline and the requirements-to-evidence crosswalk. The first demonstrator is the fictional Kapolei hurricane pilot; the statewide target remains separate. | Section 4 also names earthquake in a hazard list, which conflicts with the explicit four-hazard scope and metric language in sections 5–7. The project follows the explicit four-hazard scope and records earthquake as an unresolved interpretation question. Agency problem statements in sections 2–4 are attributed challenge context, not independent verification of current recurring gaps. DHS states it will provide no datasets for this exercise; use public/de-identified sources and synthetic scenario inputs unless separately authorized data are provided. |
+
 ## Historical hurricane evidence
 
 | Source | Source-reported finding | Appropriate use | Limit |
