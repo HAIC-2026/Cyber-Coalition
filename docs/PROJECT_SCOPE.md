@@ -14,7 +14,7 @@ Demonstrate an evidence-traceable, privacy-preserving planning workflow for mass
 | Statewide framework | The design accounts for all Hawaiʻi counties/islands and identifies how coverage and missingness would be reported. | Statewide design intent only until all required sources and measures have been verified. |
 | Kapolei / Leeward Oʻahu pilot | One fictional Category 5 hurricane wind-stress tabletop in the City and County of Honolulu. | A method demonstration for this bounded scenario only. |
 
-The written challenge PDF remains the authority for final geographic and metric requirements. The kickoff recording describes five hazards—hurricane, wildfire, tsunami, earthquake, and flood—while an earlier draft matrix reportedly listed four. The team must reconcile this difference using exact PDF page references before treating the hazard set as final.
+The written DHS challenge PDF has been reviewed. Its scope and measurable-goal sections (pp. 5–7) specify four core hazards: hurricane, wildfire, tsunami, and flood. The measurable goal is hazard-specific AFN vulnerability maps for every county, with a target of 100% of census tracts. Section 4 separately includes earthquake in a list of hazard types, and the kickoff transcript also mentions earthquake. To keep the committed baseline aligned with the explicit four-hazard scope and metric wording, this project uses the four listed hazards; earthquake remains an unresolved interpretation question or possible later extension, not a fifth committed deliverable. Record the ambiguity in submission notes if no organizer clarification is received.
 
 ## Scenario assumptions
 
