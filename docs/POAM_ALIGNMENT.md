@@ -4,7 +4,7 @@ This document maps the current working POA&M to repository artifacts. POA&M item
 
 | POA&M item | Repository implementation | Evidence still needed |
 |---|---|---|
-| PM-01: written challenge requirements | `PROJECT_SCOPE.md` flags the kickoff-versus-matrix hazard discrepancy. | Page-level requirements-to-evidence matrix from the challenge PDF, including exact hazards, geography, and metrics. |
+| PM-01: written challenge requirements | `PROJECT_SCOPE.md` records the reviewed four-hazard baseline, statewide county/tract target, and the PDF’s separate earthquake reference. | Team acceptance of this interpretation and any written HAIC clarification; keep earthquake outside the committed baseline unless scope is explicitly expanded. |
 | PM-02: statewide framework and local pilot | `README.md`, `PROJECT_SCOPE.md`, and prototype scope tags distinguish them. | Team review that claims remain bounded to what is implemented. |
 | PM-03: coverage ledger | Evidence register describes candidate sources and missingness. | Actual county/island × geography × hazard × CMIST × vintage coverage counts. |
 | PM-04: aggregate CMIST method | Prototype shows CMIST dimensions without person-level data. | Reproducible estimation method, validation, uncertainty, assumptions, and sample output. |
@@ -16,13 +16,14 @@ This document maps the current working POA&M to repository artifacts. POA&M item
 | PM-10: performance measurement | Prototype presents proposed start/stop boundaries and says results are unmeasured. | Baseline protocol, target rationale, repeatable tabletop observations, and independent review. |
 | PM-11: privacy, security, accessibility, authority | `SECURITY_PRIVACY.md` and interface disclose boundaries and fail-safe unknowns. | Project-specific review, accessible/multilingual review, and security/privacy statement within submission limits. |
 | PM-12: package assembly | Root README and docs establish the initial package. | Final source index, evidence matrix, method, scenario outputs, and judge instructions. |
-| PM-13: video and form | Not implemented in repository. | Verify submission limits and produce accessible video/form artifacts. |
+| PM-13: video and form | Not implemented in repository. | Complete the HAIC Project Submission Form; provide a functional evaluation video explaining the AI plan (maximum 10 minutes or 50 MB); provide the solution-specific security/privacy description (maximum 300 words); confirm the completed plan and supporting resources are accessible to reviewers. |
 | PM-14: team review | Not implemented in repository. | Team member/owner confirmation and recorded review. |
-| PM-15: tools and access | README links to team ArcGIS resources; no keys or account secrets stored. | Track Datatrove Pro account/renewal and separately confirm ArcGIS voucher entitlement; protect credentials. |
+| PM-15: tools and access | README links to the Esri HAIC Resource Hub and the Hawaiʻi StateGIS organization/Map Viewer; no keys or account secrets are stored. Team lead reports Datatrove Pro subscription and Esri $25 voucher registration. | Verify Datatrove MCP access is enabled for the registered email, check available plan limits/renewal, and confirm ArcGIS voucher activation/credit status. No project ArcGIS map/app item exists in the reviewed content folder. Keep credentials out of GitHub and the submission form. |
 
 ## Acceptance checks for this draft
 
 - A reviewer can distinguish statewide design intent from the Kapolei pilot.
+- The core hazard baseline follows the challenge PDF’s explicit four-hazard scope and metric sections; the earthquake reference in Section 4 remains visible as an unresolved interpretation question.
 - Fictional wind category remains separate from other hazard assumptions.
 - Every operational status shown as confirmed has a current, attributable source; otherwise it remains unknown or simulated.
 - Historical ʻIniki material is described as historical evidence and does not prove a present-day recurring gap.
