@@ -2,7 +2,7 @@
 
 **Working project:** DHS Enhanced ESF-6 planning through AI-supported insights  
 **Team:** Cyber Coalition  
-**Status:** Initial implementation draft for team review. This repository and prototype are not approved by DHS, HI-EMA, Honolulu DEM, or another emergency-management authority.
+**Status:** Working implementation and planning package for team review. This repository and prototype are not approved by DHS, HI-EMA, Honolulu DEM, or another emergency-management authority.
 
 ## Mission
 
@@ -39,6 +39,7 @@ The pilot should make source dates, native geography, assumptions, uncertainty, 
 | [`docs/POAM_ALIGNMENT.md`](docs/POAM_ALIGNMENT.md) | Mapping from POA&M items to implementation and acceptance evidence. |
 | [`docs/EVIDENCE_REGISTER.md`](docs/EVIDENCE_REGISTER.md) | Source-backed historical findings, candidate data, and validation state. |
 | [`docs/SECURITY_PRIVACY.md`](docs/SECURITY_PRIVACY.md) | Data handling, AI limits, source integrity, and fail-safe behavior. |
+| [`docs/SITE_LICENSE_RECONCILIATION.md`](docs/SITE_LICENSE_RECONCILIATION.md) | Public-safe Kapolei OHCA record-to-site and separate-license crosswalk. |
 | [`data/README.md`](data/README.md) | Rules for source records and future public/synthetic data extracts. |
 
 ## Open the prototype
@@ -54,7 +55,11 @@ ArcGIS and HAIC resources:
 - [Map Viewer in the Hawaiʻi StateGIS organization](https://hawaiihub.maps.arcgis.com/apps/mapviewer/index.html)
 - [My Content in the Hawaiʻi StateGIS organization](https://hawaiihub.maps.arcgis.com/home/content.html)
 
-The team has an ArcGIS organization identity, but no project-specific map or application item is documented in the reviewed content folder. The existing business/economy map is unrelated and remains untouched. These links provide access to the organization and authoring tools; they do not host this prototype. Create a separate map only after reviewing layer provenance, ownership, licensing, geography, and privacy limits.
+The project has a separate ArcGIS reference map: [Cyber Coalition ESF-6 Hawaiʻi Hazard Reference Map](https://hawaiihub.maps.arcgis.com/home/item.html?id=d7b64dfd6e5a4e7589be7bcfbe355ad0). It is a reference artifact and is not integrated into this static prototype. Current sharing and external judge access are unverified. Review layer provenance, ownership, terms, geography, and privacy limits before relying on map content.
+
+**Current build snapshot (2026-11-14):** The separate [ArcGIS reference map](https://hawaiihub.maps.arcgis.com/home/item.html?id=d7b64dfd6e5a4e7589be7bcfbe355ad0) displays 26 layer-list entries (10 Kapolei QA/boundary items and 16 statewide/reference layers) plus one `Hospital - Review` table. Its Kapolei OHCA QA table shows 39 source records and 37 address-coordinate reconciliation keys, not 37 certified sites. Site/license associations, source IDs, and unresolved exceptions are documented in [`docs/SITE_LICENSE_RECONCILIATION.md`](https://github.com/HAIC-2026/Cyber-Coalition/blob/main/docs/SITE_LICENSE_RECONCILIATION.md). All 39 source operational-status values are `0` without a published domain; meaning is unresolved. The facility-capacity field has no defined units and is not treated as validated capacity. Current ArcGIS sharing and external judge access remain unverified. No source features were edited. Tract inventory: 461 2020 Census GEOIDs; 435 exact matches in each candidate StateGIS Census and Coastal SVI set; 26 Census-only zero-population/zero-housing GEOIDs, with tract 9812 one of the 26. This is not hazard-coverage validation. The public repo is updated; the team functional-evaluation video and final form submission remain pending.
+
+
 
 ## Evidence and validation status
 
@@ -64,4 +69,4 @@ Datatrove is a discovery and analysis workbench, not the authority for a claim. 
 
 ## Development status
 
-The written DHS challenge PDF has been reviewed. The working baseline is four hazards, with the PDF’s separate earthquake mention recorded as an unresolved scope question. Remaining work includes reproducing source counts and schemas, adding source-linked scenario inputs, defining and validating an aggregate CMIST estimation method, confirming current county/State procedures from official plans, building the statewide coverage ledger, and measuring a repeatable tabletop. Planned statewide coverage must not be described as completed coverage. Performance and operational benefits have not been measured. HAIC’s technical-review requirements also include a completed plan with access to supporting resources, a functional evaluation video (maximum 10 minutes or 50 MB), and a solution-specific security/privacy description limited to 300 words; see the official judging criteria.
+The written DHS challenge PDF has been reviewed. The working baseline is four hazards, with the PDF’s separate earthquake mention recorded as an unresolved scope question. Remaining work includes validating source counts and schemas with owners, adding source-linked scenario inputs, defining and validating an aggregate CMIST estimation method, confirming current county/State procedures from official plans, completing the statewide hazard-specific coverage ledger, measuring a repeatable tabletop, and confirming map/reviewer access. Planned statewide coverage must not be described as completed coverage. Performance and operational benefits have not been measured. HAIC’s technical-review requirements also include a completed plan with access to supporting resources, a functional evaluation video (maximum 10 minutes or 50 MB), and a solution-specific security/privacy description limited to 300 words; see the official judging criteria.
