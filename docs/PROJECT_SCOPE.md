@@ -42,3 +42,8 @@ The interface can prepare options, source-linked summaries, unresolved questions
 6. Proposed plan and workflow.
 
 For each conclusion, record whether it is a source finding, an inference, a planning assumption, a proposed requirement, or an open question.
+
+
+## Current ArcGIS and source boundaries (2026-11-14)
+
+The [separate ArcGIS reference map](https://hawaiihub.maps.arcgis.com/home/item.html?id=d7b64dfd6e5a4e7589be7bcfbe355ad0) is not connected to the static prototype. The Map Viewer displays 26 layer-list entries and one review table. The Kapolei OHCA QA set contains 39 StateGIS source records and 37 address-coordinate keys; the latter are not verified unique facilities. Detailed site/license associations are in [`SITE_LICENSE_RECONCILIATION.md`](SITE_LICENSE_RECONCILIATION.md). Operational-status values and capacity units are unresolved. Current sharing and external reviewer access remain unverified. No source records were changed. The 461/435/26 statewide tract inventory comparison is described in the evidence register and does not prove hazard-specific coverage.
