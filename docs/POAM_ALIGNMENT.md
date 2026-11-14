@@ -18,7 +18,7 @@ This document maps the current working POA&M to repository artifacts. POA&M item
 | PM-12: package assembly | Root README and docs establish the initial package. | Final source index, evidence matrix, method, scenario outputs, and judge instructions. |
 | PM-13: video and form | Not implemented in repository. | Complete the HAIC Project Submission Form; provide a functional evaluation video explaining the AI plan (maximum 10 minutes or 50 MB); provide the solution-specific security/privacy description (maximum 300 words); confirm the completed plan and supporting resources are accessible to reviewers. |
 | PM-14: team review | Not implemented in repository. | Team member/owner confirmation and recorded review. |
-| PM-15: tools and access | README links to the Esri HAIC Resource Hub and the Hawaiʻi StateGIS organization/Map Viewer; no keys or account secrets are stored. Team lead reports Datatrove Pro subscription and Esri $25 voucher registration. | Verify Datatrove MCP access is enabled for the registered email, check available plan limits/renewal, and confirm ArcGIS voucher activation/credit status. No project ArcGIS map/app item exists in the reviewed content folder. Keep credentials out of GitHub and the submission form. |
+| PM-15: tools and access | README links to the Esri HAIC Resource Hub and the Hawaiʻi StateGIS organization/Map Viewer; no keys or account secrets are stored. Team lead reports Datatrove Pro subscription and Esri $25 voucher registration. | Verify Datatrove MCP access is enabled for the registered email, check available plan limits/renewal, and confirm ArcGIS voucher activation/credit status. A separate ArcGIS reference map exists; its current item sharing shows Owner, while external judge access remains unverified. Keep credentials out of GitHub and the submission form. |
 
 ## Acceptance checks for this draft
 
@@ -30,3 +30,10 @@ This document maps the current working POA&M to repository artifacts. POA&M item
 - Source geography, date, masking, and uncertainty remain visible.
 - The demo has no personal records, secrets, live integrations, or operational decision authority.
 - No measured performance or statewide completeness is claimed without results.
+
+
+| PM-16: ArcGIS reference map and OHCA site/license reconciliation | The separate map displays 26 layer-list entries and a `Hospital - Review` table; [`SITE_LICENSE_RECONCILIATION.md`](SITE_LICENSE_RECONCILIATION.md) records 39 source records, 37 address-coordinate keys, separate license associations, privacy exclusions, and unresolved source conflicts. | Confirm site identity, separate license records, source-defined status and capacity units, current license state, provider terms, all layer wiring, and intended reviewer access with authoritative owners. Do not claim capacity, operations, or current availability from this extract. |
+
+## Current evidence note (2026-11-14)
+
+The ArcGIS Map Viewer currently shows 26 layer-list entries (10 Kapolei QA/boundary plus 16 statewide/reference layers) and one `Hospital - Review` table. The statewide tract comparison is 461 Census GEOIDs, 435 exact candidate StateGIS/SVI matches, and 26 Census-only zero-population/zero-housing GEOIDs; tract 9812 is one of the 26. Base geography matching does not close hazard-specific coverage. The functional evaluation video remains pending team production; final form submission and team review are open.
