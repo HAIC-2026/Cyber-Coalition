@@ -28,3 +28,8 @@ The eventual workflow should support accessible presentation, plain language, mu
 ## Review boundary
 
 This document describes the project prototype boundary. It is not a security certification, privacy impact assessment, approved agency policy, or operational authorization.
+
+
+## Public facility map handling
+
+The public site/license crosswalk omits home-based and individual-linked facility rows, including names, residential addresses, phones, and source IDs. Its 39-record count retains the omitted rows without publishing their details. Do not put the raw reconciliation extract in GitHub, the public map, demo assets, or model prompts. Share only the reviewed organization-level summary and source identifiers needed for audit. Facility status values and capacity claims remain unresolved until the authoritative data owner defines them. Do not present an address, listing, license, or geocoded point as proof of current service, operational availability, or dispatch suitability.
