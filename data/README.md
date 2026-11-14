@@ -1,6 +1,6 @@
 # Data Directory Rules
 
-The prototype currently uses no downloaded source datasets. This directory is reserved for future public, aggregate, or synthetic files that have been reviewed and are necessary to reproduce the demonstration.
+The static prototype currently uses no downloaded source datasets. The ArcGIS reference map and the source crosswalk are separate artifacts, not inputs consumed by the prototype. This directory is reserved for future public, aggregate, or synthetic files that have been reviewed and are necessary to reproduce the demonstration.
 
 Before adding a file, document its authoritative source, license/terms, retrieval timestamp and timezone, native geography, vintage, fields used, query or download method, transformations, checksum, privacy limits, and validation state. Keep an unmodified source reference where redistribution is allowed.
 
