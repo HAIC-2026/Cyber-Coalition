@@ -4,13 +4,11 @@
 <style>
 
     .coverage-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr);gap:18px}
-    .coverage-bar{position:relative;height:22px;margin:13px 3px 8px;border-radius:999px;background:#e5edf0;border:1px solid var(--line)}
+    .coverage-bar{height:22px;margin:13px 3px 8px;border-radius:999px;background:#e5edf0;border:1px solid var(--line);overflow:hidden}
     .coverage-bar-fill{height:100%;width:94.4%;background:var(--teal);border-radius:999px}
-    .coverage-marker{position:absolute;top:-5px;height:30px;border-left:2px solid var(--amber)}
-    .coverage-marker.threshold{left:60%}.coverage-marker.target{left:calc(100% - 2px);border-color:var(--red)}
     .coverage-scale{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:11px}
     .coverage-legend{display:flex;gap:12px;flex-wrap:wrap;margin:9px 0;color:var(--muted);font-size:12px}
-    .coverage-legend span{display:inline-flex;align-items:center;gap:5px}.legend-swatch{width:12px;height:12px;border-radius:3px;background:var(--teal)}.legend-swatch.threshold{background:var(--amber)}.legend-swatch.target{background:var(--red)}
+    .coverage-legend span{display:inline-flex;align-items:center;gap:5px}.legend-swatch{width:12px;height:12px;border-radius:3px;background:var(--teal)}
     .hazard-table{width:100%;border-collapse:collapse;min-width:760px}.hazard-table th,.hazard-table td{padding:10px 11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:12px}.hazard-table th{background:#f2f6f7;color:#435a68;font-size:11px;text-transform:uppercase;letter-spacing:.05em}.hazard-table tr:last-child td{border-bottom:0}
     .evidence-checklist{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.evidence-check{border:1px solid var(--line);border-radius:9px;padding:11px;background:#fff}.evidence-check b{display:block;color:var(--navy);font-size:12px}.evidence-check span{display:block;color:var(--muted);font-size:11px;margin-top:3px}
     .hazard-note{grid-column:1/-1;padding:10px 12px;border-left:4px solid var(--blue);background:var(--blue-light);border-radius:7px;color:#2c4868;font-size:12px}
@@ -91,7 +89,7 @@
       <div class="grid two">
         <article class="card scenario"><div class="eyebrow" style="color:#a6ded8">Scenario in focus</div><h2>Kapolei / Leeward Oʻahu</h2><div class="category"><i aria-hidden="true"></i> CATEGORY 5 · ≥157 MPH · FICTIONAL</div><p style="margin-top:15px">A high-end wind stress test to examine county-led mass-care planning, accessible sheltering, continuity needs, transportation barriers, and requests for state support. The Category 5 label describes sustained wind only. Surge, rainfall flooding, tornadoes, impact timing, footprint, participation, outages, and resource availability remain separately defined scenario inputs, not measured conditions.</p><p class="small"><a href="https://www.nhc.noaa.gov/aboutsshws.php?unit=m" target="_blank" rel="noreferrer" style="color:#c7eeea">NHC Saffir-Simpson Hurricane Wind Scale</a></p><div class="scenario-grid"><div class="scenario-stat"><b>Scope</b><span>Local pilot within statewide framework</span></div><div class="scenario-stat"><b>Inputs</b><span>Public aggregate + synthetic scenario data</span></div><div class="scenario-stat"><b>Authority</b><span>Human review at every decision point</span></div></div></article>
         <article class="card"><div class="eyebrow">Project status</div><h2>What this demo can establish</h2><div class="status-list"><div class="status-row"><b>Scenario workflow</b><span><span class="label synthetic">Demonstration scope</span></span></div><div class="status-row"><b>Current shelter capacity</b><span><span class="label unknown">Unknown</span></span></div><div class="status-row"><b>Current site accessibility</b><span><span class="label unknown">Unknown</span></span></div><div class="status-row"><b>Statewide data completeness</b><span><span class="label unknown">Not yet measured</span></span></div><div class="status-row"><b>Forecast-to-plan time benefit</b><span><span class="label unknown">Not yet measured</span></span></div></div><p class="focus-note">“Unknown” is visible in the output. The prototype does not fill missing values by inference.</p></article>
-      </div>      <div class="callout" style="margin:18px 0"><strong>ArcGIS audit checkpoint: 435 of 461 tract GEOIDs reconciled (94.4%).</strong> This is above the team-stated 60% threshold for tract-ID reconciliation. The 26 unmatched GEOIDs remain visible as a coverage gap; a missing candidate record does not mean no AFNs or no need. The separate 100% statewide hazard-specific mapping target is not yet measured. See the Coverage &amp; audit tab for the hazard-by-hazard evidence boundaries.</div>
+      </div>      <div class="callout" style="margin:18px 0"><strong>ArcGIS tract-ID checkpoint: 435 of 461 2020 Census GEOIDs (94.4%) occur in both candidate layers.</strong> The other 26 are Census-only base-geography exceptions, each recorded with zero population and housing in the reviewed Census inventory. This is not hazard, AFN, or service coverage, and zero recorded population does not establish zero need. Statewide hazard-specific mapping remains unmeasured. See the Coverage &amp; audit tab for the hazard-by-hazard evidence boundaries.</div>
 
       <div class="section-head"><div><h2>Planning path</h2><p>Move from a fictional event to a human-reviewed county plan and simulated state-support request.</p></div></div>
       <div class="flow" aria-label="Six-step planning method"><div class="flow-step"><div class="num">1</div><h3>Set the objective</h3><p>Define the planning question and the call to action.</p></div><div class="flow-step"><div class="num">2</div><h3>Frame the scenario</h3><p>Record backstory, time, geography, hazard assumptions, and fictional inputs.</p></div><div class="flow-step"><div class="num">3</div><h3>Map roles and data</h3><p>Identify stakeholders, responsibilities, source owners, and native data geography.</p></div><div class="flow-step"><div class="num">4</div><h3>Analyze evidence</h3><p>Separate documented findings, inferences, assumptions, and open questions.</p></div><div class="flow-step"><div class="num">5</div><h3>Test decisions</h3><p>Walk through feasible scenarios, resource checks, and human decision points.</p></div><div class="flow-step"><div class="num">6</div><h3>Specify the workflow</h3><p>Document the proposed plan, owners, measures, and simulated state-support pathway.</p></div></div>
@@ -119,7 +117,7 @@
       <div class="callout warn"><strong>Unresolved:</strong> the identity, owner, link, geographic scope, and limitations of each of the nine references are not confirmed. No dataset, layer, or validation result has been added on their behalf.</div>
       <div class="table-wrap"><table><thead><tr><th>Slot</th><th>Reference / source attribution</th><th>Link</th><th>Geographic scope</th><th>Data limitations</th><th>Status</th></tr></thead><tbody>
         <tr><td>1–9</td><td>Per Jeff's planning materials</td><td>Not provided</td><td>Not confirmed</td><td>Not assessed</td><td><span class="label unknown">Awaiting source from Jeff</span></td></tr>
-        <tr><td>Doc.</td><td>Project ArcGIS reference map (26 layer-list entries plus one review table), Cyber Coalition ESF-6</td><td><a href="https://hawaiihub.maps.arcgis.com/home/item.html?id=d7b64dfd6e5a4e7589be7bcfbe355ad0" target="_blank" rel="noreferrer">ArcGIS item</a></td><td>Hawaiʻi statewide and Kapolei QA layers</td><td>Sharing shows Owner; external access untested. Tract-ID reconciliation (461/435/26) is not hazard-specific coverage validation.</td><td><span class="label reported">Documented in repo</span></td></tr>
+        <tr><td>Doc.</td><td>Project ArcGIS reference map (28 saved layer-list entries plus one review table; inspected 2026-11-18), Cyber Coalition ESF-6</td><td><a href="https://hawaiihub.maps.arcgis.com/home/item.html?id=d7b64dfd6e5a4e7589be7bcfbe355ad0" target="_blank" rel="noreferrer">ArcGIS item</a></td><td>Hawaiʻi statewide and Kapolei QA layers</td><td>Item Details showed organization and two group sharing on 2026-11-18; public sharing was off per the 2026-11-17 POA&M. External judge access and dependent-layer access remain unverified. Tract-ID reconciliation (461/435/26) is not hazard-specific coverage validation.</td><td><span class="label reported">Documented in repo</span></td></tr>
         <tr><td>Doc.</td><td>State of Hawaiʻi StateGIS OHCA Facilities, HumanHealthSafety MapServer/3</td><td><a href="https://geodata.hawaii.gov/arcgis/rest/services/HumanHealthSafety/MapServer/3" target="_blank" rel="noreferrer">Layer</a></td><td>Kapolei CDP queried (39 records, 37 address keys)</td><td>Status value 0 undefined; capacity units undefined; keys are not verified unique sites.</td><td><span class="label reported">Documented in repo</span></td></tr>
         <tr><td>Doc.</td><td>Hawaiʻi Statewide GIS Hub</td><td><a href="https://hawaiihub.maps.arcgis.com/apps/mapviewer/index.html" target="_blank" rel="noreferrer">Map Viewer</a></td><td>Statewide discovery</td><td>Each layer's owner, date, licensing, and fields need review.</td><td><span class="label reported">Documented in repo</span></td></tr>
       </tbody></table></div>
@@ -155,11 +153,11 @@
       <div class="coverage-grid">
         <article class="card">
           <div class="eyebrow">ArcGIS tract-ID reconciliation · team-reported audit</div><h2>435 of 461 GEOIDs · 94.4%</h2>
-          <p>The candidate project geography matches 435 of the strict 2020 Census tract universe. The remaining 26 GEOIDs are outside the candidate set. A missing candidate match does not mean no AFNs or no service need.</p>
-          <div class="coverage-bar" role="img" aria-label="94.4 percent of tract GEOIDs reconciled; above the 60 percent team threshold and below the separate 100 percent hazard mapping target"><div class="coverage-bar-fill"></div><span class="coverage-marker threshold" aria-hidden="true"></span><span class="coverage-marker target" aria-hidden="true"></span></div>
-          <div class="coverage-scale"><span>0%</span><span>60% threshold</span><span>100% challenge target</span></div>
-          <div class="coverage-legend"><span><i class="legend-swatch"></i>94.4% GEOID reconciliation</span><span><i class="legend-swatch threshold"></i>Team-stated 60% threshold</span><span><i class="legend-swatch target"></i>Hazard-specific mapping target</span></div>
-          <div class="callout warn"><strong>Metric boundary:</strong> 94.4% exceeds the team-stated 60% threshold for tract-ID reconciliation. It does not establish 94.4% AFN, need, or hazard-layer coverage. The challenge’s separate target is hazard-specific mapping across 100% of census tracts; that statewide measure remains open.</div>
+          <p>The candidate StateGIS Census and Coastal SVI sets each match 435 of the 461 official 2020 Census tract GEOIDs. The 26 Census-only GEOIDs are absent from both candidate sets and were recorded with zero population and housing in the reviewed 2020 Census inventory. This is base-geography reconciliation only; it does not establish zero need.</p>
+          <div class="coverage-bar" role="img" aria-label="94.4 percent of official 2020 Census tract identifiers appear in both candidate geography layers"><div class="coverage-bar-fill"></div></div>
+          <div class="coverage-scale"><span>0%</span><span>435 of 461 identifiers</span><span>100%</span></div>
+          <div class="coverage-legend"><span><i class="legend-swatch"></i>Base-geography identifier reconciliation only</span></div>
+          <div class="callout warn"><strong>Metric boundary:</strong> 94.4% is the share of official tract identifiers found in both candidate geography layers. It does not establish AFN, need, hazard-layer, resource, or service coverage. The challenge’s separate 100% hazard-specific mapping target across census tracts remains unmeasured.</div>
         </article>
         <article class="card">
           <div class="eyebrow">What the audit supports</div><h2>Geography is the join foundation</h2>
@@ -169,7 +167,7 @@
             <div class="status-row"><b>Outside candidate set</b><span>26; retain as unknown coverage, not zero need</span></div>
             <div class="status-row"><b>Statewide hazard coverage</b><span><span class="label unknown">Not yet measured</span></span></div>
           </div>
-          <p class="small muted">Base-geography matching validates identifiers for reconciliation. It does not validate hazard overlays, CMIST estimates, source freshness, or resource availability.</p>
+          <p class="small muted">Base-geography matching validates identifiers for reconciliation. It does not validate hazard overlays, CMIST estimates, source freshness, or resource availability. Saved map inspection on 2026-11-18 found 28 layer-list entries and one <code>Hospital - Review</code> table; this does not mean all layers are validated.</p>
           <p><a href="https://hawaiihub.maps.arcgis.com/home/item.html?id=06c11dc78afa44e7992a1348527fed7b" target="_blank" rel="noopener noreferrer">Open project tract layer in ArcGIS</a></p>
         </article>
       </div>
@@ -220,7 +218,7 @@
         </article>
         <article class="card">
           <h2>Add a synthetic partner record</h2>
-          <p class="small muted">Choose whether the example is an aggregate need report or a service offer. One CMIST category per record keeps the report reviewable.</p>
+          <p class="small muted">Choose whether the example is an aggregate need report or a service offer. One CMIST category per record keeps the report reviewable. All records are synthetic, held in this page session only, and disappear on reload; the static page does not collect or return stakeholder data.</p>
           <div class="filters" role="group" aria-label="Synthetic record type">
             <button type="button" id="record-need" aria-pressed="true">Need report</button>
             <button type="button" id="record-offer" aria-pressed="false">Service offer</button>
@@ -292,6 +290,7 @@
     const recordNeed=document.getElementById('record-need'),recordOffer=document.getElementById('record-offer'),recordType=document.getElementById('record-type');
     const intakeForm=document.getElementById('intake-form'),recordList=document.getElementById('record-list'),formMessage=document.getElementById('form-message');
     const volumeLabel=document.getElementById('volume-label');
+    const capacityUnit=document.getElementById('capacity-unit');
     let demoSequence=3;
     let demoRecords=[
       {id:'DEMO-001',type:'Need report',county:'Honolulu',hazard:'Hurricane',cmist:'Transportation',service:'Accessible transportation',volume:'25–49 (synthetic)',capacityUnit:'',window:'0–6 hours',source:'Synthetic tabletop input',reportedAt:'Demo timestamp',validation:'Awaiting human validation',match:'No reviewed match'},
@@ -304,6 +303,13 @@
     }
     recordNeed.addEventListener('click',()=>setRecordType('need'));recordOffer.addEventListener('click',()=>setRecordType('offer'));
     function escapeText(value){return String(value).replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]))}
+    function isEligibleCounterpart(item,other){
+      const samePlanningContext=item.county===other.county&&item.hazard===other.hazard&&item.cmist===other.cmist&&item.service===other.service&&item.window===other.window;
+      const oppositeTypes=item.type!==other.type;
+      const offer=item.type==='Service offer'?item:other;
+      return samePlanningContext&&oppositeTypes&&offer.capacityUnit==='people served';
+    }
+    function amountWithUnit(item){return item.type==='Service offer'?item.volume+' '+(item.capacityUnit||'unit unknown'):item.volume+' people needing support'}
     function renderRecords(){
       document.getElementById('queue-total').textContent=demoRecords.length;
       document.getElementById('queue-pending').textContent=demoRecords.filter(item=>item.validation!=='Validated in demo').length;
@@ -311,15 +317,15 @@
       if(!demoRecords.length){recordList.innerHTML='<div class="card"><p class="muted">No synthetic records in this page session.</p></div>';return}
       recordList.innerHTML=demoRecords.map(item=>{
         const validated=item.validation==='Validated in demo';
-        const canReview=validated&&demoRecords.some(other=>other.id!==item.id&&other.validation==='Validated in demo'&&other.county===item.county&&other.service===item.service&&other.window===item.window&&other.type!==item.type);
-        return '<article class="record"><div class="record-head"><h3>'+escapeText(item.id)+' · '+escapeText(item.type)+' <span class="status-pill '+(validated?'ok':'')+'">'+escapeText(item.validation)+'</span></h3><span class="small muted">Synthetic only</span></div><dl><dt>Area / hazard</dt><dd>'+escapeText(item.county)+' County · '+escapeText(item.hazard)+'</dd><dt>CMIST / support</dt><dd>'+escapeText(item.cmist)+' · '+escapeText(item.service)+'</dd><dt>Aggregate amount</dt><dd>'+escapeText(item.volume)+' · '+escapeText(item.window)+'</dd><dt>Evidence / time</dt><dd>'+escapeText(item.source)+' · '+escapeText(item.reportedAt)+'</dd><dt>Coordination state</dt><dd>'+escapeText(item.match)+'</dd></dl><div class="record-actions"><button type="button" data-action="validate" data-id="'+escapeText(item.id)+'" '+(validated?'disabled':'')+'>Simulate human validation</button><button type="button" data-action="match" data-id="'+escapeText(item.id)+'" '+(!canReview?'disabled':'')+'>Simulate coordinator review</button></div></article>'
+        const canReview=validated&&demoRecords.some(other=>other.id!==item.id&&other.validation==='Validated in demo'&&isEligibleCounterpart(item,other));
+        return '<article class="record"><div class="record-head"><h3>'+escapeText(item.id)+' · '+escapeText(item.type)+' <span class="status-pill '+(validated?'ok':'')+'">'+escapeText(item.validation)+'</span></h3><span class="small muted">Synthetic only</span></div><dl><dt>Area / hazard</dt><dd>'+escapeText(item.county)+' County · '+escapeText(item.hazard)+'</dd><dt>CMIST / support</dt><dd>'+escapeText(item.cmist)+' · '+escapeText(item.service)+'</dd><dt>Aggregate amount</dt><dd>'+escapeText(amountWithUnit(item))+' · '+escapeText(item.window)+'</dd><dt>Evidence / time</dt><dd>'+escapeText(item.source)+' · '+escapeText(item.reportedAt)+'</dd><dt>Coordination state</dt><dd>'+escapeText(item.match)+'</dd></dl><div class="record-actions"><button type="button" data-action="validate" data-id="'+escapeText(item.id)+'" '+(validated?'disabled':'')+'>Simulate human validation</button><button type="button" data-action="match" data-id="'+escapeText(item.id)+'" '+(!canReview?'disabled':'')+'>Simulate coordinator review</button></div></article>'
       }).join('');
       recordList.querySelectorAll('button[data-action]').forEach(button=>button.addEventListener('click',()=>{
         const item=demoRecords.find(entry=>entry.id===button.dataset.id);if(!item)return;
         if(button.dataset.action==='validate'){item.validation='Validated in demo';formMessage.textContent=item.id+' marked validated for demonstration only. No real identity or source was checked.'}
         if(button.dataset.action==='match'){
-          const counterpart=demoRecords.find(other=>other.id!==item.id&&other.validation==='Validated in demo'&&other.county===item.county&&other.service===item.service&&other.window===item.window&&other.type!==item.type);
-          if(counterpart){item.match='Human-reviewed demo candidate · not assigned';counterpart.match='Human-reviewed demo candidate · not assigned';formMessage.textContent='A possible pair is displayed for demonstration. A real coordinator must confirm units, suitability, time, and authority; no service was assigned.'}
+          const counterpart=demoRecords.find(other=>other.id!==item.id&&other.validation==='Validated in demo'&&isEligibleCounterpart(item,other));
+          if(counterpart){item.match='Human-reviewed demo candidate · not assigned';counterpart.match='Human-reviewed demo candidate · not assigned';formMessage.textContent='A possible pair is displayed for demonstration because county, hazard, CMIST dimension, service, time window, and person-count offer unit match. A coordinator must still verify source, suitability, capacity, timing, and authority; no service was assigned.'}
         }
         renderRecords();
       }));
