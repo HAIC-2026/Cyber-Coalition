@@ -11,6 +11,43 @@
     @media(max-width:850px){.grid.two,.grid.three,.split{grid-template-columns:1fr}.flow{grid-template-columns:repeat(2,1fr)}.flow-step:last-child{grid-column:span 2}.scenario-grid{grid-template-columns:1fr}.cmist{grid-template-columns:repeat(2,1fr)}.sourcecards{grid-template-columns:1fr}.metric-row{grid-template-columns:1fr}.wrap{padding:0 18px}}
     @media(max-width:480px){.topbar .wrap{height:62px}.env{display:none}.hero{padding-top:28px}.flow{grid-template-columns:1fr}.flow-step:last-child{grid-column:auto}.nav button{padding-left:11px;padding-right:11px}.card{padding:16px}.notice{grid-template-columns:1fr}.cmist{grid-template-columns:1fr 1fr}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  
+    .intake-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(320px,.9fr);gap:18px}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .field{display:grid;gap:5px}.field.full{grid-column:1/-1}
+    .field label{font-size:12px;font-weight:750;color:var(--navy)}
+    .field input,.field select{width:100%;min-height:42px;padding:9px 10px;border:1px solid #b7c8cf;border-radius:8px;background:#fff;color:var(--ink);font:inherit}
+    .field input:focus,.field select:focus,.action:focus{outline:3px solid #84cfca;outline-offset:2px}
+    .form-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .action{border:0;border-radius:8px;background:var(--teal);color:#fff;padding:10px 14px;font-weight:750;cursor:pointer}
+    .action.secondary{background:#edf3f5;color:var(--navy);border:1px solid var(--line)}
+    .action:disabled{opacity:.55;cursor:not-allowed}
+    .demo-banner{margin:0 0 16px;padding:14px 16px;border:1px solid #e2a33b;border-left:5px solid #d8901b;border-radius:10px;background:#fff8e8;color:#604414}
+    .demo-banner strong{display:block;margin-bottom:3px;color:#734800}
+    .context-list{display:grid;gap:10px}
+    .context-item{border:1px solid var(--line);border-radius:10px;padding:12px;background:#fff}
+    .context-item h3{margin:0 0 4px;font-size:14px;color:var(--navy)}
+    .context-item p{margin:0;color:var(--muted);font-size:12px}
+    .context-item a{font-size:12px}
+    .queue-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:12px 0}
+    .queue-stat{border:1px solid var(--line);border-radius:9px;padding:10px;background:#f8fbfc}
+    .queue-stat b{display:block;color:var(--navy);font-size:20px}.queue-stat span{font-size:11px;color:var(--muted)}
+    .record-list{display:grid;gap:10px}
+    .record{border:1px solid var(--line);border-radius:11px;padding:13px;background:#fff}
+    .record-head{display:flex;justify-content:space-between;gap:12px;align-items:start}
+    .record-head h3{margin:0;font-size:14px;color:var(--navy)}
+    .record dl{display:grid;grid-template-columns:140px 1fr;gap:4px 8px;margin:10px 0;font-size:12px}
+    .record dt{font-weight:700;color:#516674}.record dd{margin:0;color:var(--ink)}
+    .record-actions{display:flex;gap:7px;flex-wrap:wrap}
+    .record-actions button{border:1px solid var(--line);border-radius:7px;background:#f5f8f9;color:var(--navy);padding:6px 9px;font-size:11px;font-weight:700;cursor:pointer}
+    .record-actions button:disabled{opacity:.5;cursor:not-allowed}
+    .status-pill{display:inline-block;border-radius:999px;padding:4px 8px;background:var(--amber-light);color:var(--amber);font-size:11px;font-weight:750}
+    .status-pill.ok{background:var(--teal-light);color:var(--teal)}
+    .integrity-note{margin-top:12px;padding:12px;border-radius:9px;background:#eef4f8;color:#354f60;font-size:12px}
+    .subhead{margin:0 0 6px;color:var(--navy);font-size:17px}
+    @media(max-width:850px){.intake-grid{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:520px){.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.queue-summary{grid-template-columns:1fr 1fr}.record dl{grid-template-columns:1fr;gap:2px}.record dd{margin-bottom:5px}}
+
   </style>
 </head>
 <body>
@@ -28,6 +65,7 @@
     <button role="tab" id="tab-data" aria-controls="panel-data" aria-selected="false" tabindex="-1" data-tab="data">Data & uncertainty</button>
     <button role="tab" id="tab-evidence" aria-controls="panel-evidence" aria-selected="false" tabindex="-1" data-tab="evidence">Evidence log</button>
     <button role="tab" id="tab-workflow" aria-controls="panel-workflow" aria-selected="false" tabindex="-1" data-tab="workflow">Decision workflow</button>
+    <button role="tab" id="tab-intake" aria-controls="panel-intake" aria-selected="false" tabindex="-1" data-tab="intake">Partner intake demo</button>
   </div></nav>
   <main id="main" class="wrap">
     <section class="page active" role="tabpanel" id="panel-overview" aria-labelledby="tab-overview">
@@ -83,6 +121,51 @@
       <div class="section-head"><div><h2>Questions for authorized validation</h2><p>These are evidence requests, not claims that agencies have failed.</p></div></div>
       <div class="question-list"><div class="question"><div><h3>Which shelter location list is current, who maintains it, and how often is it updated?</h3><p>Seek a public or authorized source for capacity, accessibility audits, wind suitability, staffing, and activation status. Keep unavailable fields marked unknown.</p></div></div><div class="question"><div><h3>Which later Oʻahu studies or exercise improvement plans address the 1993 ʻIniki findings?</h3><p>Request public/shareable reports and page-specific recommendations; distinguish historical closure evidence from present-day status.</p></div></div><div class="question"><div><h3>What county-to-state planning/request pathway should the tabletop model?</h3><p>Use current official EOP/SESF annexes and county plans; depict a simulated process until authorized reviewers confirm it.</p></div></div><div class="question"><div><h3>What target and baseline should be used for forecast-to-plan time?</h3><p>Set the metric before timing a repeatable exercise; report the observed result and limitations.</p></div></div></div>
     </section>
+
+    <section class="page" role="tabpanel" id="panel-intake" aria-labelledby="tab-intake" tabindex="0">
+      <div class="section-head"><div><div class="eyebrow">Stakeholder workflow prototype</div><h2>Partner intake & coordination</h2><p>Demonstrates how providers could report aggregate needs or service offers for human review, using ArcGIS as geographic context.</p></div></div>
+      <div class="demo-banner" role="note"><strong>DEMO ONLY · SYNTHETIC INFORMATION</strong>This page does not authenticate partners, transmit, save, or protect submissions. Use only the fictional records built into this demo. Do not enter real operational, personal, or partner data.</div>
+      <div class="grid two">
+        <article class="card">
+          <h2>ArcGIS context for this prototype</h2>
+          <p class="small muted">These are reconciled reference findings, not live layers. The page does not query ArcGIS or infer affected people from a map overlay.</p>
+          <div class="context-list">
+            <div class="context-item"><h3>Geography and coverage</h3><p>The strict 2020 Census denominator is 461 tracts. The candidate project set contains 435; 26 are outside that set. A missing candidate record does not mean no AFNs or no need.</p><a href="https://hawaiihub.maps.arcgis.com/home/item.html?id=06c11dc78afa44e7992a1348527fed7b" target="_blank" rel="noopener noreferrer">Project tract layer · item 06c11dc7…</a></div>
+            <div class="context-item"><h3>Flood · DFIRM overlay</h3><p>The saved output summarizes intersecting DFIRM area for the 435 input tracts. The grouped T/F rows are not unique affected-person counts; mapped area is not AFN need or shelter demand.</p><a href="https://hawaiihub.maps.arcgis.com/home/item.html?id=ae7b936cb4c845dc9ee8d1770f9dc598" target="_blank" rel="noopener noreferrer">Flood result layer · item ae7b936c…</a></div>
+            <div class="context-item"><h3>Hurricane & wildfire · FEMA NRI</h3><p>NRI scores are modeled, long-term risk context. They are not event footprints, forecasts, observed impacts, or counts of people needing services.</p><a href="https://services.arcgis.com/XG15cJAlne2vxtgt/ArcGIS/rest/services/National_Risk_Index_Census_Tracts/FeatureServer/0" target="_blank" rel="noopener noreferrer">FEMA NRI tract service · layer 0</a></div>
+            <div class="context-item"><h3>Tsunami · evacuation references</h3><p>Mapped evacuation and safe-zone layers support planning context. They do not establish current impacts, safe routes, staffed facilities, or verified shelter capacity.</p><a href="https://geodata.hawaii.gov/arcgis/rest/services/Hazards/MapServer" target="_blank" rel="noopener noreferrer">Hawaiʻi StateGIS hazards service</a></div>
+          </div>
+          <div class="integrity-note"><b>Join rule:</b> a future system may join a provider’s aggregate report to an authorized geography key, but it must preserve the source, time, scale, and validation status. A spatial intersection alone cannot turn a modeled hazard into a confirmed service need.</div>
+        </article>
+        <article class="card">
+          <h2>Add a synthetic partner record</h2>
+          <p class="small muted">Choose whether the example is an aggregate need report or a service offer. One CMIST category per record keeps the report reviewable.</p>
+          <div class="filters" role="group" aria-label="Synthetic record type">
+            <button type="button" id="record-need" aria-pressed="true">Need report</button>
+            <button type="button" id="record-offer" aria-pressed="false">Service offer</button>
+          </div>
+          <form id="intake-form">
+            <input type="hidden" id="record-type" value="need">
+            <div class="form-grid">
+              <div class="field"><label for="county">County / reporting area</label><select id="county" required><option value="">Choose area</option><option>Hawaiʻi</option><option>Honolulu</option><option>Kauaʻi</option><option>Maui</option><option>Kalawao</option></select></div>
+              <div class="field"><label for="hazard">Hazard context</label><select id="hazard" required><option value="">Choose hazard</option><option>Flood</option><option>Hurricane</option><option>Wildfire</option><option>Tsunami</option></select></div>
+              <div class="field"><label for="cmist">CMIST category</label><select id="cmist" required><option value="">Choose category</option><option>Communication</option><option>Maintaining Health</option><option>Independence</option><option>Safety and Support</option><option>Transportation</option></select></div>
+              <div class="field"><label for="service">Service / support type</label><select id="service" required><option value="">Choose support</option><option>Accessible transportation</option><option>Communication support</option><option>Health maintenance support</option><option>Assistive technology / independence support</option><option>Safety and personal support</option><option>Other · describe in approved workflow</option></select></div>
+              <div class="field"><label for="volume" id="volume-label">Aggregate people needing support</label><select id="volume" required><option value="">Choose synthetic range</option><option>1–9 (synthetic)</option><option>10–24 (synthetic)</option><option>25–49 (synthetic)</option><option>50+ (synthetic)</option></select></div><div class="field" id="capacity-unit-wrap" hidden><label for="capacity-unit">Service offer unit</label><select id="capacity-unit"><option value="">Choose unit</option><option>people served</option><option>seats</option><option>vehicles</option><option>meals</option><option>staff shifts</option><option>calls or messages</option><option>other approved unit</option></select></div>
+              <div class="field"><label for="window">Applicable time window</label><select id="window" required><option value="">Choose window</option><option>0–6 hours</option><option>6–24 hours</option><option>24–72 hours</option><option>More than 72 hours</option></select></div>
+              <div class="field"><label for="source">Evidence basis</label><select id="source" required><option value="">Choose basis</option><option>Synthetic tabletop input</option><option>Synthetic provider estimate</option><option>Synthetic public-data reference</option></select></div>
+              <div class="field"><label for="reported-at">Report time</label><input id="reported-at" type="datetime-local" required></div>
+            </div>
+            <div class="form-actions"><button class="action" type="submit">Add demo record</button><button class="action secondary" type="reset">Clear form</button></div>
+          </form>
+          <p id="form-message" class="focus-note" aria-live="polite">No network calls. Demo records remain in this page session and disappear when it is reloaded.</p>
+        </article>
+      </div>
+      <div class="section-head"><div><h2>Coordination queue</h2><p>Validation and matching are shown as separate human-controlled steps. The demo never assigns a service automatically.</p></div></div>
+      <div class="queue-summary" aria-label="Demo queue totals"><div class="queue-stat"><b id="queue-total">0</b><span>synthetic records</span></div><div class="queue-stat"><b id="queue-pending">0</b><span>awaiting validation</span></div><div class="queue-stat"><b id="queue-unmatched">0</b><span>without a reviewed match</span></div></div>
+      <div id="record-list" class="record-list" aria-live="polite"></div>
+      <div class="callout warn" style="margin-top:16px"><b>Operational boundary:</b> a real deployment needs approved partner identity and role controls, protected storage, retention rules, audit records, human validation, secure communications, and a tested degraded-connectivity process. None is implemented by this static prototype.</div>
+    </section>
   </main>
   <footer class="footer"><div class="wrap"><span>Cyber Coalition · HAIC 2026 · Working prototype</span><span>Public aggregate and synthetic scenario only · No live operational integrations</span></div></footer>
   <script>
@@ -92,6 +175,66 @@
     tabs.forEach((tab,index)=>{tab.addEventListener('click',()=>selectTab(tab));tab.addEventListener('keydown',event=>{if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();const offset=event.key==='ArrowRight'?1:-1;selectTab(tabs[(index+offset+tabs.length)%tabs.length])}})});
     const filters=[...document.querySelectorAll('[data-filter]')], cards=[...document.querySelectorAll('.source-card')];
     filters.forEach(button=>button.addEventListener('click',()=>{filters.forEach(item=>item.setAttribute('aria-pressed',String(item===button)));const value=button.dataset.filter;cards.forEach(card=>card.classList.toggle('hidden',value!=='all'&&!card.dataset.kind.split(' ').includes(value)))}));
+
+    const recordNeed=document.getElementById('record-need'),recordOffer=document.getElementById('record-offer'),recordType=document.getElementById('record-type');
+    const intakeForm=document.getElementById('intake-form'),recordList=document.getElementById('record-list'),formMessage=document.getElementById('form-message');
+    const volumeLabel=document.getElementById('volume-label');
+    let demoSequence=3;
+    let demoRecords=[
+      {id:'DEMO-001',type:'Need report',county:'Honolulu',hazard:'Hurricane',cmist:'Transportation',service:'Accessible transportation',volume:'25–49 (synthetic)',capacityUnit:'',window:'0–6 hours',source:'Synthetic tabletop input',reportedAt:'Demo timestamp',validation:'Awaiting human validation',match:'No reviewed match'},
+      {id:'DEMO-002',type:'Service offer',county:'Honolulu',hazard:'Hurricane',cmist:'Transportation',service:'Accessible transportation',volume:'10–24 (synthetic)',capacityUnit:'seats',window:'0–6 hours',source:'Synthetic provider estimate',reportedAt:'Demo timestamp',validation:'Awaiting human validation',match:'Offer not confirmed'}
+    ];
+    function setRecordType(type){
+      const isNeed=type==='need';recordType.value=type;
+      recordNeed.setAttribute('aria-pressed',String(isNeed));recordOffer.setAttribute('aria-pressed',String(!isNeed));
+      volumeLabel.textContent=isNeed?'Aggregate people needing support':'Aggregate service offer capacity';document.getElementById('capacity-unit-wrap').hidden=isNeed;document.getElementById('capacity-unit').required=!isNeed;
+    }
+    recordNeed.addEventListener('click',()=>setRecordType('need'));recordOffer.addEventListener('click',()=>setRecordType('offer'));
+    function escapeText(value){return String(value).replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]))}
+    function renderRecords(){
+      document.getElementById('queue-total').textContent=demoRecords.length;
+      document.getElementById('queue-pending').textContent=demoRecords.filter(item=>item.validation!=='Validated in demo').length;
+      document.getElementById('queue-unmatched').textContent=demoRecords.filter(item=>!item.match.startsWith('Human-reviewed demo')).length;
+      if(!demoRecords.length){recordList.innerHTML='<div class="card"><p class="muted">No synthetic records in this page session.</p></div>';return}
+      recordList.innerHTML=demoRecords.map(item=>{
+        const validated=item.validation==='Validated in demo';
+        const canReview=validated&&demoRecords.some(other=>other.id!==item.id&&other.validation==='Validated in demo'&&other.county===item.county&&other.service===item.service&&other.window===item.window&&other.type!==item.type);
+        return '<article class="record"><div class="record-head"><h3>'+escapeText(item.id)+' · '+escapeText(item.type)+' <span class="status-pill '+(validated?'ok':'')+'">'+escapeText(item.validation)+'</span></h3><span class="small muted">Synthetic only</span></div><dl><dt>Area / hazard</dt><dd>'+escapeText(item.county)+' County · '+escapeText(item.hazard)+'</dd><dt>CMIST / support</dt><dd>'+escapeText(item.cmist)+' · '+escapeText(item.service)+'</dd><dt>Aggregate amount</dt><dd>'+escapeText(item.volume)+' · '+escapeText(item.window)+'</dd><dt>Evidence / time</dt><dd>'+escapeText(item.source)+' · '+escapeText(item.reportedAt)+'</dd><dt>Coordination state</dt><dd>'+escapeText(item.match)+'</dd></dl><div class="record-actions"><button type="button" data-action="validate" data-id="'+escapeText(item.id)+'" '+(validated?'disabled':'')+'>Simulate human validation</button><button type="button" data-action="match" data-id="'+escapeText(item.id)+'" '+(!canReview?'disabled':'')+'>Simulate coordinator review</button></div></article>'
+      }).join('');
+      recordList.querySelectorAll('button[data-action]').forEach(button=>button.addEventListener('click',()=>{
+        const item=demoRecords.find(entry=>entry.id===button.dataset.id);if(!item)return;
+        if(button.dataset.action==='validate'){item.validation='Validated in demo';formMessage.textContent=item.id+' marked validated for demonstration only. No real identity or source was checked.'}
+        if(button.dataset.action==='match'){
+          const counterpart=demoRecords.find(other=>other.id!==item.id&&other.validation==='Validated in demo'&&other.county===item.county&&other.service===item.service&&other.window===item.window&&other.type!==item.type);
+          if(counterpart){item.match='Human-reviewed demo candidate · not assigned';counterpart.match='Human-reviewed demo candidate · not assigned';formMessage.textContent='A possible pair is displayed for demonstration. A real coordinator must confirm units, suitability, time, and authority; no service was assigned.'}
+        }
+        renderRecords();
+      }));
+    }
+    intakeForm.addEventListener('submit',event=>{
+      event.preventDefault();
+      const type=recordType.value==='need'?'Need report':'Service offer';
+      const localTime=document.getElementById('reported-at').value;
+      const item={
+        id:'DEMO-'+String(demoSequence++).padStart(3,'0'),type,
+        county:document.getElementById('county').value,
+        hazard:document.getElementById('hazard').value,
+        cmist:document.getElementById('cmist').value,
+        service:document.getElementById('service').value,
+        volume:document.getElementById('volume').value,
+        capacityUnit:recordType.value==='offer'?document.getElementById('capacity-unit').value:'',
+        window:document.getElementById('window').value,
+        source:document.getElementById('source').value,
+        reportedAt:localTime?new Date(localTime).toLocaleString():'Not supplied',
+        validation:'Awaiting human validation',
+        match:type==='Need report'?'No reviewed match':'Offer not confirmed'
+      };
+      demoRecords.unshift(item);renderRecords();intakeForm.reset();setRecordType('need');
+      formMessage.textContent=item.id+' added to this browser session only. It is synthetic and still requires human validation.';
+    });
+    intakeForm.addEventListener('reset',()=>{setTimeout(()=>setRecordType('need'),0)});
+    renderRecords();
   </script>
 </body>
 </html>
+presnted bet
