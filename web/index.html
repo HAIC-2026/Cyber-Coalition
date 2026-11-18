@@ -1,6 +1,22 @@
 <!doctype html>
 <html lang="en">
 <head>
+<style>
+
+    .coverage-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr);gap:18px}
+    .coverage-bar{position:relative;height:22px;margin:13px 3px 8px;border-radius:999px;background:#e5edf0;border:1px solid var(--line)}
+    .coverage-bar-fill{height:100%;width:94.4%;background:var(--teal);border-radius:999px}
+    .coverage-marker{position:absolute;top:-5px;height:30px;border-left:2px solid var(--amber)}
+    .coverage-marker.threshold{left:60%}.coverage-marker.target{left:calc(100% - 2px);border-color:var(--red)}
+    .coverage-scale{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:11px}
+    .coverage-legend{display:flex;gap:12px;flex-wrap:wrap;margin:9px 0;color:var(--muted);font-size:12px}
+    .coverage-legend span{display:inline-flex;align-items:center;gap:5px}.legend-swatch{width:12px;height:12px;border-radius:3px;background:var(--teal)}.legend-swatch.threshold{background:var(--amber)}.legend-swatch.target{background:var(--red)}
+    .hazard-table{width:100%;border-collapse:collapse;min-width:760px}.hazard-table th,.hazard-table td{padding:10px 11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:12px}.hazard-table th{background:#f2f6f7;color:#435a68;font-size:11px;text-transform:uppercase;letter-spacing:.05em}.hazard-table tr:last-child td{border-bottom:0}
+    .evidence-checklist{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.evidence-check{border:1px solid var(--line);border-radius:9px;padding:11px;background:#fff}.evidence-check b{display:block;color:var(--navy);font-size:12px}.evidence-check span{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+    .hazard-note{grid-column:1/-1;padding:10px 12px;border-left:4px solid var(--blue);background:var(--blue-light);border-radius:7px;color:#2c4868;font-size:12px}
+    @media(max-width:850px){.coverage-grid{grid-template-columns:1fr}.evidence-checklist{grid-template-columns:1fr}}
+</style>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="HAIC Cyber Coalition ESF-6 planning demonstrator for a fictional Category 5 hurricane scenario in Kapolei, Oahu.">
@@ -55,8 +71,7 @@
   <header class="topbar"><div class="wrap"><div class="brand"><div class="brand-mark" aria-hidden="true">CC</div><div>Cyber Coalition<small>HAIC 2026 · ESF-6 Planning Concept</small></div></div><div class="env">WORKING DEMONSTRATOR · NO LIVE OPERATIONS</div></div></header>
   <section class="hero"><div class="wrap">
     <div class="crumb">Mass care · Emergency assistance · Housing · Human services</div>
-    <h1>Evidence into a coordinated plan.</h1>
-    <p>Cyber Coalition’s proposed Common Operational Framework (COF) organizes evidence, assumptions, roles, resource status, and human follow-up into a reviewable ESF-6 planning picture. This static workbench illustrates parts of that approach with a fictional hurricane scenario and public, aggregate information; it is not a live operational system.</p>
+    <h1>Evidence into a coordinated plan.</h1>    <p>Cyber Coalition’s proposed Common Operational Framework connects public aggregate evidence and synthetic partner inputs to hazard-specific coverage, CMIST planning considerations, source review, resource questions, and human-reviewed coordination. It frames a statewide four-hazard design and a bounded fictional Kapolei hurricane pilot. This static workbench is not operational, and the pilot does not prove statewide hazard coverage.</p>
     <div class="scope-row"><span class="tag">Statewide framework: all Hawaiʻi counties/islands</span><span class="tag">First demonstrator: Kapolei / Leeward Oʻahu</span><span class="tag">Four-hazard baseline: earthquake scope question recorded</span></div>
     <div class="notice" role="note"><div class="notice-icon" aria-hidden="true">⚠</div><div><strong>Fictional Category 5 stress scenario · not a forecast, alert, or operational recommendation.</strong><p>The Saffir-Simpson category rates maximum sustained wind only. It does not describe storm surge, rainfall flooding, tornadoes, or local impacts. The scenario keeps those hazards and assumptions separate for review.</p></div></div>
   </div></section>
@@ -65,14 +80,16 @@
     <button role="tab" id="tab-data" aria-controls="panel-data" aria-selected="false" tabindex="-1" data-tab="data">Data & uncertainty</button>
     <button role="tab" id="tab-evidence" aria-controls="panel-evidence" aria-selected="false" tabindex="-1" data-tab="evidence">Evidence log</button>
     <button role="tab" id="tab-workflow" aria-controls="panel-workflow" aria-selected="false" tabindex="-1" data-tab="workflow">Decision workflow</button>
-    <button role="tab" id="tab-intake" aria-controls="panel-intake" aria-selected="false" tabindex="-1" data-tab="intake">Partner intake demo</button>
+    <button role="tab" id="tab-coverage" aria-controls="panel-coverage" aria-selected="false" tabindex="-1" data-tab="coverage">Coverage &amp; audit</button>
+    <button role="tab" id="tab-intake" aria-controls="panel-intake" aria-selected="false" tabindex="-1" data-tab="intake">All-hazard intake &amp; coordination</button>
   </div></nav>
   <main id="main" class="wrap">
     <section class="page active" role="tabpanel" id="panel-overview" aria-labelledby="tab-overview">
       <div class="grid two">
         <article class="card scenario"><div class="eyebrow" style="color:#a6ded8">Scenario in focus</div><h2>Kapolei / Leeward Oʻahu</h2><div class="category"><i aria-hidden="true"></i> CATEGORY 5 · ≥157 MPH · FICTIONAL</div><p style="margin-top:15px">A high-end wind stress test to examine county-led mass-care planning, accessible sheltering, continuity needs, transportation barriers, and requests for state support. The Category 5 label describes sustained wind only. Surge, rainfall flooding, tornadoes, impact timing, footprint, participation, outages, and resource availability remain separately defined scenario inputs, not measured conditions.</p><p class="small"><a href="https://www.nhc.noaa.gov/aboutsshws.php?unit=m" target="_blank" rel="noreferrer" style="color:#c7eeea">NHC Saffir-Simpson Hurricane Wind Scale</a></p><div class="scenario-grid"><div class="scenario-stat"><b>Scope</b><span>Local pilot within statewide framework</span></div><div class="scenario-stat"><b>Inputs</b><span>Public aggregate + synthetic scenario data</span></div><div class="scenario-stat"><b>Authority</b><span>Human review at every decision point</span></div></div></article>
         <article class="card"><div class="eyebrow">Project status</div><h2>What this demo can establish</h2><div class="status-list"><div class="status-row"><b>Scenario workflow</b><span><span class="label synthetic">Demonstration scope</span></span></div><div class="status-row"><b>Current shelter capacity</b><span><span class="label unknown">Unknown</span></span></div><div class="status-row"><b>Current site accessibility</b><span><span class="label unknown">Unknown</span></span></div><div class="status-row"><b>Statewide data completeness</b><span><span class="label unknown">Not yet measured</span></span></div><div class="status-row"><b>Forecast-to-plan time benefit</b><span><span class="label unknown">Not yet measured</span></span></div></div><p class="focus-note">“Unknown” is visible in the output. The prototype does not fill missing values by inference.</p></article>
-      </div>
+      </div>      <div class="callout" style="margin:18px 0"><strong>ArcGIS audit checkpoint: 435 of 461 tract GEOIDs reconciled (94.4%).</strong> This is above the team-stated 60% threshold for tract-ID reconciliation. The 26 unmatched GEOIDs remain visible as a coverage gap; a missing candidate record does not mean no AFNs or no need. The separate 100% statewide hazard-specific mapping target is not yet measured. See the Coverage &amp; audit tab for the hazard-by-hazard evidence boundaries.</div>
+
       <div class="section-head"><div><h2>Planning path</h2><p>Move from a fictional event to a human-reviewed county plan and simulated state-support request.</p></div></div>
       <div class="flow" aria-label="Six-step planning method"><div class="flow-step"><div class="num">1</div><h3>Set the objective</h3><p>Define the planning question and the call to action.</p></div><div class="flow-step"><div class="num">2</div><h3>Frame the scenario</h3><p>Record backstory, time, geography, hazard assumptions, and fictional inputs.</p></div><div class="flow-step"><div class="num">3</div><h3>Map roles and data</h3><p>Identify stakeholders, responsibilities, source owners, and native data geography.</p></div><div class="flow-step"><div class="num">4</div><h3>Analyze evidence</h3><p>Separate documented findings, inferences, assumptions, and open questions.</p></div><div class="flow-step"><div class="num">5</div><h3>Test decisions</h3><p>Walk through feasible scenarios, resource checks, and human decision points.</p></div><div class="flow-step"><div class="num">6</div><h3>Specify the workflow</h3><p>Document the proposed plan, owners, measures, and simulated state-support pathway.</p></div></div>
       <div class="split">
@@ -120,10 +137,61 @@
       <div class="metric-row"><div class="metric"><b>Start point</b><p>Scenario forecast package becomes available to the planning team.</p></div><div class="metric"><b>Stop point</b><p>Human-reviewed plan packet includes source-linked needs context, resource status, open questions, owner, and simulated support pathway.</p></div><div class="metric"><b>Comparison</b><p>Repeat the same tabletop task with a documented baseline and with the prototype. Report actual time and completeness; do not claim a benefit before measurement.</p></div></div>
       <div class="section-head"><div><h2>Questions for authorized validation</h2><p>These are evidence requests, not claims that agencies have failed.</p></div></div>
       <div class="question-list"><div class="question"><div><h3>Which shelter location list is current, who maintains it, and how often is it updated?</h3><p>Seek a public or authorized source for capacity, accessibility audits, wind suitability, staffing, and activation status. Keep unavailable fields marked unknown.</p></div></div><div class="question"><div><h3>Which later Oʻahu studies or exercise improvement plans address the 1993 ʻIniki findings?</h3><p>Request public/shareable reports and page-specific recommendations; distinguish historical closure evidence from present-day status.</p></div></div><div class="question"><div><h3>What county-to-state planning/request pathway should the tabletop model?</h3><p>Use current official EOP/SESF annexes and county plans; depict a simulated process until authorized reviewers confirm it.</p></div></div><div class="question"><div><h3>What target and baseline should be used for forecast-to-plan time?</h3><p>Set the metric before timing a repeatable exercise; report the observed result and limitations.</p></div></div></div>
+    </section>    <section class="page" role="tabpanel" id="panel-coverage" aria-labelledby="tab-coverage" tabindex="0">
+      <div class="section-head"><div><div class="eyebrow">Reconciliation, evidence, and honest coverage</div><h2>Coverage & validation dashboard</h2><p>Shows what the project can substantiate today, what the map context means, and what still needs evidence.</p></div></div>
+      <div class="coverage-grid">
+        <article class="card">
+          <div class="eyebrow">ArcGIS tract-ID reconciliation · team-reported audit</div><h2>435 of 461 GEOIDs · 94.4%</h2>
+          <p>The candidate project geography matches 435 of the strict 2020 Census tract universe. The remaining 26 GEOIDs are outside the candidate set. A missing candidate match does not mean no AFNs or no service need.</p>
+          <div class="coverage-bar" role="img" aria-label="94.4 percent of tract GEOIDs reconciled; above the 60 percent team threshold and below the separate 100 percent hazard mapping target"><div class="coverage-bar-fill"></div><span class="coverage-marker threshold" aria-hidden="true"></span><span class="coverage-marker target" aria-hidden="true"></span></div>
+          <div class="coverage-scale"><span>0%</span><span>60% threshold</span><span>100% challenge target</span></div>
+          <div class="coverage-legend"><span><i class="legend-swatch"></i>94.4% GEOID reconciliation</span><span><i class="legend-swatch threshold"></i>Team-stated 60% threshold</span><span><i class="legend-swatch target"></i>Hazard-specific mapping target</span></div>
+          <div class="callout warn"><strong>Metric boundary:</strong> 94.4% exceeds the team-stated 60% threshold for tract-ID reconciliation. It does not establish 94.4% AFN, need, or hazard-layer coverage. The challenge’s separate target is hazard-specific mapping across 100% of census tracts; that statewide measure remains open.</div>
+        </article>
+        <article class="card">
+          <div class="eyebrow">What the audit supports</div><h2>Geography is the join foundation</h2>
+          <div class="status-list">
+            <div class="status-row"><b>Denominator</b><span>461 strict 2020 Census tract GEOIDs</span></div>
+            <div class="status-row"><b>Candidate matches</b><span>435 GEOIDs matched in the candidate StateGIS Census and Coastal SVI sets</span></div>
+            <div class="status-row"><b>Outside candidate set</b><span>26; retain as unknown coverage, not zero need</span></div>
+            <div class="status-row"><b>Statewide hazard coverage</b><span><span class="label unknown">Not yet measured</span></span></div>
+          </div>
+          <p class="small muted">Base-geography matching validates identifiers for reconciliation. It does not validate hazard overlays, CMIST estimates, source freshness, or resource availability.</p>
+          <p><a href="https://hawaiihub.maps.arcgis.com/home/item.html?id=06c11dc78afa44e7992a1348527fed7b" target="_blank" rel="noopener noreferrer">Open project tract layer in ArcGIS</a></p>
+        </article>
+      </div>
+      <div class="section-head"><div><h2>Four-hazard baseline: context and limits</h2><p>Each row distinguishes a map or model from observed impact and reported service need.</p></div></div>
+      <div class="table-wrap"><table class="hazard-table"><thead><tr><th>Hazard</th><th>Current project context</th><th>What it can support</th><th>What it cannot prove</th><th>Validation state</th></tr></thead><tbody>
+        <tr><td><strong>Hurricane</strong></td><td>Fictional Kapolei wind-stress tabletop; FEMA NRI modeled context; historical ʻIniki reports</td><td>Planning questions and repeatable scenario inputs</td><td>Current impacts, present-day deficiencies, shelter suitability, or AFN counts</td><td><span class="label synthetic">Scenario only</span></td></tr>
+        <tr><td><strong>Wildfire</strong></td><td>FEMA NRI modeled risk context</td><td>Long-term modeled risk context with source vintage retained</td><td>Active fire perimeter, forecast, observed impacts, evacuation status, or service need</td><td><span class="label reported">Modeled context</span></td></tr>
+        <tr><td><strong>Tsunami</strong></td><td>StateGIS evacuation and safe-zone reference layers</td><td>Map-based planning context for review</td><td>Current impact, safe route, staffed facility, or verified shelter capacity</td><td><span class="label unknown">Operational facts unknown</span></td></tr>
+        <tr><td><strong>Flood</strong></td><td>DFIRM-area overlay summary for 435 input tracts</td><td>Mapped flood-area intersection by source geography</td><td>Unique affected people, AFN needs, shelter demand, or current flood conditions; grouped T/F rows remain distinct</td><td><span class="label reported">Area context only</span></td></tr>
+        <tr><td><strong>Earthquake</strong></td><td>Named separately in challenge section 4</td><td>Scope question for HAIC clarification</td><td>Inclusion in the committed four-hazard baseline or a completed earthquake deliverable</td><td><span class="label unknown">Scope decision open</span></td></tr>
+      </tbody></table></div>
+      <p class="focus-note">The statewide coverage ledger still needs actual county/island × hazard × geography × CMIST × source-vintage counts. The Kapolei pilot demonstrates a method in one bounded scenario; it is not proof of statewide completeness.</p>
+      <div class="section-head"><div><h2>How the planning workflow turns evidence into coordination</h2><p>Every stage keeps observations, modeled context, assumptions, and human decisions visibly separate.</p></div></div>
+      <div class="flow" aria-label="Evidence-to-coordination workflow">
+        <div class="flow-step"><div class="num">1</div><h3>Receive aggregate input</h3><p>Separate synthetic need reports from service offers; keep each CMIST category and time window explicit.</p></div>
+        <div class="flow-step"><div class="num">2</div><h3>Check source provenance</h3><p>Record owner, item or URL, date, vintage, fields, native geography, and evidence class.</p></div>
+        <div class="flow-step"><div class="num">3</div><h3>Reconcile geography</h3><p>Join only supported GEOIDs; show unmatched tracts and preserve source scale.</p></div>
+        <div class="flow-step"><div class="num">4</div><h3>Separate hazard context</h3><p>Label observations, modeled risk, map overlays, and scenario assumptions separately.</p></div>
+        <div class="flow-step"><div class="num">5</div><h3>Review resource options</h3><p>Keep status unknown until an authorized owner confirms date, capacity, access, and availability.</p></div>
+        <div class="flow-step"><div class="num">6</div><h3>Prepare human decision</h3><p>Produce a traceable planning option or simulated State-support request; people retain authority.</p></div>
+      </div>
+      <div class="section-head"><div><h2>Evidence validation record</h2><p>Use this checklist before a source-backed claim moves from candidate context to reviewed evidence.</p></div></div>
+      <div class="evidence-checklist">
+        <div class="evidence-check"><b>Source identity</b><span>Owner, title, exact item ID or URL, access/terms, retrieval date and timezone.</span></div>
+        <div class="evidence-check"><b>Data definition</b><span>Native geography, vintage, fields, schema, suppression, missingness, units.</span></div>
+        <div class="evidence-check"><b>Reproducible transformation</b><span>Query, filters, join key, spatial rule, code or method version, checksum when available.</span></div>
+        <div class="evidence-check"><b>Validation outcome</b><span>Independent check, reviewer/owner, status, confidence, exceptions, and date.</span></div>
+        <div class="evidence-check"><b>Claim boundary</b><span>What the source supports, what it does not establish, and what remains unknown.</span></div>
+        <div class="evidence-check"><b>Decision control</b><span>Human reviewer, authority, validity period, and next confirmation action.</span></div>
+      </div>
+      <div class="callout red" style="margin-top:16px"><strong>Current implementation boundary:</strong> this is a static, disconnected prototype with synthetic intake records. It does not ingest live sources, store partner submissions, validate source owners, estimate people from map intersections, issue alerts, or commit resources.</div>
     </section>
 
-    <section class="page" role="tabpanel" id="panel-intake" aria-labelledby="tab-intake" tabindex="0">
-      <div class="section-head"><div><div class="eyebrow">Stakeholder workflow prototype</div><h2>Partner intake & coordination</h2><p>Demonstrates how providers could report aggregate needs or service offers for human review, using ArcGIS as geographic context.</p></div></div>
+
+    <section class="page" role="tabpanel" id="panel-intake" aria-labelledby="tab-intake" tabindex="0">      <div class="section-head"><div><div class="eyebrow">All-hazard stakeholder workflow prototype</div><h2>All-hazard intake &amp; coordination</h2><p>Demonstrates synthetic aggregate-need reports and service offers across the four-hazard baseline. Earthquake and other hazards are scope-review extensions. ArcGIS layers provide reference context, not live intake sources or need counts.</p></div></div>
       <div class="demo-banner" role="note"><strong>DEMO ONLY · SYNTHETIC INFORMATION</strong>This page does not authenticate partners, transmit, save, or protect submissions. Use only the fictional records built into this demo. Do not enter real operational, personal, or partner data.</div>
       <div class="grid two">
         <article class="card">
@@ -147,8 +215,8 @@
           <form id="intake-form">
             <input type="hidden" id="record-type" value="need">
             <div class="form-grid">
-              <div class="field"><label for="county">County / reporting area</label><select id="county" required><option value="">Choose area</option><option>Hawaiʻi</option><option>Honolulu</option><option>Kauaʻi</option><option>Maui</option><option>Kalawao</option></select></div>
-              <div class="field"><label for="hazard">Hazard context</label><select id="hazard" required><option value="">Choose hazard</option><option>Flood</option><option>Hurricane</option><option>Wildfire</option><option>Tsunami</option></select></div>
+              <div class="field"><label for="county">County / reporting area</label><select id="county" required><option value="">Choose area</option><option>Hawaiʻi</option><option>Honolulu</option><option>Kauaʻi</option><option>Maui</option><option>Kalawao</option></select></div>              <div class="field"><label for="hazard">Hazard context</label><select id="hazard" required><option value="">Choose hazard</option><optgroup label="Four-hazard challenge baseline"><option>Hurricane</option><option>Wildfire</option><option>Tsunami</option><option>Flood</option></optgroup><optgroup label="Scope extension · not in baseline"><option>Earthquake · scope review only</option><option>Other natural hazard · scope review only</option></optgroup></select></div>
+              <div id="hazard-note" class="hazard-note" aria-live="polite">Select a hazard. The context label explains what the available evidence can and cannot support.</div>
               <div class="field"><label for="cmist">CMIST category</label><select id="cmist" required><option value="">Choose category</option><option>Communication</option><option>Maintaining Health</option><option>Independence</option><option>Safety and Support</option><option>Transportation</option></select></div>
               <div class="field"><label for="service">Service / support type</label><select id="service" required><option value="">Choose support</option><option>Accessible transportation</option><option>Communication support</option><option>Health maintenance support</option><option>Assistive technology / independence support</option><option>Safety and personal support</option><option>Other · describe in approved workflow</option></select></div>
               <div class="field"><label for="volume" id="volume-label">Aggregate people needing support</label><select id="volume" required><option value="">Choose synthetic range</option><option>1–9 (synthetic)</option><option>10–24 (synthetic)</option><option>25–49 (synthetic)</option><option>50+ (synthetic)</option></select></div><div class="field" id="capacity-unit-wrap" hidden><label for="capacity-unit">Service offer unit</label><select id="capacity-unit"><option value="">Choose unit</option><option>people served</option><option>seats</option><option>vehicles</option><option>meals</option><option>staff shifts</option><option>calls or messages</option><option>other approved unit</option></select></div>
@@ -235,5 +303,21 @@
     intakeForm.addEventListener('reset',()=>{setTimeout(()=>setRecordType('need'),0)});
     renderRecords();
   </script>
+  <script>
+  (()=>{
+    const selector=document.getElementById('hazard');
+    const note=document.getElementById('hazard-note');
+    const notes={
+      'Hurricane':'Wind category is separate from surge, rainfall flooding, tornadoes, outages, local impacts, and service need. Record each as a separate, labeled assumption or source finding.',
+      'Wildfire':'FEMA NRI is modeled long-term context. It does not establish an active fire perimeter, forecast, observed impact, evacuation status, or service need.',
+      'Tsunami':'Evacuation and safe-zone references do not verify current impact, safe routes, staffed facilities, or shelter capacity.',
+      'Flood':'DFIRM intersection is mapped-area context. Area and grouped T/F rows are not unique people, AFN counts, or service demand.',
+      'Earthquake · scope review only':'Earthquake is a scope extension, not in the committed four-hazard baseline. Keep it out of coverage totals pending HAIC clarification.',
+      'Other natural hazard · scope review only':'An additional hazard is a scope extension. Review the requirement and authoritative source before counting it toward coverage.'
+    };
+    if(selector&&note){selector.addEventListener('change',()=>{note.textContent=notes[selector.value]||'Select a hazard to see the evidence boundary.'})}
+  })();
+</script>
+
 </body>
 </html>
