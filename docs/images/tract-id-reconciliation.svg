@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 330" role="img" aria-labelledby="title desc">
+<title id="title">2020 Census tract GEOID identifier reconciliation</title>
+<desc id="desc">Of 461 Census tract GEOIDs in the reviewed inventory, 435 exactly matched candidate StateGIS and Coastal SVI layers and 26 were Census-only. This compares identifiers only and does not establish hazard or AFN coverage.</desc>
+<rect width="1000" height="330" rx="24" fill="#0b1726"/>
+<text x="48" y="55" fill="#f1f5f9" font-family="Arial,sans-serif" font-size="26" font-weight="700">Tract identifiers reconciled</text>
+<text x="48" y="86" fill="#a9bed3" font-family="Arial,sans-serif" font-size="16">2020 Census inventory compared with candidate StateGIS and Coastal SVI tract GEOIDs</text>
+<text x="50" y="137" fill="#d8e5f0" font-family="Arial,sans-serif" font-size="16" font-weight="700">461 Census GEOIDs reviewed</text>
+<rect x="50" y="154" width="900" height="42" rx="10" fill="#26384a"/>
+<path d="M60 154h839v42H60a10 10 0 0 1-10-10v-22a10 10 0 0 1 10-10" fill="#39b7c7"/>
+<text x="50" y="227" fill="#8bd9e2" font-family="Arial,sans-serif" font-size="18" font-weight="700">435 exact GEOID matches · 94.4%</text>
+<text x="950" y="227" text-anchor="end" fill="#ffd49d" font-family="Arial,sans-serif" font-size="18" font-weight="700">26 Census-only · 5.6%</text>
+<text x="50" y="270" fill="#d8e5f0" font-family="Arial,sans-serif" font-size="15">The 26 Census-only GEOIDs had zero population and housing in the reviewed inventory.</text>
+<text x="50" y="297" fill="#f4c77e" font-family="Arial,sans-serif" font-size="14" font-weight="700">Identifier comparison only. This does not establish hazard-specific or AFN coverage, nor zero need.</text>
+</svg>
