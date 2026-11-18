@@ -279,7 +279,42 @@
         <tr><td>D4</td><td>5</td><td>ʻAiea, Kahuku, Waialua, Wahiawā, Waipiʻo (Waipahū)</td></tr>
       </tbody></table></div>
       <p class="small muted">Official reference: <a href="https://emergencyservices.honolulu.gov/emergency-medical-services/ems-unit-locations/" target="_blank" rel="noopener noreferrer">City and County of Honolulu — EMS Unit Locations</a> (consulted 18 November 2026). Official text: 23 ALS ambulance units / 4 districts. Published roster: 24 rows. District locations are addresses or labels, not response territories. Source does not provide real-time staffed or available ambulances.</p>
-      <div class="callout" style="margin-top:16px"><strong>City / community breakdown:</strong> Pending verifiable station-level or unit-level records. A listed station location is not its service boundary; no invented city totals are presented.</div>
+      <div class="section-head"><div><h3>Ambulance location entries by city or community</h3><p>Choose a community to filter published EMS unit-location listings. Figures are roster entries at addresses, not independently verified vehicle counts or real-time ambulance availability.</p></div></div>
+      <div class="card" style="margin-top:12px">
+        <label for="ems-city-filter" style="display:block;font-weight:650;margin-bottom:7px">Filter by city or community</label>
+        <select id="ems-city-filter" style="width:100%;max-width:430px;padding:10px;border:1px solid var(--line);border-radius:8px;background:white;color:var(--ink)">
+          <option value="all">All Oʻahu communities</option>
+          <option value="Honolulu">Honolulu</option>
+          <option value="Waiʻanae">Waiʻanae</option>
+          <option value="Waipahū">Waipahū</option>
+          <option value="Kapolei">Kapolei</option>
+          <option value="Ko Olina">Ko Olina</option>
+          <option value="ʻEwa Beach">ʻEwa Beach</option>
+          <option value="Kailua">Kailua</option>
+          <option value="Kāneʻohe">Kāneʻohe</option>
+          <option value="Waimānalo">Waimānalo</option>
+          <option value="ʻAiea">ʻAiea</option>
+          <option value="Kahuku">Kahuku</option>
+          <option value="Waialua">Waialua</option>
+          <option value="Wahiawā">Wahiawā</option>
+        </select>
+        <div class="table-wrap" style="margin-top:14px"><table><thead><tr><th>City / community (published address)</th><th>Listed EMS entries</th><th>District(s)</th></tr></thead><tbody id="ems-city-rows">
+          <tr data-ems-city="Honolulu"><td>Honolulu</td><td>10</td><td>D2 / D3</td></tr>
+          <tr data-ems-city="Waiʻanae"><td>Waiʻanae</td><td>2</td><td>D1</td></tr>
+          <tr data-ems-city="Waipahū"><td>Waipahū</td><td>2</td><td>D1 / D4</td></tr>
+          <tr data-ems-city="Kapolei"><td>Kapolei</td><td>1</td><td>D1</td></tr>
+          <tr data-ems-city="Ko Olina"><td>Ko Olina</td><td>1</td><td>D2</td></tr>
+          <tr data-ems-city="ʻEwa Beach"><td>ʻEwa Beach</td><td>1</td><td>D1</td></tr>
+          <tr data-ems-city="Kailua"><td>Kailua</td><td>1</td><td>D3</td></tr>
+          <tr data-ems-city="Kāneʻohe"><td>Kāneʻohe</td><td>1</td><td>D3</td></tr>
+          <tr data-ems-city="Waimānalo"><td>Waimānalo</td><td>1</td><td>D3</td></tr>
+          <tr data-ems-city="ʻAiea"><td>ʻAiea</td><td>1</td><td>D4</td></tr>
+          <tr data-ems-city="Kahuku"><td>Kahuku</td><td>1</td><td>D4</td></tr>
+          <tr data-ems-city="Waialua"><td>Waialua</td><td>1</td><td>D4</td></tr>
+          <tr data-ems-city="Wahiawā"><td>Wahiawā</td><td>1</td><td>D4</td></tr>
+        </tbody><tfoot><tr><th scope="row">Displayed total</th><td id="ems-city-total">24</td><td id="ems-city-summary">13 communities</td></tr></tfoot></table></div>
+        <p class="small muted">Source: <a href="https://emergencyservices.honolulu.gov/emergency-medical-services/ems-unit-locations/" target="_blank" rel="noopener noreferrer">Honolulu Emergency Services Department — EMS Unit Locations</a>, checked November 18, 2026. Community is based on the published street address; a location is not an EMS service or response boundary. Honolulu EMS reports 23 ambulance units, while the published list contains 24 location entries. This table counts those entries, not confirmed operational ambulances.</p>
+      </div>
     </section>
     <section class="page" role="tabpanel" id="panel-title10" aria-labelledby="tab-title10" tabindex="0">
       <div class="section-head"><div><div class="eyebrow">Federal military coordination</div><h2>Title 10 resources</h2><p>Potential federal military capabilities that planners may need to understand when state and local resources are exceeded.</p></div></div>
@@ -378,6 +413,22 @@
   </main>
   <footer class="footer"><div class="wrap"><span>Cyber Coalition · HAIC 2026 · Working prototype</span><span>Public aggregate and synthetic scenario only · No live operational integrations</span></div></footer>
   <script>
+    const emsCityFilter=document.getElementById('ems-city-filter');
+    if(emsCityFilter){
+      const emsCityRows=[...document.querySelectorAll('#ems-city-rows tr[data-ems-city]')];
+      emsCityFilter.addEventListener('change',()=>{
+        const chosen=emsCityFilter.value;
+        let total=0,visible=0;
+        emsCityRows.forEach(row=>{
+          const matches=chosen==='all'||row.dataset.emsCity===chosen;
+          row.hidden=!matches;
+          row.style.display=matches?'':'none';
+          if(matches){total+=Number(row.cells[1].textContent);visible++;}
+        });
+        document.getElementById('ems-city-total').textContent=String(total);
+        document.getElementById('ems-city-summary').textContent=visible===1?'1 community':visible+' communities';
+      });
+    }
     const tabs=[...document.querySelectorAll('[role="tab"]')];
     const panels=[...document.querySelectorAll('[role="tabpanel"]')];
     function selectTab(tab){tabs.forEach(item=>{const selected=item===tab;item.setAttribute('aria-selected',String(selected));item.tabIndex=selected?0:-1});panels.forEach(panel=>panel.classList.toggle('active',panel.id===tab.getAttribute('aria-controls')));tab.focus()}
