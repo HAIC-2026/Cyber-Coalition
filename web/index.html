@@ -286,7 +286,7 @@
     const panels=[...document.querySelectorAll('[role="tabpanel"]')];
     function selectTab(tab){tabs.forEach(item=>{const selected=item===tab;item.setAttribute('aria-selected',String(selected));item.tabIndex=selected?0:-1});panels.forEach(panel=>panel.classList.toggle('active',panel.id===tab.getAttribute('aria-controls')));tab.focus()}
     tabs.forEach((tab,index)=>{tab.addEventListener('click',()=>selectTab(tab));tab.addEventListener('keydown',event=>{if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();const offset=event.key==='ArrowRight'?1:-1;selectTab(tabs[(index+offset+tabs.length)%tabs.length])}})});
-    const filters=[...document.querySelectorAll('[data-filter]')], cards=[...document.querySelectorAll('.source-card')];
+    const filters=[...document.querySelectorAll('[data-filter]')], cards=[...document.querySelectorAll('#panel-data .source-card')];
     filters.forEach(button=>button.addEventListener('click',()=>{filters.forEach(item=>item.setAttribute('aria-pressed',String(item===button)));const value=button.dataset.filter;cards.forEach(card=>card.classList.toggle('hidden',value!=='all'&&!card.dataset.kind.split(' ').includes(value)))}));
 
     const recordNeed=document.getElementById('record-need'),recordOffer=document.getElementById('record-offer'),recordType=document.getElementById('record-type');
