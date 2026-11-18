@@ -4,6 +4,14 @@
 **Team:** Cyber Coalition  
 **Status:** Working implementation and planning package for team review. This repository and prototype are not approved by DHS, HI-EMA, Honolulu DEM, or another emergency-management authority.
 
+## Open the planning demonstrator
+
+**Status: publication pending.** GitHub Pages is not enabled for this repository yet. After a repository administrator enables Pages and the workflow deploys, launch [the planning demonstrator](https://haic-2026.github.io/Cyber-Coalition/).
+
+> Public static demonstration using a fictional Kapolei hurricane scenario and synthetic partner inputs. It is not an official operational system or live stakeholder intake. Entries are held in this browser session only and disappear on reload; the page does not integrate the live ArcGIS map or confirm resource availability.
+
+
+
 ## Mission
 
 Develop a privacy-preserving, evidence-traceable planning workflow that helps emergency planners consider where people may need mass care or related assistance, estimate aggregate needs, identify information and resource gaps, and prepare human-reviewed coordination options. AI may assist with data discovery and analysis. Authorized people retain every operational decision.
