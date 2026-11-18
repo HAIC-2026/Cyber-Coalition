@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HAIC HTML browser test harness</title>
+  <style>
+    body{font:16px/1.5 system-ui,sans-serif;color:#182d3c;margin:0;background:#f3f7f8}
+    main{max-width:1320px;margin:auto;padding:20px}
+    h1{font-size:1.5rem}
+    .note{padding:12px;background:#fff3dc;border-left:4px solid #9a5a00}
+    #status{background:#fff;border:1px solid #d6e0e5;border-radius:8px;padding:12px}
+    #results{padding-left:22px}
+    .pass{color:#087e83}.fail{color:#a63d38}
+    .frame{width:1280px;max-width:100%;height:780px;border:1px solid #9aabb4;background:white}
+    iframe{width:100%;height:100%;border:0}
+    button{font:inherit;padding:8px 12px}
+  </style>
+</head>
+<body>
+<main>
+  <h1>HAIC ESF-6 HTML browser harness</h1>
+  <p class="note">Runs against the parent-page HTML in a same-origin iframe. It uses synthetic data only, changes no ArcGIS settings, and makes no network calls. Serve the repository root locally; see <code>tests/README.md</code>.</p>
+  <p id="status" role="status" aria-live="polite">Loading the demonstrator…</p>
+  <ol id="results"></ol>
+  <div class="frame" id="frame"><iframe id="app" src="../web/index.html" title="HAIC planning demonstrator under test"></iframe></div>
+</main>
+<script>
+(async()=>{
+  const status=document.getElementById('status');
+  const results=document.getElementById('results');
+  const frame=document.getElementById('frame');
+  const iframe=document.getElementById('app');
+  let passed=0,failed=0;
+  const wait=(ms=80)=>new Promise(resolve=>setTimeout(resolve,ms));
+  const assert=(name,condition,detail='')=>{
+    const li=document.createElement('li');
+    li.className=condition?'pass':'fail';
+    li.textContent=(condition?'PASS: ':'FAIL: ')+name+(detail?' — '+detail:'');
+    results.appendChild(li);
+    condition?passed++:failed++;
+  };
+  const loadFrame=()=>new Promise((resolve,reject)=>{
+    const timer=setTimeout(()=>{clearInterval(poll);reject(new Error('Timed out waiting for demonstrator iframe'))},10000);
+    const check=()=>{try{const d=iframe.contentDocument;if(d&&d.URL.endsWith('/web/index.html')&&d.querySelectorAll('[role="tab"]').length===9){clearTimeout(timer);clearInterval(poll);resolve()}}catch{}};
+    const poll=setInterval(check,50);
+    iframe.addEventListener('load',check);
+    check();
+  });
+  try{
+    await loadFrame();
+    const doc=iframe.contentDocument;
+    const win=iframe.contentWindow;
+    const byId=id=>doc.getElementById(id);
+    const click=el=>{if(!el)throw new Error('Expected control not found');el.click()};
+    const select=(id,value)=>{const el=byId(id);el.value=value;el.dispatchEvent(new win.Event('change',{bubbles:true}))};
+    const submit=()=>{const form=byId('intake-form');if(!form.reportValidity())return false;form.requestSubmit();return true};
+    const addOffer=()=>{
+      click(byId('record-offer'));
+      select('county','Honolulu');
+      select('hazard','Hurricane');
+      select('cmist','Transportation');
+      select('service','Accessible transportation');
+      select('volume','10–24 (synthetic)');
+      select('capacity-unit','people served');
+      select('window','0–6 hours');
+      select('source','Synthetic provider estimate');
+      byId('reported-at').value='2026-11-18T10:00';
+      return submit();
+    };
+    const validate=id=>click(doc.querySelector('[data-action="validate"][data-id="'+id+'"]'));
+    const matchButton=id=>doc.querySelector('[data-action="match"][data-id="'+id+'"]');
+    const recordText=id=>[...doc.querySelectorAll('.record')].find(el=>el.textContent.includes(id))?.textContent||'';
+    const tabs=[...doc.querySelectorAll('[role="tab"]')];
+    assert('Nine workbench tabs are present',tabs.length===9,'found '+tabs.length);
+    for(const tab of tabs){
+      click(tab);await wait();
+      const panel=byId(tab.getAttribute('aria-controls'));
+      assert('Tab '+tab.dataset.tab+' opens its matching panel',tab.getAttribute('aria-selected')==='true'&&panel.classList.contains('active'));
+    }
+    const overview=byId('tab-overview');
+    click(overview);overview.dispatchEvent(new win.KeyboardEvent('keydown',{key:'ArrowRight',bubbles:true}));
+    await wait();
+    assert('ArrowRight keyboard navigation selects the next tab',byId('tab-data').getAttribute('aria-selected')==='true');
+    const filters=[...doc.querySelectorAll('#panel-data [data-filter]')];
+    click(filters.find(b=>b.dataset.filter==='all'));await wait();
+    const allCount=[...doc.querySelectorAll('#panel-data .source-card')].filter(c=>!c.classList.contains('hidden')).length;
+    click(filters.find(b=>b.dataset.filter==='available'));await wait();
+    const availableCards=[...doc.querySelectorAll('#panel-data .source-card')];
+    const availableValid=availableCards.every(c=>c.classList.contains('hidden')===!c.dataset.kind.split(' ').includes('available'));
+    assert('Data filter shows only cards in the selected category',availableValid&&allCount>0);
+    assert('Demo queue begins with two synthetic session records',byId('queue-total').textContent==='2'&&byId('queue-pending').textContent==='2');
+    click(byId('tab-intake'));await wait();
+    validate('DEMO-001');validate('DEMO-002');await wait();
+    assert('Validated seed offer with seats cannot pair with person-count need',matchButton('DEMO-001').disabled&&matchButton('DEMO-002').disabled);
+    assert('Seed offer display names its capacity unit',recordText('DEMO-002').includes('seats'));
+    assert('Invalid blank submission is blocked by required fields',!submit()&&byId('queue-total').textContent==='2');
+    assert('A matching synthetic people-served offer can be added',addOffer()&&byId('queue-total').textContent==='3');
+    validate('DEMO-003');await wait();
+    assert('Compatible need and offer become coordinator-review candidates',!matchButton('DEMO-001').disabled&&!matchButton('DEMO-003').disabled);
+    click(matchButton('DEMO-003'));await wait();
+    assert('Coordinator review labels the pair as not assigned',recordText('DEMO-003').includes('Human-reviewed demo candidate · not assigned'));
+    frame.style.width='375px';await wait(300);
+    const mobileWidth=win.document.documentElement.scrollWidth<=win.innerWidth;
+    assert('Demonstrator has no document-level horizontal overflow at 375px',mobileWidth,'viewport '+win.innerWidth+'px, document '+win.document.documentElement.scrollWidth+'px');
+    frame.style.width='1280px';await wait(300);
+    const desktopWidth=win.document.documentElement.scrollWidth<=win.innerWidth;
+    assert('Demonstrator has no document-level horizontal overflow at 1280px',desktopWidth,'viewport '+win.innerWidth+'px, document '+win.document.documentElement.scrollWidth+'px');
+    const reloaded=new Promise(resolve=>iframe.addEventListener('load',resolve,{once:true}));
+    iframe.contentWindow.location.reload();
+    await reloaded;
+    assert('Reload restores the two static synthetic seed records',iframe.contentDocument.getElementById('queue-total').textContent==='2');
+  }catch(error){
+    assert('Harness completed without an uncaught error',false,String(error));
+  }
+  status.textContent=failed===0?'PASS: '+passed+' checks, 0 failures.':'Completed: '+passed+' passed, '+failed+' failed.';
+})();
+</script>
+</body>
+</html>
