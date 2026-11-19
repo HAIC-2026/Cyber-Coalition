@@ -89,17 +89,21 @@
     const availableCards=[...doc.querySelectorAll('#panel-data .source-card')];
     const availableValid=availableCards.every(c=>c.classList.contains('hidden')===!c.dataset.kind.split(' ').includes('available'));
     assert('Data filter shows only cards in the selected category',availableValid&&allCount>0);
-    assert('Demo queue begins with two synthetic session records',byId('queue-total').textContent==='2'&&byId('queue-pending').textContent==='2');
+    assert('Demo queue begins with three synthetic session records',byId('queue-total').textContent==='3'&&byId('queue-pending').textContent==='3');
     click(byId('tab-intake'));await wait();
     validate('DEMO-001');validate('DEMO-002');await wait();
     assert('Validated seed offer with seats cannot pair with person-count need',matchButton('DEMO-001').disabled&&matchButton('DEMO-002').disabled);
     assert('Seed offer display names its capacity unit',recordText('DEMO-002').includes('seats'));
-    assert('Invalid blank submission is blocked by required fields',!submit()&&byId('queue-total').textContent==='2');
-    assert('A matching synthetic people-served offer can be added',addOffer()&&byId('queue-total').textContent==='3');
     validate('DEMO-003');await wait();
-    assert('Compatible need and offer become coordinator-review candidates',!matchButton('DEMO-001').disabled&&!matchButton('DEMO-003').disabled);
+    assert('Pre-seeded compatible need and offer become coordinator-review candidates without any live data entry',!matchButton('DEMO-001').disabled&&!matchButton('DEMO-003').disabled);
     click(matchButton('DEMO-003'));await wait();
-    assert('Coordinator review labels the pair as not assigned',recordText('DEMO-003').includes('Human-reviewed demo candidate · not assigned'));
+    assert('Coordinator review labels the pre-seeded pair as not assigned',recordText('DEMO-003').includes('Human-reviewed demo candidate · not assigned'));
+    assert('Invalid blank submission is blocked by required fields',!submit()&&byId('queue-total').textContent==='3');
+    assert('A second matching synthetic people-served offer can be added live',addOffer()&&byId('queue-total').textContent==='4');
+    validate('DEMO-004');await wait();
+    assert('Newly added compatible need and offer become coordinator-review candidates',!matchButton('DEMO-001').disabled&&!matchButton('DEMO-004').disabled);
+    click(matchButton('DEMO-004'));await wait();
+    assert('Coordinator review labels the newly added pair as not assigned',recordText('DEMO-004').includes('Human-reviewed demo candidate · not assigned'));
     frame.style.width='375px';await wait(300);
     const mobileWidth=win.document.documentElement.scrollWidth<=win.innerWidth;
     assert('Demonstrator has no document-level horizontal overflow at 375px',mobileWidth,'viewport '+win.innerWidth+'px, document '+win.document.documentElement.scrollWidth+'px');
@@ -109,7 +113,7 @@
     const reloaded=new Promise(resolve=>iframe.addEventListener('load',resolve,{once:true}));
     iframe.contentWindow.location.reload();
     await reloaded;
-    assert('Reload restores the two static synthetic seed records',iframe.contentDocument.getElementById('queue-total').textContent==='2');
+    assert('Reload restores the three static synthetic seed records',iframe.contentDocument.getElementById('queue-total').textContent==='3');
   }catch(error){
     assert('Harness completed without an uncaught error',false,String(error));
   }
