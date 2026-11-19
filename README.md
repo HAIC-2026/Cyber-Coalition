@@ -130,6 +130,7 @@ The merged browser harness reported 22 passing checks at the time of PR #5 revie
 | [docs/EVIDENCE_REGISTER.md](docs/EVIDENCE_REGISTER.md) | Source-backed findings and validation state |
 | [docs/SECURITY_PRIVACY.md](docs/SECURITY_PRIVACY.md) | Data handling, AI limits, source integrity, and fail-safe behavior |
 | [docs/SITE_LICENSE_RECONCILIATION.md](docs/SITE_LICENSE_RECONCILIATION.md) | Public-safe Kapolei OHCA record-to-site and separate-license crosswalk |
+| [docs/COMMUNICATIONS_RESILIENCE.md](docs/COMMUNICATIONS_RESILIENCE.md) | Working notes on the power/fuel/data-center/comms dependency chain and fallback layers for the Communication CMIST dimension |
 | [data/README.md](data/README.md) | Rules for source records and public or synthetic extracts |
 
 ## Official and project references
@@ -149,5 +150,6 @@ The merged browser harness reported 22 passing checks at the time of PR #5 revie
 5. Define and validate an aggregate CMIST estimation method and acceptance criteria.
 6. Confirm current county and State procedures and resource semantics with authoritative owners.
 7. Monitor the published Pages site after repository changes and keep it clearly labeled as a demonstrator; do not imply operational intake or readiness.
+8. Validate the power/fuel/data-center/communications dependency chain and fallback-layer findings in [docs/COMMUNICATIONS_RESILIENCE.md](docs/COMMUNICATIONS_RESILIENCE.md) — see that document's own open-items list (HI-EOP fuel priority policy, cell-tower backup power, undersea cable landing power, AlohaNAP generator endurance, AFN device-dependency mapping, and Meshtastic/Winlink as shelter options).
 
 **The goal is a more useful planning conversation, not a claim of operational readiness.** Every number and map should tell reviewers what was measured, where it applies, what remains unknown, and who must decide.
