@@ -1,3 +1,9 @@
+## Open the planning demonstrator
+
+[Launch the static GitHub Pages demonstrator](https://haic-2026.github.io/Cyber-Coalition/) · [Review the source HTML](web/index.html) · [Open the ArcGIS reference map](https://hawaiihub.maps.arcgis.com/home/item.html?id=d7b64dfd6e5a4e7589be7bcfbe355ad0)
+
+> Fictional Kapolei hurricane scenario; synthetic examples only. This is a planning demonstrator, not live stakeholder intake or an operational service.
+
 # HAIC 2026 Cyber Coalition
 
 ### Hawaiʻi ESF-6 planning, made visible and evidence-led
@@ -10,7 +16,7 @@ A Part 2 AI-Developed Planning and Improvement Challenge project exploring how p
 |---|---|
 | [Planning demonstrator source](web/index.html) · [ArcGIS reference map](https://hawaiihub.maps.arcgis.com/home/item.html?id=d7b64dfd6e5a4e7589be7bcfbe355ad0) | [Evidence register](docs/EVIDENCE_REGISTER.md) · [Scope](docs/PROJECT_SCOPE.md) · [POA&M alignment](docs/POAM_ALIGNMENT.md) |
 
-> **Demonstrator boundary:** The HTML is a static planning concept using a fictional Kapolei hurricane scenario and synthetic partner inputs. It is not an operational system or live stakeholder intake. Entries remain in the current browser session and disappear on reload. There is no live ArcGIS integration, protected submission service, or confirmation that resources are available. GitHub Pages publication is pending; the live demo link should be used only after an administrator enables Pages and verifies a successful deployment.
+> **Demonstrator boundary:** The HTML is a static planning concept using a fictional Kapolei hurricane scenario and synthetic partner inputs. It is not an operational system or live stakeholder intake. Entries remain in the current browser session and disappear on reload. There is no live ArcGIS integration, protected submission service, or confirmation that resources are available. The GitHub Pages URL above is the intended public demo. Confirm it opens before presenting it; the page is static and uses synthetic examples only.
 
 ## The planning idea
 
