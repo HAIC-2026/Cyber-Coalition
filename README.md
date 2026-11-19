@@ -26,11 +26,9 @@ Planning should start with people and their support needs, connect those needs t
 
 ### Oʻahu map views
 
-These cropped ArcGIS map views show the Oʻahu map extent and selected layer appearances. They are reference images, not live HTML integrations or proof of validated hazard coverage.
+![Oʻahu map context](docs/images/map-gallery/oahu-context.png)
 
-![Oʻahu shaded map view with relief and selected layer context](docs/images/map-gallery/oahu-context.png)
-
-![Oʻahu map view with orange and peach tract overlay](docs/images/map-gallery/oahu-tract-overlay.png)
+![Oʻahu tract overlay](docs/images/map-gallery/oahu-tract-overlay.png)
 
 **People make the decisions.** AI can help find, organize, and explain evidence; it does not assign people, declare a resource suitable, or issue an operational recommendation.
 
