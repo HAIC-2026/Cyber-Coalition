@@ -61,7 +61,7 @@ The saved ArcGIS reference map is a source-review workspace. It is not embedded 
 
 | Reconciliation checkpoint | Reviewed result | What it means |
 |---|---:|---|
-| Layer-list entries | 28: 10 Kapolei QA/boundary + 18 statewide/reference | Inventory of visible entries, not validated coverage |
+| Layer-list entries | 26: 10 Kapolei QA/boundary + 16 statewide/reference, per the item's own description (2026-11-18, reconfirmed public 2026-11-19) — corrects the earlier 28-entry figure recorded below | Inventory of visible entries, not validated coverage |
 | Related table | 1, named Hospital - Review | A review table, not a confirmed operational facility list |
 | 2020 Census tract inventory | 461 official GEOIDs | Baseline tract identifier set reviewed |
 | Exact IDs in each candidate StateGIS Census and Coastal SVI set | 435 of 461 | Identifier reconciliation only; not hazard-specific or AFN coverage |
@@ -70,7 +70,7 @@ The saved ArcGIS reference map is a source-review workspace. It is not embedded 
 
 ![Exact GEOID comparison: 435 matching candidate IDs and 26 Census-only IDs out of 461](docs/images/tract-id-reconciliation.svg)
 
-The map’s descriptive metadata still says 26 layers, which needs owner reconciliation against the 28 visible entries. Item sharing was observed with the organization and two groups; the 2026-11-17 POA&M records public sharing off. External judge access and access to dependent layers remain unverified. The map’s data provenance, vintages, native geography, joins, licenses, and owner confirmations still need hazard-by-hazard review.
+**Update, 2026-11-19:** the earlier "28 visible entries vs. 26 in metadata" discrepancy noted below is resolved — the item's own description (dated 2026-11-18) states 26 layer-list entries (10 Kapolei QA/boundary + 16 statewide/reference), matching the metadata count; the table above has been corrected accordingly. Sharing was also changed and reconfirmed: querying the ArcGIS Portal REST API anonymously (no credentials) on 2026-11-19 returned `"access":"public"` for this item and the two related items below, superseding the organization/two-group sharing and unverified-judge-access notes previously recorded here on 2026-11-14–17. Dependent source-layer access (the underlying StateGIS/geodata.hawaii.gov services the map draws from) was not independently rechecked in this pass. The map's data provenance, vintages, native geography, joins, licenses, and owner confirmations still need hazard-by-hazard review — see `docs/EVIDENCE_REGISTER.md` for the supporting-layer reconciliation now pulled from the item description.
 
 **Resource status is unknown unless a current authoritative source confirms it.** In the reviewed Kapolei table, the 39 source status values are all 0 with no published domain, so their meaning is unresolved. The capacity field has no defined units. Neither field supports a claim of current availability, staffing, accessibility, suitability, or capacity.
 
@@ -130,6 +130,7 @@ The merged browser harness reported 22 passing checks at the time of PR #5 revie
 | [docs/EVIDENCE_REGISTER.md](docs/EVIDENCE_REGISTER.md) | Source-backed findings and validation state |
 | [docs/SECURITY_PRIVACY.md](docs/SECURITY_PRIVACY.md) | Data handling, AI limits, source integrity, and fail-safe behavior |
 | [docs/SITE_LICENSE_RECONCILIATION.md](docs/SITE_LICENSE_RECONCILIATION.md) | Public-safe Kapolei OHCA record-to-site and separate-license crosswalk |
+| [docs/COMMUNICATIONS_RESILIENCE.md](docs/COMMUNICATIONS_RESILIENCE.md) | Working notes on the power/fuel/data-center/comms dependency chain and fallback layers for the Communication CMIST dimension |
 | [data/README.md](data/README.md) | Rules for source records and public or synthetic extracts |
 
 ## Official and project references
@@ -143,11 +144,12 @@ The merged browser harness reported 22 passing checks at the time of PR #5 revie
 ## Open validation priorities
 
 1. Resolve the four-hazard versus earthquake scope wording with the challenge authority.
-2. Identify Jeff’s nine GIS references from authoritative team materials and reconcile them into the evidence register.
+2. **Titles and public access for Jeff’s nine GIS references are now identified and reconciled (2026-11-19; see the evidence register).** Feature content, fields, and vintage for the five references not already covered elsewhere (LIDAC, Medically Underserved Areas, Police Stations, Fire Response Zones, Census Blocks) remain open.
 3. Build the hazard-by-hazard source, vintage, geography, join, missingness, and limitation ledger.
-4. Validate ArcGIS item metadata, source owners, dependent-layer access, and judge access.
+4. **Item-level sharing for the three core ArcGIS Online items and nine GIS reference items is now verified public (2026-11-19).** Dependent source-layer access (the underlying StateGIS/geodata.hawaii.gov feature services) and judge-specific access beyond anonymous public reachability remain unverified.
 5. Define and validate an aggregate CMIST estimation method and acceptance criteria.
 6. Confirm current county and State procedures and resource semantics with authoritative owners.
 7. Monitor the published Pages site after repository changes and keep it clearly labeled as a demonstrator; do not imply operational intake or readiness.
+8. Validate the power/fuel/data-center/communications dependency chain and fallback-layer findings in [docs/COMMUNICATIONS_RESILIENCE.md](docs/COMMUNICATIONS_RESILIENCE.md) — see that document's own open-items list (HI-EOP fuel priority policy, cell-tower backup power, undersea cable landing power, AlohaNAP generator endurance, AFN device-dependency mapping, and Meshtastic/Winlink as shelter options).
 
 **The goal is a more useful planning conversation, not a claim of operational readiness.** Every number and map should tell reviewers what was measured, where it applies, what remains unknown, and who must decide.
