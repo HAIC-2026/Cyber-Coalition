@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 330" role="img" aria-labelledby="title desc">
+<title id="title">From evidence to human-reviewed ESF-6 planning</title>
+<desc id="desc">Four steps: map population and hazard context, model aggregate CMIST needs, match needs to candidate resources and gaps, then human review and coordination.</desc>
+<rect width="1200" height="330" rx="24" fill="#0b1726"/>
+<text x="56" y="54" fill="#f1f5f9" font-family="Arial,sans-serif" font-size="25" font-weight="700">A planning loop built around evidence and people</text>
+<text x="56" y="82" fill="#a9bed3" font-family="Arial,sans-serif" font-size="15">Public and aggregate evidence informs a planning conversation; authorized partners retain decisions.</text>
+<g font-family="Arial,sans-serif">
+<rect x="56" y="118" width="236" height="148" rx="18" fill="#132b42" stroke="#39b7c7" stroke-width="2"/>
+<circle cx="86" cy="150" r="17" fill="#39b7c7"/><text x="86" y="156" text-anchor="middle" fill="#08212a" font-size="16" font-weight="700">1</text>
+<text x="114" y="156" fill="#ffffff" font-size="20" font-weight="700">MAP</text>
+<text x="78" y="194" fill="#d8e5f0" font-size="15">People, geography,</text><text x="78" y="216" fill="#d8e5f0" font-size="15">hazard context, sources</text>
+<text x="78" y="246" fill="#8bd9e2" font-size="12">Show source and vintage</text>
+<path d="M300 192h34l-9-9m9 9-9 9" fill="none" stroke="#91a9bf" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="344" y="118" width="236" height="148" rx="18" fill="#132b42" stroke="#6689e8" stroke-width="2"/>
+<circle cx="374" cy="150" r="17" fill="#6689e8"/><text x="374" y="156" text-anchor="middle" fill="#111d3b" font-size="16" font-weight="700">2</text>
+<text x="402" y="156" fill="#ffffff" font-size="20" font-weight="700">MODEL</text>
+<text x="366" y="194" fill="#d8e5f0" font-size="15">Aggregate needs across</text><text x="366" y="216" fill="#d8e5f0" font-size="15">the five CMIST dimensions</text>
+<text x="366" y="246" fill="#b4c5ff" font-size="12">Keep uncertainty visible</text>
+<path d="M588 192h34l-9-9m9 9-9 9" fill="none" stroke="#91a9bf" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="632" y="118" width="236" height="148" rx="18" fill="#132b42" stroke="#e6a34f" stroke-width="2"/>
+<circle cx="662" cy="150" r="17" fill="#e6a34f"/><text x="662" y="156" text-anchor="middle" fill="#39230a" font-size="16" font-weight="700">3</text>
+<text x="690" y="156" fill="#ffffff" font-size="20" font-weight="700">MATCH</text>
+<text x="654" y="194" fill="#d8e5f0" font-size="15">Compare needs with</text><text x="654" y="216" fill="#d8e5f0" font-size="15">candidate resources and gaps</text>
+<text x="654" y="246" fill="#ffd49d" font-size="12">Candidate does not mean available</text>
+<path d="M876 192h34l-9-9m9 9-9 9" fill="none" stroke="#91a9bf" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="920" y="118" width="224" height="148" rx="18" fill="#132b42" stroke="#b38be8" stroke-width="2"/>
+<circle cx="950" cy="150" r="17" fill="#b38be8"/><text x="950" y="156" text-anchor="middle" fill="#2b1641" font-size="16" font-weight="700">4</text>
+<text x="978" y="156" fill="#ffffff" font-size="20" font-weight="700">REVIEW</text>
+<text x="942" y="194" fill="#d8e5f0" font-size="15">Partners verify options,</text><text x="942" y="216" fill="#d8e5f0" font-size="15">owners, and next actions</text>
+<text x="942" y="246" fill="#ddc6fa" font-size="12">People retain authority</text>
+</g>
+<text x="56" y="304" fill="#a9bed3" font-family="Arial,sans-serif" font-size="13">Planning framework: statewide intent  •  First demonstrator: fictional Kapolei hurricane tabletop</text>
+</svg>
