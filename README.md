@@ -148,7 +148,7 @@ The merged browser harness reported 22 passing checks at the time of PR #5 revie
 3. Build the hazard-by-hazard source, vintage, geography, join, missingness, and limitation ledger.
 4. **Item-level sharing for the three core ArcGIS Online items and nine GIS reference items is now verified public (2026-11-19).** Dependent source-layer access (the underlying StateGIS/geodata.hawaii.gov feature services) and judge-specific access beyond anonymous public reachability remain unverified.
 5. Define and validate an aggregate CMIST estimation method and acceptance criteria.
-6. Confirm current county and State procedures and resource semantics with authoritative owners.
+6. **The documented county-to-state RFA/WebEOC pathway is now identified from primary sources (2026-11-19): the signed HI-EOP Base Plan (Feb 2026, §4.4/§5.3) and SESF #6 Mass Care Annex (Sep 2025) — see the evidence register.** HIEMA has not reviewed or confirmed the demonstrator's depiction against current operational practice, and SESF #7 (Logistics) and SESF #2 (Communications) annexes remain unreviewed.
 7. Monitor the published Pages site after repository changes and keep it clearly labeled as a demonstrator; do not imply operational intake or readiness.
 8. Validate the power/fuel/data-center/communications dependency chain and fallback-layer findings in [docs/COMMUNICATIONS_RESILIENCE.md](docs/COMMUNICATIONS_RESILIENCE.md) — see that document's own open-items list (HI-EOP fuel priority policy, cell-tower backup power, undersea cable landing power, AlohaNAP generator endurance, AFN device-dependency mapping, and Meshtastic/Winlink as shelter options).
 
