@@ -143,9 +143,9 @@ The merged browser harness reported 22 passing checks at the time of PR #5 revie
 ## Open validation priorities
 
 1. Resolve the four-hazard versus earthquake scope wording with the challenge authority.
-2. Identify Jeff’s nine GIS references from authoritative team materials and reconcile them into the evidence register.
+2. **Titles and public access for Jeff’s nine GIS references are now identified and reconciled (2026-11-19; see the evidence register).** Feature content, fields, and vintage for the five references not already covered elsewhere (LIDAC, Medically Underserved Areas, Police Stations, Fire Response Zones, Census Blocks) remain open.
 3. Build the hazard-by-hazard source, vintage, geography, join, missingness, and limitation ledger.
-4. Validate ArcGIS item metadata, source owners, dependent-layer access, and judge access.
+4. **Item-level sharing for the three core ArcGIS Online items and nine GIS reference items is now verified public (2026-11-19).** Dependent source-layer access (the underlying StateGIS/geodata.hawaii.gov feature services) and judge-specific access beyond anonymous public reachability remain unverified.
 5. Define and validate an aggregate CMIST estimation method and acceptance criteria.
 6. Confirm current county and State procedures and resource semantics with authoritative owners.
 7. Monitor the published Pages site after repository changes and keep it clearly labeled as a demonstrator; do not imply operational intake or readiness.
