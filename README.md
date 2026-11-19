@@ -24,6 +24,14 @@ Planning should start with people and their support needs, connect those needs t
 
 ![Map, model, match, and human review planning workflow](docs/images/esf6-planning-workflow.svg)
 
+### Oʻahu map views
+
+These cropped ArcGIS map views show the Oʻahu map extent and selected layer appearances. They are reference images, not live HTML integrations or proof of validated hazard coverage.
+
+![Oʻahu shaded map view with relief and selected layer context](docs/images/map-gallery/oahu-context.png)
+
+![Oʻahu map view with orange and peach tract overlay](docs/images/map-gallery/oahu-tract-overlay.png)
+
 **People make the decisions.** AI can help find, organize, and explain evidence; it does not assign people, declare a resource suitable, or issue an operational recommendation.
 
 ## Challenge scope at a glance
@@ -145,4 +153,3 @@ The merged browser harness reported 22 passing checks at the time of PR #5 revie
 7. Monitor the published Pages site after repository changes and keep it clearly labeled as a demonstrator; do not imply operational intake or readiness.
 
 **The goal is a more useful planning conversation, not a claim of operational readiness.** Every number and map should tell reviewers what was measured, where it applies, what remains unknown, and who must decide.
-```
