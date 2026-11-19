@@ -26,9 +26,9 @@ Planning should start with people and their support needs, connect those needs t
 
 ### Oʻahu map views
 
-![Oʻahu map context](docs/images/map-gallery/oahu-context.png)
+![Oʻahu shaded-relief tract context](docs/images/map-gallery/oahu-shaded-relief-tract-context.png)
 
-![Oʻahu tract overlay](docs/images/map-gallery/oahu-tract-overlay.png)
+![Oʻahu tract choropleth overlay](docs/images/map-gallery/oahu-tract-choropleth-overlay.png)
 
 **People make the decisions.** AI can help find, organize, and explain evidence; it does not assign people, declare a resource suitable, or issue an operational recommendation.
 
