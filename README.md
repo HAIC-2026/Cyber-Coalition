@@ -61,7 +61,7 @@ The saved ArcGIS reference map is a source-review workspace. It is not embedded 
 
 | Reconciliation checkpoint | Reviewed result | What it means |
 |---|---:|---|
-| Layer-list entries | 28: 10 Kapolei QA/boundary + 18 statewide/reference | Inventory of visible entries, not validated coverage |
+| Layer-list entries | 26: 10 Kapolei QA/boundary + 16 statewide/reference, per the item's own description (2026-11-18, reconfirmed public 2026-11-19) — corrects the earlier 28-entry figure recorded below | Inventory of visible entries, not validated coverage |
 | Related table | 1, named Hospital - Review | A review table, not a confirmed operational facility list |
 | 2020 Census tract inventory | 461 official GEOIDs | Baseline tract identifier set reviewed |
 | Exact IDs in each candidate StateGIS Census and Coastal SVI set | 435 of 461 | Identifier reconciliation only; not hazard-specific or AFN coverage |
@@ -70,7 +70,7 @@ The saved ArcGIS reference map is a source-review workspace. It is not embedded 
 
 ![Exact GEOID comparison: 435 matching candidate IDs and 26 Census-only IDs out of 461](docs/images/tract-id-reconciliation.svg)
 
-The map’s descriptive metadata still says 26 layers, which needs owner reconciliation against the 28 visible entries. Item sharing was observed with the organization and two groups; the 2026-11-17 POA&M records public sharing off. External judge access and access to dependent layers remain unverified. The map’s data provenance, vintages, native geography, joins, licenses, and owner confirmations still need hazard-by-hazard review.
+**Update, 2026-11-19:** the earlier "28 visible entries vs. 26 in metadata" discrepancy noted below is resolved — the item's own description (dated 2026-11-18) states 26 layer-list entries (10 Kapolei QA/boundary + 16 statewide/reference), matching the metadata count; the table above has been corrected accordingly. Sharing was also changed and reconfirmed: querying the ArcGIS Portal REST API anonymously (no credentials) on 2026-11-19 returned `"access":"public"` for this item and the two related items below, superseding the organization/two-group sharing and unverified-judge-access notes previously recorded here on 2026-11-14–17. Dependent source-layer access (the underlying StateGIS/geodata.hawaii.gov services the map draws from) was not independently rechecked in this pass. The map's data provenance, vintages, native geography, joins, licenses, and owner confirmations still need hazard-by-hazard review — see `docs/EVIDENCE_REGISTER.md` for the supporting-layer reconciliation now pulled from the item description.
 
 **Resource status is unknown unless a current authoritative source confirms it.** In the reviewed Kapolei table, the 39 source status values are all 0 with no published domain, so their meaning is unresolved. The capacity field has no defined units. Neither field supports a claim of current availability, staffing, accessibility, suitability, or capacity.
 
