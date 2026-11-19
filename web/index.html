@@ -519,10 +519,11 @@
     const intakeForm=document.getElementById('intake-form'),recordList=document.getElementById('record-list'),formMessage=document.getElementById('form-message');
     const volumeLabel=document.getElementById('volume-label');
     const capacityUnit=document.getElementById('capacity-unit');
-    let demoSequence=3;
+    let demoSequence=4;
     let demoRecords=[
       {id:'DEMO-001',type:'Need report',county:'Honolulu',hazard:'Hurricane',cmist:'Transportation',service:'Accessible transportation',volume:'25–49 (synthetic)',capacityUnit:'',window:'0–6 hours',source:'Synthetic tabletop input',reportedAt:'Demo timestamp',validation:'Awaiting human validation',match:'No reviewed match'},
-      {id:'DEMO-002',type:'Service offer',county:'Honolulu',hazard:'Hurricane',cmist:'Transportation',service:'Accessible transportation',volume:'10–24 (synthetic)',capacityUnit:'seats',window:'0–6 hours',source:'Synthetic provider estimate',reportedAt:'Demo timestamp',validation:'Awaiting human validation',match:'Offer not confirmed'}
+      {id:'DEMO-002',type:'Service offer',county:'Honolulu',hazard:'Hurricane',cmist:'Transportation',service:'Accessible transportation',volume:'10–24 (synthetic)',capacityUnit:'seats',window:'0–6 hours',source:'Synthetic provider estimate',reportedAt:'Demo timestamp',validation:'Awaiting human validation',match:'Offer not confirmed'},
+      {id:'DEMO-003',type:'Service offer',county:'Honolulu',hazard:'Hurricane',cmist:'Transportation',service:'Accessible transportation',volume:'25–49 (synthetic)',capacityUnit:'people served',window:'0–6 hours',source:'Synthetic provider estimate',reportedAt:'Demo timestamp',validation:'Awaiting human validation',match:'Offer not confirmed'}
     ];
     function setRecordType(type){
       const isNeed=type==='need';recordType.value=type;
