@@ -1,6 +1,6 @@
 ## Open the planning demonstrator
 
-[Launch the static GitHub Pages demonstrator](https://haic-2026.github.io/Cyber-Coalition/) · [Review the source HTML](web/index.html) · [Open the ArcGIS reference map](https://hawaiihub.maps.arcgis.com/home/item.html?id=d7b64dfd6e5a4e7589be7bcfbe355ad0)
+[Open the live planning demonstrator](https://haic-2026.github.io/Cyber-Coalition/) · [Review the source HTML](web/index.html) · [Open the ArcGIS reference map](https://hawaiihub.maps.arcgis.com/home/item.html?id=d7b64dfd6e5a4e7589be7bcfbe355ad0)
 
 > Fictional Kapolei hurricane scenario; synthetic examples only. This is a planning demonstrator, not live stakeholder intake or an operational service.
 
@@ -14,9 +14,9 @@ A Part 2 AI-Developed Planning and Improvement Challenge project exploring how p
 
 | Open the work | Review the evidence |
 |---|---|
-| [Planning demonstrator source](web/index.html) · [ArcGIS reference map](https://hawaiihub.maps.arcgis.com/home/item.html?id=d7b64dfd6e5a4e7589be7bcfbe355ad0) | [Evidence register](docs/EVIDENCE_REGISTER.md) · [Scope](docs/PROJECT_SCOPE.md) · [POA&M alignment](docs/POAM_ALIGNMENT.md) |
+| [Open live planning demonstrator](https://haic-2026.github.io/Cyber-Coalition/) · [Source](web/index.html) · [ArcGIS reference map](https://hawaiihub.maps.arcgis.com/home/item.html?id=d7b64dfd6e5a4e7589be7bcfbe355ad0) | [Evidence register](docs/EVIDENCE_REGISTER.md) · [Scope](docs/PROJECT_SCOPE.md) · [POA&M alignment](docs/POAM_ALIGNMENT.md) |
 
-> **Demonstrator boundary:** The HTML is a static planning concept using a fictional Kapolei hurricane scenario and synthetic partner inputs. It is not an operational system or live stakeholder intake. Entries remain in the current browser session and disappear on reload. There is no live ArcGIS integration, protected submission service, or confirmation that resources are available. The GitHub Pages URL above is the intended public demo. Confirm it opens before presenting it; the page is static and uses synthetic examples only.
+> **Demonstrator boundary:** The HTML is a static planning concept using a fictional Kapolei hurricane scenario and synthetic partner inputs. It is not an operational system or live stakeholder intake. Entries remain in the current browser session and disappear on reload. There is no live ArcGIS integration, protected submission service, or confirmation that resources are available. The public GitHub Pages demonstrator is available at [Open the live planning workbench](https://haic-2026.github.io/Cyber-Coalition/). It remains a static concept with synthetic inputs, no live ArcGIS integration, no protected submission service, and no confirmation that resources are available.
 
 ## The planning idea
 
@@ -100,7 +100,7 @@ A candidate location is not labeled open, suitable, accessible, staffed, or avai
 | Synthetic intake | Fictional partner examples held in browser session | Not real stakeholder submissions; cleared on reload |
 | ArcGIS | Separate reference map and candidate layers | No validated processing pipeline from ArcGIS into the HTML |
 | Browser harness | [tests/harness.html](tests/harness.html) and [usage notes](tests/README.md) | Browser-only checks; no ArcGIS calls or external-system changes |
-| GitHub Pages | Workflow exists; publication remains pending | Requires repository Pages configuration and a successful deployment check |
+| GitHub Pages | Public site published; live URL checked in a browser on 2026-11-18 | Static demonstrator only; check the published page after future deployment changes |
 
 The merged browser harness reported 22 passing checks at the time of PR #5 review, covering navigation, filters, synthetic intake validation, capacity-safe matching, human-review labels, responsive overflow, and session reset. This README update does not rerun those checks.
 
@@ -142,6 +142,7 @@ The merged browser harness reported 22 passing checks at the time of PR #5 revie
 4. Validate ArcGIS item metadata, source owners, dependent-layer access, and judge access.
 5. Define and validate an aggregate CMIST estimation method and acceptance criteria.
 6. Confirm current county and State procedures and resource semantics with authoritative owners.
-7. Publish the static demonstrator only after Pages setup and an observed successful deployment; label it clearly as a demonstrator.
+7. Monitor the published Pages site after repository changes and keep it clearly labeled as a demonstrator; do not imply operational intake or readiness.
 
 **The goal is a more useful planning conversation, not a claim of operational readiness.** Every number and map should tell reviewers what was measured, where it applies, what remains unknown, and who must decide.
+```
