@@ -192,6 +192,30 @@
 .dashboard-time-icon{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .dashboard-background-note{max-width:1364px;margin:10px auto 0;padding:0 16px;color:#405568;font-size:11px;text-align:right}
 @media(max-width:700px){.dashboard-overview{background-position:center top}.dashboard-masthead{background-position:54% 50%}.dashboard-background-note{padding:0 20px;text-align:left}}
+</style><style>
+:root{--aloha-cyan:#00cfe8;--aloha-teal:#00a996;--aloha-violet:#7558e8;--aloha-coral:#f0445f;--aloha-gold:#f5b746}
+html{min-height:100%;background:#e8f1f6}
+body{min-height:100vh;background-color:#e8f1f6;background-image:linear-gradient(rgba(244,249,252,.88),rgba(244,249,252,.88)),url("assets/bathymetry-background.jpg");background-repeat:repeat,repeat;background-size:auto,1050px auto;background-position:0 0,0 0;background-attachment:fixed,fixed}
+.dashboard-overview{background:transparent!important}
+.dashboard-masthead{background-color:#06121d;background-image:linear-gradient(105deg,rgba(3,13,24,.82),rgba(8,22,38,.70)),url("assets/bathymetry-background.jpg");background-repeat:no-repeat;background-position:center 45%;background-size:cover}
+.dashboard-timebar{border-color:rgba(0,207,232,.55);box-shadow:0 9px 22px rgba(12,48,77,.16),0 0 22px rgba(0,207,232,.12)}
+.dashboard-running-head h2{position:relative}
+.dashboard-running-head h2::after{content:"";display:block;width:100%;height:3px;margin-top:9px;border-radius:99px;background:linear-gradient(90deg,var(--aloha-coral),var(--aloha-gold),var(--aloha-teal),var(--aloha-cyan),var(--aloha-violet))}
+.dashboard-estimates .dashboard-estimate{border-top:3px solid var(--aloha-cyan);box-shadow:0 5px 16px rgba(14,52,76,.12)}
+.dashboard-estimates .dashboard-estimate:nth-child(2){border-top-color:var(--aloha-coral)}
+.dashboard-estimates .dashboard-estimate:nth-child(3){border-top-color:var(--aloha-teal)}
+.dashboard-estimates .dashboard-estimate:nth-child(4){border-top-color:var(--aloha-gold)}
+.dashboard-portal{border:1px solid rgba(213,30,67,.36);box-shadow:0 8px 20px rgba(135,18,47,.18),0 0 0 1px rgba(0,207,232,.22)}
+.dashboard-portal>summary{position:relative;overflow:hidden;background:linear-gradient(105deg,#b20d27 0%,#e32645 55%,#bd174e 100%);color:#fff;text-shadow:0 1px 1px rgba(56,0,12,.25)}
+.dashboard-portal>summary::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,var(--aloha-cyan),#fff,var(--aloha-gold),var(--aloha-violet))}
+.dashboard-portal>summary:hover{background:linear-gradient(105deg,#93091e 0%,#d91538 55%,#a90f43 100%)}
+.dashboard-portal .portal-icon{color:#fff;text-shadow:0 0 12px rgba(0,207,232,.7)}
+.dashboard-empower{border-top:3px solid var(--aloha-teal);box-shadow:0 7px 18px rgba(18,66,91,.12)}
+.dashboard-empower-link{background:linear-gradient(110deg,#075f9a,var(--aloha-cyan));box-shadow:0 0 14px rgba(0,207,232,.22)}
+.hero{background:linear-gradient(135deg,rgba(220,241,244,.86),rgba(246,250,251,.84) 58%,rgba(224,244,237,.86))}
+.card{box-shadow:0 6px 18px rgba(13,49,71,.11)}
+.nav{background:rgba(248,251,253,.90);backdrop-filter:blur(8px)}
+@media(max-width:700px){body{background-size:auto,760px auto;background-position:0 0,center top}.dashboard-masthead{background-position:center 45%}}
 </style></head>
 <body>
   <a class="skip" href="#main">Skip to planning workbench</a>
