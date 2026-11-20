@@ -109,10 +109,112 @@
 <style>
 .tabletop-widget{margin:18px 0;border-color:#b8d4d8}.tabletop-header{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}.tabletop-intro{max-width:790px}.tabletop-intro p{margin:5px 0 0}.tabletop-badge{display:inline-flex;padding:6px 10px;border-radius:999px;background:#fff3dc;color:#805000;font-size:11px;font-weight:800}.tabletop-injects{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px;margin:15px 0}.tabletop-inject{display:flex;gap:10px;padding:13px;border:1px solid var(--line);border-radius:11px;background:#f8fbfc}.tabletop-inject input{width:18px;height:18px;margin:2px 0 0;accent-color:var(--teal)}.tabletop-inject label{cursor:pointer}.tabletop-inject strong{display:block;color:var(--navy);font-size:13px}.tabletop-inject span{display:block;color:var(--muted);font-size:12px;line-height:1.4;margin-top:3px}.tabletop-results{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(240px,.9fr);gap:12px}.tabletop-result{padding:15px;border:1px solid #c8dce0;border-radius:11px;background:#f2f8f8}.tabletop-result h3{margin:0 0 7px;color:var(--navy);font-size:14px}.tabletop-result p,.tabletop-result ul{margin:0;color:#435a68;font-size:13px}.tabletop-result ul{padding-left:19px}.tabletop-result li+li{margin-top:5px}.tabletop-controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px}.tabletop-controls button{border:1px solid #8aafb4;border-radius:8px;padding:8px 12px;background:#fff;color:var(--navy);font-weight:700;cursor:pointer}.tabletop-controls button:focus-visible,.tabletop-inject input:focus-visible{outline:3px solid var(--teal);outline-offset:2px}.tabletop-state{font-size:12px;color:var(--muted)}@media(max-width:760px){.tabletop-injects,.tabletop-results{grid-template-columns:1fr}}
 </style>
-</head>
+<style>    /* Screenshot-informed emergency dashboard overview. Values below are static demo references. */
+    .dashboard-masthead{background:#05080b;color:#fff;border-bottom:5px solid #43a7d1}
+    .dashboard-masthead-inner{max-width:1420px;min-height:94px;margin:0 auto;padding:17px 28px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+    .dashboard-brand{display:flex;align-items:center;gap:14px;color:inherit;text-decoration:none}
+    .dashboard-brand:hover{color:#fff}
+    .dashboard-brand-mark{width:48px;height:48px;display:grid;place-items:center;border:1px solid #548aa1;border-radius:50%;background:#0a1822;color:#73d7eb;font-size:13px;font-weight:850;letter-spacing:.06em}
+    .dashboard-brand-name strong{display:block;font-size:clamp(21px,2.6vw,32px);line-height:1;letter-spacing:.08em}
+    .dashboard-brand-name small{display:block;margin-top:8px;color:#cbd7dc;font-size:11px;font-weight:750;letter-spacing:.24em}
+    .dashboard-demo-flag{display:grid;gap:5px;justify-items:end;text-align:right}
+    .dashboard-demo-flag strong{border:2px solid #f0444c;border-radius:7px;padding:5px 12px;color:#ff4b54;font-size:14px;letter-spacing:.08em}
+    .dashboard-demo-flag span{color:#e5eaed;font-size:11px}
+    .dashboard-timebar{max-width:1364px;margin:18px auto 0;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;border:1px solid #286694;border-radius:12px;background:linear-gradient(120deg,#123e68,#082749);color:#fff;box-shadow:0 9px 22px rgba(12,48,77,.12)}
+    .dashboard-timebox{min-height:112px;padding:18px 24px;display:flex;align-items:center;gap:16px}
+    .dashboard-timebox+ .dashboard-timebox{border-left:1px solid rgba(255,255,255,.23)}
+    .dashboard-time-icon{width:44px;height:44px;flex:0 0 44px;color:#e8f4fc}
+    .dashboard-time-label{color:#dcecf7;font-size:12px;font-weight:800;letter-spacing:.07em;text-transform:uppercase}
+    .dashboard-time-value{display:block;margin:2px 0;font-size:clamp(24px,3.4vw,42px);font-weight:850;line-height:1.05;letter-spacing:.015em;font-variant-numeric:tabular-nums}
+    .dashboard-time-value.timer{color:#5be3ec;letter-spacing:.04em}
+    .dashboard-time-note{color:#d0dfeb;font-size:11px}
+    .dashboard-running{max-width:1420px;margin:0 auto;padding:18px 28px 0}
+    .dashboard-running-head{display:flex;justify-content:space-between;align-items:end;gap:14px;flex-wrap:wrap;margin:0 0 12px}
+    .dashboard-running-head h2{margin:0;color:#101b25;font-size:clamp(22px,2.4vw,30px);letter-spacing:-.025em}
+    .dashboard-running-head p{margin:0;color:#5a6c78;font-size:11px}
+    .dashboard-demo-note{margin:0 0 12px;padding:8px 11px;border-left:4px solid #e3a02e;border-radius:5px;background:#fff6df;color:#594312;font-size:11px}
+    .dashboard-estimates{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px}
+    .dashboard-estimate{min-width:0;min-height:144px;padding:14px 15px 12px;display:grid;grid-template-columns:48px minmax(0,1fr);align-content:start;align-items:start;gap:8px;border:1px solid #b9c9d2;border-radius:11px;background:linear-gradient(150deg,#fff,#f7fafc);box-shadow:0 3px 9px rgba(26,57,77,.07)}
+    .dashboard-estimate-icon{width:42px;height:42px;display:grid;place-items:center}
+    .dashboard-estimate-icon svg{width:40px;height:40px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .dashboard-estimate:nth-child(1) .dashboard-estimate-icon{color:#1761cc}
+    .dashboard-estimate:nth-child(2) .dashboard-estimate-icon{color:#d72d3b}
+    .dashboard-estimate:nth-child(3) .dashboard-estimate-icon{color:#078272}
+    .dashboard-estimate:nth-child(4) .dashboard-estimate-icon{color:#d97812}
+    .dashboard-estimate-label{min-height:38px;color:#17232e;font-size:13px;font-weight:800;line-height:1.25}
+    .dashboard-estimate-value{grid-column:2;color:#1856bb;font-size:clamp(28px,3.2vw,40px);font-weight:900;line-height:1;font-variant-numeric:tabular-nums;white-space:nowrap}
+    .dashboard-estimate:nth-child(2) .dashboard-estimate-value{color:#c72934}
+    .dashboard-estimate:nth-child(3) .dashboard-estimate-value{color:#0b786e}
+    .dashboard-estimate:nth-child(4) .dashboard-estimate-value{color:#cf7110}
+    .dashboard-estimate-value .secondary{color:#1c5ec6}
+    .dashboard-estimate-value small{font-size:11px;font-weight:700;color:#52626d;white-space:normal}
+    .dashboard-estimate-caption{grid-column:1/-1;color:#5a6a75;font-size:10px;line-height:1.3}
+    .dashboard-context{margin:10px 0 0;padding:10px 12px;display:flex;justify-content:space-around;gap:8px;flex-wrap:wrap;border-radius:8px;background:#eaf2f8;color:#304758;font-size:11px}
+    .dashboard-context strong{color:#142d43}
+    .dashboard-portal{max-width:1364px;margin:16px auto 0;border:1px solid #d7e0e7;border-radius:11px;background:#fff;box-shadow:0 4px 12px rgba(20,47,66,.06);overflow:hidden}
+    .dashboard-portal details>summary{list-style:none;min-height:86px;padding:15px 22px;display:flex;align-items:center;gap:15px;background:linear-gradient(100deg,#d91520,#bd0d18);color:#fff;cursor:pointer}
+    .dashboard-portal details>summary::-webkit-details-marker{display:none}
+    .dashboard-portal details>summary:focus-visible{outline:3px solid #113c5d;outline-offset:-4px}
+    .portal-summary-icon{width:42px;height:42px;flex:0 0 42px}
+    .portal-summary-copy{display:grid;gap:2px;flex:1}
+    .portal-summary-copy strong{font-size:clamp(18px,2.5vw,27px);line-height:1.15}
+    .portal-summary-copy small{font-size:12px;color:#ffe3e4}
+    .portal-summary-chevron{font-size:30px;line-height:1;transition:transform .18s ease}
+    .dashboard-portal details[open] .portal-summary-chevron{transform:rotate(180deg)}
+    .portal-preview-body{padding:18px 20px}
+    .dashboard-empower{max-width:1364px;margin:12px auto 20px;padding:15px 18px;display:grid;grid-template-columns:52px minmax(0,1fr) auto;align-items:center;gap:14px;border:1px solid #c3d5e0;border-radius:11px;background:linear-gradient(110deg,#f8fbfd,#eaf3f9);box-shadow:0 3px 10px rgba(20,47,66,.05)}
+    .dashboard-empower-icon{width:48px;height:48px;display:grid;place-items:center;border-radius:50%;background:#144a76;color:#fff;font-size:13px;font-weight:850}
+    .dashboard-empower-copy h2{margin:0 0 3px;color:#143b5b;font-size:19px}
+    .dashboard-empower-copy p{margin:0;color:#42596a;font-size:12px}
+    .dashboard-empower-copy .source-note{display:block;margin-top:4px;color:#5b6d79;font-size:10px}
+    .dashboard-empower-link{padding:10px 13px;display:inline-flex;align-items:center;gap:9px;border-radius:8px;background:#17629b;color:#fff;font-size:12px;font-weight:800;text-decoration:none}
+    .dashboard-empower-link:hover{background:#0e4b79;color:#fff}
+    @media(max-width:900px){.dashboard-estimates{grid-template-columns:repeat(2,minmax(0,1fr))}.dashboard-timebar,.dashboard-portal,.dashboard-empower{margin-left:18px;margin-right:18px}}
+    @media(max-width:620px){.dashboard-masthead-inner{padding:14px 18px;align-items:flex-start;flex-direction:column}.dashboard-demo-flag{justify-items:start;text-align:left}.dashboard-timebar{grid-template-columns:1fr}.dashboard-timebox{min-height:92px;padding:14px 17px}.dashboard-timebox+.dashboard-timebox{border-left:0;border-top:1px solid rgba(255,255,255,.23)}.dashboard-running{padding:15px 18px 0}.dashboard-estimates{grid-template-columns:1fr 1fr;gap:8px}.dashboard-estimate{min-height:132px;padding:11px;grid-template-columns:38px minmax(0,1fr);gap:5px}.dashboard-estimate-icon,.dashboard-estimate-icon svg{width:34px;height:34px}.dashboard-estimate-label{font-size:11px}.dashboard-estimate-value{font-size:27px}.dashboard-context{justify-content:flex-start}.dashboard-empower{grid-template-columns:42px minmax(0,1fr);padding:13px}.dashboard-empower-icon{width:40px;height:40px}.dashboard-empower-link{grid-column:1/-1;justify-content:center}.dashboard-portal details>summary{padding:13px;gap:10px}.portal-summary-icon{width:34px;height:34px;flex-basis:34px}.portal-summary-copy strong{font-size:17px}.portal-preview-body{padding:14px}}
+    @media(max-width:390px){.dashboard-estimates{grid-template-columns:1fr}.dashboard-estimate{min-height:0;grid-template-columns:44px minmax(0,1fr)}.dashboard-estimate-label{min-height:0;font-size:12px}.dashboard-estimate-value{grid-column:2}}
+
+.brand-islands{width:100%;height:100%;display:block;color:#fff}.dashboard-brand-mark{background:transparent!important;box-shadow:none!important;border-radius:0!important}.dashboard-portal{margin:18px 0;background:#c90b0b;color:white;border-radius:14px;overflow:hidden}.dashboard-portal>summary{display:flex;align-items:center;gap:18px;padding:18px 24px;cursor:pointer;list-style:none}.dashboard-portal>summary::-webkit-details-marker{display:none}.dashboard-portal>summary strong{display:block;font-size:clamp(20px,3vw,34px)}.dashboard-portal>summary small{display:block;font-size:16px}.dashboard-portal .assistance-portal{margin:0;border-radius:0;color:var(--ink);background:white}.portal-icon{font-size:44px;font-weight:800}</style></head>
 <body>
   <a class="skip" href="#main">Skip to planning workbench</a>
-  <header class="topbar"><div class="wrap"><div class="brand"><div class="brand-mark" aria-hidden="true">CC</div><div>Cyber Coalition<small>HAIC 2026 · ESF-6 Planning Concept</small></div></div><div class="env">WORKING DEMONSTRATOR · NO LIVE OPERATIONS</div></div></header>
+    <header class="dashboard-masthead">
+    <div class="dashboard-masthead-inner">
+      <a class="dashboard-brand" href="#main" aria-label="Cyber Coalition dashboard">
+        <span class="dashboard-brand-mark"><svg class="brand-islands" viewBox="0 0 190 72" role="img" aria-label="Hawaiian Islands silhouette"><g fill="currentColor"><path d="M12 11l4-3 4 2-2 4-5 1zM30 18l5-4 4 2-1 5-6 1zM51 26l4-2 4 3-3 3-5-1zM71 34l6-4 7 2 3 7-4 4-9-2zM100 37l8-4 8 3-2 5-9 1zM122 46l5-3 5 4-2 4-6-1zM144 53l7-3 8 4-3 5-9 1zM166 58l9-4 10 6-2 7-9 2-9-5z"/></g></svg></span>
+        <span class="dashboard-brand-name"><strong>CYBER COALITION</strong><small>HAWAIʻI STATEWIDE PLANNING · OʻAHU EMERGENCY OPERATIONS DASHBOARD</small></span>
+      </a>
+      <div class="dashboard-demo-flag"><strong>DEMONSTRATION ONLY</strong><span>Exercise / Planning Use · Not for Real-World Emergency Reporting</span></div>
+    </div>
+  </header>
+  <section class="dashboard-timebar" aria-label="Static scenario time reference">
+    <div class="dashboard-timebox">
+      <svg class="dashboard-time-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18M7 14h3M7 17h7"/></svg>
+      <div><div class="dashboard-time-label">Current Date-Time Group (DTG)</div><strong class="dashboard-time-value">191247 NOV 26</strong><div class="dashboard-time-note">HST (UTC−10) · static scenario reference</div></div>
+    </div>
+    <div class="dashboard-timebox">
+      <svg class="dashboard-time-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6M12 2v3M18 5l2-2"/></svg>
+      <div><div class="dashboard-time-label">H+ Elapsed Incident Time</div><strong class="dashboard-time-value timer">00:00:00:00</strong><div class="dashboard-time-note">Days : hours : minutes : seconds · static screenshot value</div></div>
+    </div>
+  </section>
+  <section class="dashboard-running" aria-labelledby="running-estimates-title">
+    <div class="dashboard-running-head"><h2 id="running-estimates-title">▮ Running Estimates</h2><p>Reference values transcribed from the supplied screenshot</p></div>
+    <p class="dashboard-demo-note"><strong>Static demonstration figures only.</strong> These values are not live, verified, or connected to an operational reporting system.</p>
+    <div class="dashboard-estimates">
+      <article class="dashboard-estimate"><span class="dashboard-estimate-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h3l2 5-2 1.5a15 15 0 0 0 5.5 5.5L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/><path d="M14 5a5 5 0 0 1 5 5M14 2a8 8 0 0 1 8 8"/></svg></span><div><div class="dashboard-estimate-label">911 Calls Received</div><div class="dashboard-estimate-value">128</div></div><div class="dashboard-estimate-caption">Illustrative scenario count · not live calls</div></article>
+      <article class="dashboard-estimate"><span class="dashboard-estimate-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7h12v11H3zM15 11h4l3 3v4h-7z"/><path d="M7 7V4h7v3M18 11v3h4M8 18a2 2 0 1 0 4 0M17 18a2 2 0 1 0 4 0M7 11h4M9 9v4"/></svg></span><div><div class="dashboard-estimate-label">Community Ambulances</div><div class="dashboard-estimate-value">12 <span class="secondary">/ 8</span></div></div><div class="dashboard-estimate-caption">Committed / uncommitted · illustrative</div></article>
+      <article class="dashboard-estimate"><span class="dashboard-estimate-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><div><div class="dashboard-estimate-label">Community-Based Organizations</div><div class="dashboard-estimate-value">15 <span class="secondary">/ 230</span></div></div><div class="dashboard-estimate-caption">Total CBOs / total volunteers · illustrative</div></article>
+      <article class="dashboard-estimate"><span class="dashboard-estimate-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 4H5a2 2 0 0 0-2 2v15h18V6a2 2 0 0 0-2-2h-3M8 2h8v4H8zM7 12l1.5 1.5L11 11M13 13h4M7 18l1.5 1.5L11 17M13 19h4"/></svg></span><div><div class="dashboard-estimate-label">Public Assistance Reporting</div><div class="dashboard-estimate-value">45 <span class="secondary">/ 187</span></div></div><div class="dashboard-estimate-caption">Reports submitted / persons affected · illustrative</div></article>
+    </div>
+    <div class="dashboard-context"><span><strong>Operational Area:</strong> Oʻahu</span><span><strong>Operational Period:</strong> H+00 · reference only</span><span><strong>Reference Timestamp:</strong> 191247 NOV 26 HST</span></div>
+  </section>
+
+  <details class="dashboard-portal"><summary><span class="portal-icon" aria-hidden="true">＋</span><span><strong>Emergency Assistance Submission Portal</strong><small>Click to open planned form preview</small></span></summary></details>
+
+  <section class="dashboard-empower" aria-labelledby="dashboard-empower-title">
+    <div class="dashboard-empower-icon" aria-hidden="true">HHS</div>
+    <div class="dashboard-empower-copy"><h2 id="dashboard-empower-title">HHS emPOWER — Oʻahu</h2><p>U.S. Department of Health and Human Services · Electricity-Dependent Population Planning</p><span class="source-note">Candidate · ZIP level · Medicare only · privacy-masked · not a live local feed</span></div>
+    <a class="dashboard-empower-link" href="https://empowerprogram.hhs.gov/empowermap.html" target="_blank" rel="noreferrer">Access HHS emPOWER data <span aria-hidden="true">↗</span></a>
+  </section>
+
 
   <section class="hero"><div class="wrap">
     <div class="crumb">Mass care · Emergency assistance · Housing · Human services</div>
