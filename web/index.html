@@ -175,20 +175,30 @@
 
 .brand-islands{width:100%;height:100%;display:block;color:#fff}.dashboard-brand-mark{background:transparent!important;box-shadow:none!important;border-radius:0!important}.dashboard-portal{margin:18px 0;background:#c90b0b;color:white;border-radius:14px;overflow:hidden}.dashboard-portal>summary{display:flex;align-items:center;gap:18px;padding:18px 24px;cursor:pointer;list-style:none}.dashboard-portal>summary::-webkit-details-marker{display:none}.dashboard-portal>summary strong{display:block;font-size:clamp(20px,3vw,34px)}.dashboard-portal>summary small{display:block;font-size:16px}.dashboard-portal .assistance-portal{margin:0;border-radius:0;color:var(--ink);background:white}.portal-icon{font-size:44px;font-weight:800}</style><style>
 .dashboard-brand-mark{width:154px;height:58px;flex:0 0 154px;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;display:flex!important;align-items:center;justify-content:flex-start}
-.hawaii-chain{display:block;width:100%;height:100%;overflow:visible;color:#fff}
+
 .dashboard-brand{gap:14px}.dashboard-brand-name strong{white-space:nowrap}.dashboard-brand-name small{line-height:1.35}
 .dashboard-portal{width:calc(100% - 32px);max-width:1364px;margin:16px auto 0!important;background:#fff!important;color:var(--ink);box-sizing:border-box}
 .dashboard-portal>summary{min-height:86px;padding:15px 22px;box-sizing:border-box}
 .dashboard-portal .assistance-portal{margin:0;border-radius:0;color:var(--ink);background:white}
 .dashboard-time-icon{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 @media(max-width:700px){.dashboard-brand-mark{width:105px;height:42px;flex-basis:105px}.dashboard-brand-name strong{font-size:20px}.dashboard-brand-name small{font-size:9px;letter-spacing:.08em}.dashboard-demo-flag{max-width:140px}.dashboard-masthead-inner{padding:13px 16px;gap:10px}}
+</style><style>
+.dashboard-overview{background-color:#e9f0f6;background-image:linear-gradient(rgba(245,249,252,.84),rgba(245,249,252,.90)),url("assets/bathymetry-background.jpg");background-size:cover;background-position:center 42%;background-repeat:no-repeat;padding-bottom:18px}
+.dashboard-masthead{background-color:#04080c;background-image:linear-gradient(rgba(3,8,12,.70),rgba(3,8,12,.82)),url("assets/bathymetry-background.jpg");background-size:cover;background-position:center 45%}
+.dashboard-brand-mark{display:none!important}
+.dashboard-portal{width:calc(100% - 32px);max-width:1364px;margin:16px auto 0!important;background:#fff!important;color:var(--ink);box-sizing:border-box}
+.dashboard-portal>summary{min-height:86px;padding:15px 22px;box-sizing:border-box}
+.dashboard-portal .assistance-portal{margin:0;border-radius:0;color:var(--ink);background:white}
+.dashboard-time-icon{fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.dashboard-background-note{max-width:1364px;margin:10px auto 0;padding:0 16px;color:#405568;font-size:11px;text-align:right}
+@media(max-width:700px){.dashboard-overview{background-position:center top}.dashboard-masthead{background-position:54% 50%}.dashboard-background-note{padding:0 20px;text-align:left}}
 </style></head>
 <body>
   <a class="skip" href="#main">Skip to planning workbench</a>
-    <header class="dashboard-masthead">
+    <div class="dashboard-overview">
+<header class="dashboard-masthead">
     <div class="dashboard-masthead-inner">
       <a class="dashboard-brand" href="#main" aria-label="Cyber Coalition dashboard">
-        <span class="dashboard-brand-mark"><svg class="brand-islands" viewBox="0 0 190 72" role="img" aria-label="Hawaiian Islands silhouette"><g fill="currentColor"><path d="M12 11l4-3 4 2-2 4-5 1zM30 18l5-4 4 2-1 5-6 1zM51 26l4-2 4 3-3 3-5-1zM71 34l6-4 7 2 3 7-4 4-9-2zM100 37l8-4 8 3-2 5-9 1zM122 46l5-3 5 4-2 4-6-1zM144 53l7-3 8 4-3 5-9 1zM166 58l9-4 10 6-2 7-9 2-9-5z"/></g></svg></span>
         <span class="dashboard-brand-name"><strong>CYBER COALITION</strong><small>HAWAIʻI STATEWIDE PLANNING · OʻAHU EMERGENCY OPERATIONS DASHBOARD</small></span>
       </a>
       <div class="dashboard-demo-flag"><strong>DEMONSTRATION ONLY</strong><span>Exercise / Planning Use · Not for Real-World Emergency Reporting</span></div>
@@ -223,9 +233,10 @@
     <div class="dashboard-empower-copy"><h2 id="dashboard-empower-title">HHS emPOWER — Oʻahu</h2><p>U.S. Department of Health and Human Services · Electricity-Dependent Population Planning</p><span class="source-note">Candidate · ZIP level · Medicare only · privacy-masked · not a live local feed</span></div>
     <a class="dashboard-empower-link" href="https://empowerprogram.hhs.gov/empowermap.html" target="_blank" rel="noreferrer">Access HHS emPOWER data <span aria-hidden="true">↗</span></a>
   </section>
+  <p class="dashboard-background-note">Background image supplied by the team · illustrative bathymetry only, not operational GIS data.</p>
+</div>
 
-
-  <section class="hero"><div class="wrap">
+<section class="hero"><div class="wrap">
     <div class="crumb">Mass care · Emergency assistance · Housing · Human services</div>
     <h1>Evidence into a coordinated plan.</h1>    <p>Cyber Coalition’s proposed Common Operational Framework connects public aggregate evidence and synthetic partner inputs to hazard-specific coverage, CMIST planning considerations, source review, resource questions, and human-reviewed coordination. It frames a statewide four-hazard design and a bounded fictional Kapolei hurricane pilot. This static workbench is not operational, and the pilot does not prove statewide hazard coverage.</p>
     <div class="scope-row"><span class="tag">Statewide framework: all Hawaiʻi counties/islands</span><span class="tag">First demonstrator: Kapolei / Leeward Oʻahu</span><span class="tag">Four-hazard baseline: earthquake scope question recorded</span></div>
