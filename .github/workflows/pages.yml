@@ -25,6 +25,10 @@ jobs:
         uses: actions/checkout@v4
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v6
+      - name: Stage documented background image
+        run: |
+          mkdir -p web/assets
+          cp docs/images/bathymetry-background.jpg web/assets/bathymetry-background.jpg
       - name: Upload static site
         uses: actions/upload-pages-artifact@v5
         with:
