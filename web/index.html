@@ -236,7 +236,19 @@ body{min-height:100vh;background-color:#e8f1f6;background-image:linear-gradient(
 .card{box-shadow:0 6px 18px rgba(13,49,71,.11)}
 .nav{background:rgba(248,251,253,.90);backdrop-filter:blur(8px)}
 @media(max-width:700px){body{background-size:auto,760px auto;background-position:0 0,center top}.dashboard-masthead{background-position:center 45%}}
-</style></head>
+</style>
+<style>
+.dashboard-portal-link{display:flex;align-items:center;gap:18px;min-height:86px;padding:15px 22px;color:#fff;text-decoration:none;background:linear-gradient(105deg,#b20d27 0%,#e32645 55%,#bd174e 100%);text-shadow:0 1px 1px rgba(56,0,12,.25);position:relative;overflow:hidden}
+.dashboard-portal-link::after{content:'';position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,var(--aloha-cyan),#fff,var(--aloha-gold),var(--aloha-violet))}
+.dashboard-portal-link:hover{color:#fff;background:linear-gradient(105deg,#93091e 0%,#d91538 55%,#a90f43 100%)}
+.dashboard-portal-link:focus-visible{outline:3px solid #113c5d;outline-offset:-4px}.dashboard-portal-link .portal-summary-chevron{margin-left:auto}
+.assistance-portal{scroll-margin-top:22px}
+.assistance-fieldset:not([disabled]) input:focus-visible,.assistance-fieldset:not([disabled]) select:focus-visible,.assistance-fieldset:not([disabled]) textarea:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+.assistance-actions button{cursor:pointer}.assistance-actions .assistance-demo-primary{background:var(--navy);color:#fff;border-color:var(--navy);font-weight:750}.assistance-actions .assistance-demo-primary:hover{background:#075f79}
+.assistance-demo-result{margin-top:16px;padding:15px;border:1px solid #8ac5bd;border-left:5px solid var(--teal);border-radius:10px;background:#eaf7f5;color:#183b43}.assistance-demo-result h3{margin:0 0 6px;color:#123d4d;font-size:17px}.assistance-demo-result p{margin:5px 0}.assistance-demo-result ul{margin:8px 0 0;padding-left:20px}
+@media(max-width:620px){.dashboard-portal-link{padding:13px;gap:10px}.dashboard-portal-link .portal-icon{font-size:34px}.dashboard-portal-link .portal-summary-copy strong{font-size:17px}.assistance-actions{align-items:stretch}.assistance-actions button{flex:1 1 180px}}
+</style>
+</head>
 <body>
   <a class="skip" href="#main">Skip to planning workbench</a>
     <div class="dashboard-overview">
@@ -271,7 +283,7 @@ body{min-height:100vh;background-color:#e8f1f6;background-image:linear-gradient(
     <div class="dashboard-context"><span><strong>Operational Area:</strong> Oʻahu</span><span><strong>Operational Period:</strong> H+00 · reference only</span><span><strong>Reference Timestamp:</strong> 191247 NOV 26 HST</span></div>
   </section>
 
-  <details class="dashboard-portal"><summary><span class="portal-icon" aria-hidden="true">＋</span><span><strong>Emergency Assistance Submission Portal</strong><small>Click to open planned form preview</small></span></summary></details>
+  <section class="dashboard-portal" aria-label="Emergency assistance demo intake"><a class="dashboard-portal-link" href="#emergency-assistance-portal"><span class="portal-icon" aria-hidden="true">＋</span><span class="portal-summary-copy"><strong>Emergency Assistance Submission Portal</strong><small>Click to jump to the simulated intake form</small></span><span class="portal-summary-chevron" aria-hidden="true">↓</span></a></section>
 
   <section class="dashboard-empower" aria-labelledby="dashboard-empower-title">
     <div class="dashboard-empower-icon" aria-hidden="true">HHS</div>
@@ -301,25 +313,31 @@ body{min-height:100vh;background-color:#e8f1f6;background-image:linear-gradient(
 </div><div class="cmist-plan-end"><strong>End State</strong><span>To be defined: one shared outcome across all five CMIST areas</span></div></div><p class="small muted cmist-plan-source">Circular category illustrations are original, simplified symbols inspired by the <a href="https://content.govdelivery.com/accounts/CODHSEM/bulletins/37875d5" target="_blank" rel="noopener noreferrer">Colorado DHSEM CMIST resource newsletter</a>.</p></article>
 
 <section class="card assistance-portal" id="emergency-assistance-portal" aria-labelledby="assistance-title">
-  <div class="eyebrow">Planned public assistance reporting</div>
+  <div class="eyebrow">Simulated public assistance intake</div>
   <h2 id="assistance-title">Emergency Assistance Submission Portal</h2>
-  <p class="muted small">Planned public write-only reporting for individuals, caregivers, family members, and responding organizations.</p>
-  <div class="assistance-notice" role="note"><strong>PREVIEW ONLY — REPORTING DISABLED.</strong> Do not enter personal or medical information. No submissions are received, stored, monitored, or dispatched. If someone is in immediate danger, call 911.</div>
-  <form aria-label="Disabled emergency assistance report preview" onsubmit="return false">
-    <fieldset disabled class="assistance-fieldset"><legend>Assistance report — planned fields</legend>
+  <p class="muted small">Walk through how a fictional request can be organized for human review during the Kapolei tabletop scenario.</p>
+  <div class="assistance-notice" role="note"><strong>SIMULATION ONLY — nothing is sent, stored, monitored, or dispatched.</strong> Use fictional details only. Do not enter real names, phone numbers, addresses, or medical information. If a real person is in immediate danger, call 911.</div>
+  <form id="assistance-demo-form" class="assistance-form" aria-label="Fictional emergency assistance intake simulation">
+    <fieldset class="assistance-fieldset"><legend>Fictional assistance request</legend>
       <div class="assistance-fields-grid">
-        <div><label for="assist-reporter">Reporting person and relationship</label><input id="assist-reporter" type="text" placeholder="Reporter name and relationship"></div>
-        <div><label for="assist-contact">Reporting person contact</label><input id="assist-contact" type="text" placeholder="Phone or preferred contact"></div>
-        <div><label for="assist-party">Affected person or group</label><input id="assist-party" type="text" placeholder="Person / household, number affected"></div>
-        <div><label for="assist-vicinity">Location and vicinity</label><input id="assist-vicinity" type="text" placeholder="Address, city, island, landmarks"></div>
-        <div><label for="assist-type">Assistance category</label><select id="assist-type"><option>Select assistance type</option><option>Medical transportation</option><option>Power-dependent medical equipment</option><option>Medication or prescription refill</option><option>Evacuation or mobility</option><option>Other assistance</option></select></div>
-        <div><label for="assist-urgency">Emergency situation and urgency</label><select id="assist-urgency"><option>Select time needed</option><option>Immediate danger — call 911</option><option>Within 2 hours</option><option>Within 6 hours</option><option>Within 12 hours</option><option>Within 24 hours</option><option>More than 24 hours</option></select></div>
-        <div class="assistance-wide"><label for="assist-details">Description of need / deadlines</label><textarea id="assist-details" rows="3" placeholder="Assistance details"></textarea></div>
+        <div><label for="assist-reporter">Reporting person and relationship</label><input id="assist-reporter" name="reporter" type="text" autocomplete="off" placeholder="Fictional reporter / role"></div>
+        <div><label for="assist-contact">Preferred contact (fictional only)</label><input id="assist-contact" name="contact" type="text" autocomplete="off" placeholder="Demo contact label; no real number"></div>
+        <div><label for="assist-party">Affected person or group (fictional)</label><input id="assist-party" name="party" type="text" autocomplete="off" placeholder="For example, one simulated household"></div>
+        <div><label for="assist-vicinity">Location or service area (fictional)</label><input id="assist-vicinity" name="vicinity" type="text" autocomplete="off" placeholder="Kapolei, Oʻahu (fictional)" required></div>
+        <div><label for="assist-type">Assistance category</label><select id="assist-type" name="type" required>
+          <option value="">Select assistance category</option>
+          <option value="power-medical">Power-dependent medical equipment</option><option value="medical-transport">Medical transportation</option><option value="medication">Medication or prescription access</option><option value="evacuation-mobility">Evacuation or accessible mobility</option><option value="shelter">Shelter or accessible lodging</option><option value="food-water">Food or drinking water</option><option value="communication">Accessible communication or language support</option><option value="caregiver">Caregiver or personal assistance</option><option value="other">Other assistance</option>
+        </select></div>
+        <div><label for="assist-urgency">Timeframe requested</label><select id="assist-urgency" name="urgency" required>
+          <option value="">Select a timeframe</option><option value="immediate">Immediate danger — call 911 in a real emergency</option><option value="2h">Within 2 hours</option><option value="6h">Within 2–6 hours</option><option value="12h">Within 6–12 hours</option><option value="24h">Within 12–24 hours</option><option value="planning">More than 24 hours / planning need</option>
+        </select></div>
+        <div class="assistance-wide"><label for="assist-details">Description of need / deadline (fictional only)</label><textarea id="assist-details" name="details" rows="3" autocomplete="off" placeholder="Describe the synthetic request and any tabletop inject it relates to. Do not enter real personal or medical details."></textarea></div>
       </div>
-      <div class="assistance-actions"><button type="button" disabled>Submit report — unavailable</button><button type="button" disabled>Request correction / deletion — unavailable</button></div>
+      <div class="assistance-actions"><button type="submit" class="assistance-demo-primary">Generate simulated review</button><button type="button" id="assist-load-sample">Load fictional Kapolei example</button><button type="reset" id="assist-clear">Clear fields</button></div>
     </fieldset>
   </form>
-  <p class="small muted">Planned protections: submitters may create reports but not view, modify, or delete records. Private cases require tracking numbers, a secure backend, staff monitoring, role-based moderator access, verified correction/deletion requests, retention policies, and audit logs before deployment.</p>
+  <div id="assist-demo-result" class="assistance-demo-result" role="status" aria-live="polite" aria-atomic="true" hidden></div>
+  <p class="small muted">The generated review is temporary in this browser page only. It is not a real report or service request. A human coordinator would need to confirm the source, need, availability, accessibility, and safe delivery before any real response.</p>
 </section>
   </div>
   <nav class="nav" aria-label="Workbench sections"><div class="wrap" role="tablist">
@@ -674,6 +692,19 @@ body{min-height:100vh;background-color:#e8f1f6;background-image:linear-gradient(
     </section>
   </main>
   <footer class="footer"><div class="wrap"><span>Cyber Coalition · HAIC 2026 · Working prototype</span><span>Public aggregate and synthetic scenario only · No live operational integrations</span></div></footer>
+
+  <script>
+    (()=>{
+      const form=document.getElementById('assistance-demo-form'),result=document.getElementById('assist-demo-result');if(!form||!result)return;
+      const labels={'power-medical':'Power-dependent medical equipment','medical-transport':'Medical transportation',medication:'Medication or prescription access','evacuation-mobility':'Evacuation or accessible mobility',shelter:'Shelter or accessible lodging','food-water':'Food or drinking water',communication:'Accessible communication or language support',caregiver:'Caregiver or personal assistance',other:'Other assistance'};
+      const prompts={'power-medical':['Confirm the fictional power interruption and requested backup-power support with an authorized source.','Verify any accessible transportation or shelter needs; no capacity or service availability is assumed.'],'medical-transport':['Confirm the fictional destination, mobility requirements, and a suitable transport provider.','Verify route status and safety with the responsible authority before considering travel.'],medication:['Confirm the type and timeframe of the fictional medication-access need with an authorized health partner.','Do not infer clinical urgency, supply, or delivery availability from this demo.'],'evacuation-mobility':['Confirm the person’s stated mobility and assistance requirements using the scenario input only.','Verify accessible transport, route status, and receiving-site suitability with responsible owners.'],shelter:['Confirm current facility status, accessibility, suitability, and capacity with the shelter operator.','The map or this form does not establish that a shelter is open or available.'],'food-water':['Confirm the requested quantity and distribution location with the appropriate resource owner.','Verify stock, timing, and accessible distribution arrangements before planning delivery.'],communication:['Confirm preferred accessible communication methods and language support needs.','Verify available channels and message reach with the responsible communications partners.'],caregiver:['Clarify the fictional support task and timeframe with the affected person or authorized representative.','Confirm provider availability and consent before any real coordination.'],other:['Clarify the requested assistance and identify the responsible source owner.','Record what remains unknown; do not infer availability or commit resources.']};
+      form.addEventListener('submit',event=>{event.preventDefault();if(!form.reportValidity())return;const data=new FormData(form),category=String(data.get('type')||''),urg=document.getElementById('assist-urgency'),urgency=urg.options[urg.selectedIndex]?.text||'Not selected',location=String(data.get('vicinity')||'Fictional area not specified'),party=String(data.get('party')||'Fictional person/group not specified'),detail=String(data.get('details')||'No additional fictional detail provided.');
+        const heading=document.createElement('h3');heading.textContent='Simulated intake ready for human review';const notice=document.createElement('p');notice.textContent='DEMO ONLY · Not submitted, stored, monitored, dispatched, or matched to a real service.';const summary=document.createElement('p');summary.textContent='Request: '+(labels[category]||'Assistance not selected')+' · Timeframe: '+urgency+' · Area: '+location+' · Affected group: '+party+'.';const description=document.createElement('p');description.textContent='Fictional details: '+detail;const title=document.createElement('strong');title.textContent='Coordinator review prompts';const list=document.createElement('ul');(prompts[category]||prompts.other).forEach(text=>{const li=document.createElement('li');li.textContent=text;list.append(li)});if(data.get('urgency')==='immediate'){const li=document.createElement('li');li.textContent='This is only a simulation. In a real immediate-danger situation, call 911; this page cannot notify responders.';list.prepend(li)}result.replaceChildren(heading,notice,summary,description,title,list);result.hidden=false;result.scrollIntoView({behavior:'smooth',block:'nearest'});
+      });
+      form.addEventListener('reset',()=>{result.hidden=true;result.replaceChildren()});
+      document.getElementById('assist-load-sample')?.addEventListener('click',()=>{document.getElementById('assist-reporter').value='Fictional household reporter';document.getElementById('assist-contact').value='No contact details in simulation';document.getElementById('assist-party').value='One simulated household member';document.getElementById('assist-vicinity').value='Kapolei, Oʻahu (fictional)';document.getElementById('assist-type').value='power-medical';document.getElementById('assist-urgency').value='2h';document.getElementById('assist-details').value='Tabletop power interruption: requests planning review for backup-power coordination. No real person, facility, capacity, or service availability is implied.';result.hidden=true;result.replaceChildren();document.getElementById('assist-type').focus()});
+    })();
+  </script>
   <script>
     const emsCityFilter=document.getElementById('ems-city-filter');
     if(emsCityFilter){
