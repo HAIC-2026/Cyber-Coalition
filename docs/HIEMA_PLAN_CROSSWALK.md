@@ -47,7 +47,7 @@ The Base Plan calls WebEOC the State's primary internal incident communications 
 
 | Function | Assignment evidence | Classification |
 |---|---|---|
-| SESF #2 Communications | 2026 Base Plan Table 8 lists DAGS/ETS as primary, printed p. 5-20. Newer annex printed p. i names ETS coordinating and primary. | Fact, HIGH |
+| SESF #2 Communications | The February 2026 Base Plan Table 8 lists DAGS/ETS as primary, printed p. 5-20. A prior review record says the November 2026 annex printed p. i names ETS coordinating/primary; the annex could not be reopened in this reconciliation. | Base Plan assignment: Fact, HIGH; newer-annex agency listing: Source Reported Claim, MEDIUM (prior review record); fresh page verification: Unknown, HIGH |
 | SESF #12 Energy | 2026 Base Plan Table 8 lists DBEDT/Hawaiʻi State Energy Office as primary, printed p. 5-21. 2021 annex names HSEO coordinating/primary and Energy Sector Partners support. | Fact, HIGH |
 
 The 2021 SESF #12 annex describes fuel supplier coordination, priority setting for scarce fuel/energy, emergency fuel for critical facilities, transportation, communications, and emergency operations, and a Fuels Set-Aside tied to a Governor's energy emergency declaration. Printed pp. 4-3 to 4-4. Fact, HIGH as to that annex.
