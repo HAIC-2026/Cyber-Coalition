@@ -35,8 +35,20 @@
     .cmist-plan-arrow h3{margin:0 0 9px;font-size:14px;font-weight:800;color:#123d4d}
     .cmist-plan-arrow ul{margin:0;padding-left:17px}.cmist-plan-arrow li{margin:0 0 5px}
     .cmist-awaiting{font-style:italic;font-size:12px;color:#526d72}
-    .cmist-plan-end{border:2px solid #8eafb0;border-radius:12px;background:#eef4f0;display:flex;flex-direction:column;justify-content:center;text-align:center;gap:12px;padding:18px 12px}
-    .cmist-plan-end strong{font-size:18px;color:var(--navy)}.cmist-plan-end span{font-size:13px;line-height:1.55;color:#334d5b;overflow-wrap:break-word}.cmist-plan-end{justify-content:flex-start;padding:22px 16px;gap:14px}
+    /* Compact End State control; expanded content floats over, rather than stretching, the planning rows. */
+    .cmist-plan-end{align-self:start;position:relative;min-width:0;border:2px solid #8eafb0;border-radius:12px;background:#eef4f0;padding:10px;z-index:2}
+    .cmist-endstate-trigger{display:block;width:100%;border:0;border-radius:8px;background:transparent;color:var(--navy);font:inherit;cursor:pointer;text-align:center;padding:12px 8px}
+    .cmist-endstate-trigger strong{display:block;font-size:18px}
+    .cmist-endstate-trigger span{display:block;margin-top:4px;font-size:12px;color:#405d67}
+    .cmist-endstate-trigger:hover{background:#dcebe6}
+    .cmist-endstate-trigger:focus-visible,.cmist-endstate-close:focus-visible{outline:3px solid #087e83;outline-offset:3px}
+    .cmist-endstate-popup{position:absolute;z-index:30;top:calc(100% + 8px);right:0;width:min(430px,calc(100vw - 40px));max-height:min(65vh,580px);overflow:auto;border:2px solid #8eafb0;border-radius:12px;background:#fff;box-shadow:0 14px 36px rgba(16,38,56,.24);padding:18px;text-align:left}
+    .cmist-endstate-popup[hidden]{display:none!important}
+    .cmist-endstate-popup-header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px}
+    .cmist-endstate-popup-header strong{color:var(--navy);font-size:18px}
+    .cmist-endstate-popup p{margin:0;color:#334d5b;font-size:14px;line-height:1.6;overflow-wrap:break-word}
+    .cmist-endstate-close{border:1px solid #8eafb0;border-radius:7px;background:#f1f6f4;color:var(--navy);font:inherit;padding:5px 10px;cursor:pointer}
+    @media(max-width:700px){.cmist-plan-end{min-height:0}.cmist-endstate-popup{width:min(430px,calc(100vw - 52px));max-height:55vh}}
     .cmist-plan-source{margin-top:12px}
     @media(max-width:1050px){.cmist-plan{grid-template-columns:minmax(0,1fr) minmax(210px,27%)}.cmist-plan-row{grid-template-columns:1fr}.cmist-plan-category{align-items:center;padding:2px}.cmist-plan-arrow{min-height:145px}}
     @media(max-width:700px){.cmist-plan{grid-template-columns:1fr}.cmist-plan-end{min-height:95px}.cmist-plan-steps{grid-template-columns:1fr}.cmist-plan-arrow,.cmist-plan-arrow:first-child{clip-path:none;border-radius:7px;padding:12px;min-height:0}}
@@ -310,7 +322,7 @@ body{min-height:100vh;background-color:#e8f1f6;background-image:linear-gradient(
 <div class="cmist-plan-row cmist-tone-3"><div class="cmist-plan-category"><span class="cmist-plan-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><path d="M12 8v6m-5-3 5 2 5-2M9 21l3-7 3 7"/></svg></span><strong>I — Independence</strong></div><div class="cmist-plan-steps"><section class="cmist-plan-arrow" aria-label="Priorities for Independence"><h3>Priorities</h3><ul><li>Ensure people with access and functional needs (AFN) have resources to maintain independence.</li></ul></section><section class="cmist-plan-arrow" aria-label="Objectives for Independence"><h3>Objectives</h3><ul><li>Minimize unnecessary relocation of individuals with AFN.</li></ul></section><section class="cmist-plan-arrow" aria-label="Resources for Independence"><h3>Resources</h3><ul><li>Mobility devices and assistive medical equipment.</li><li>SPCA.</li><li>Emergency and long-term shelters.</li></ul></section></div></div>
 <div class="cmist-plan-row cmist-tone-4"><div class="cmist-plan-category"><span class="cmist-plan-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 8 4v6c0 5-3.3 8-8 10-4.7-2-8-5-8-10V6l8-4Z"/><path d="m8.5 12 2.3 2.3 4.8-5"/></svg></span><strong>S — Support &amp; Safety</strong></div><div class="cmist-plan-steps"><section class="cmist-plan-arrow" aria-label="Priorities for Support &amp; Safety"><h3>Priorities</h3><ul><li>Keep individuals with AFN safe while respecting consent, dignity, and autonomy.</li></ul></section><section class="cmist-plan-arrow" aria-label="Objectives for Support &amp; Safety"><h3>Objectives</h3><ul><li>Provide person-centered assistance based on individual preferences.</li><li>Robust social and medical staffing.</li><li>Ensure ADA-accessible facilities.</li><li>Provide language interpretation and accessible communication.</li></ul></section><section class="cmist-plan-arrow" aria-label="Resources for Support &amp; Safety"><h3>Resources</h3><p class="cmist-awaiting">Resources to be identified.</p></section></div></div>
 <div class="cmist-plan-row cmist-tone-5"><div class="cmist-plan-category"><span class="cmist-plan-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M5 17H3V9h3l3-4h5v12h-5M14 11h4l3 4v2h-2"/></svg></span><strong>T — Transportation</strong></div><div class="cmist-plan-steps"><section class="cmist-plan-arrow" aria-label="Priorities for Transportation"><h3>Priorities</h3><ul><li>Prioritize at-risk areas with road-access or communications disruptions.</li><li>Identify communities with limited transportation access.</li></ul></section><section class="cmist-plan-arrow" aria-label="Objectives for Transportation"><h3>Objectives</h3><ul><li>Coordinate transportation resource partners.</li><li>Assess roads and alternate access routes.</li><li>Plan rotary-wing rescue or evacuation when ground access is unavailable.</li></ul></section><section class="cmist-plan-arrow" aria-label="Resources for Transportation"><h3>Resources</h3><ul><li>Transportation agencies and response partners.</li><li>Rotary-wing aircraft and qualified rescue teams.</li><li>Accessible ground transportation.</li><li>Title 10 federal military support, subject to authorization and availability.</li></ul></section></div></div>
-</div><div class="cmist-plan-end"><strong>End State</strong><span>Primary Emergency Operations Centers are established, with response operations centers on standby. Communication channels are operational, and partner telecommunications vendors are deployed to the most severely affected areas lacking communications. Time-sensitive health risks are addressed. People with access and functional needs (AFN) are supported with compassion and dignity and, when evacuation is necessary, transported to appropriate evacuation shelters or medical facilities.</span></div></div><p class="small muted cmist-plan-source">Circular category illustrations are original, simplified symbols inspired by the <a href="https://content.govdelivery.com/accounts/CODHSEM/bulletins/37875d5" target="_blank" rel="noopener noreferrer">Colorado DHSEM CMIST resource newsletter</a>.</p></article>
+</div><div class="cmist-plan-end" id="cmist-endstate"><button type="button" class="cmist-endstate-trigger" id="cmist-endstate-trigger" aria-expanded="false" aria-controls="cmist-endstate-popup" aria-label="Show the complete CMIST End State"><strong>End State</strong><span>Hover or click to read the full statement</span></button><div class="cmist-endstate-popup" id="cmist-endstate-popup" role="region" aria-labelledby="cmist-endstate-popup-title" hidden><div class="cmist-endstate-popup-header"><strong id="cmist-endstate-popup-title">End State</strong><button type="button" class="cmist-endstate-close" id="cmist-endstate-close" aria-label="Close End State">Close</button></div><p>Primary Emergency Operations Centers are established, with response operations centers on standby. Communication channels are operational, and partner telecommunications vendors are deployed to the most severely affected areas lacking communications. Time-sensitive health risks are addressed. People with access and functional needs (AFN) are supported with compassion and dignity and, when evacuation is necessary, transported to appropriate evacuation shelters or medical facilities.</p></div></div></div><p class="small muted cmist-plan-source">Circular category illustrations are original, simplified symbols inspired by the <a href="https://content.govdelivery.com/accounts/CODHSEM/bulletins/37875d5" target="_blank" rel="noopener noreferrer">Colorado DHSEM CMIST resource newsletter</a>.</p></article>
 
 <section class="card assistance-portal" id="emergency-assistance-portal" aria-labelledby="assistance-title">
   <div class="eyebrow">Simulated public assistance intake</div>
@@ -822,5 +834,35 @@ body{min-height:100vh;background-color:#e8f1f6;background-image:linear-gradient(
     items.forEach(x=>document.getElementById(x.id).addEventListener('change',render));reset.addEventListener('click',()=>{items.forEach(x=>document.getElementById(x.id).checked=true);render();document.getElementById('inject-power').focus()});render();
   })();
   </script>
+
+  <script>
+  // Hover previews the End State on desktop; click/tap pins it open.
+  // Enter/Space activate the native button. Escape closes and restores focus.
+  (()=>{
+    const host=document.getElementById('cmist-endstate');
+    const trigger=document.getElementById('cmist-endstate-trigger');
+    const popup=document.getElementById('cmist-endstate-popup');
+    const closeButton=document.getElementById('cmist-endstate-close');
+    if(!host||!trigger||!popup||!closeButton)return;
+    let pinned=false;
+    const setOpen=(open)=>{
+      popup.hidden=!open;
+      trigger.setAttribute('aria-expanded',String(open));
+      trigger.setAttribute('aria-label',open?'Hide the complete CMIST End State':'Show the complete CMIST End State');
+    };
+    const dismiss=(restoreFocus=false)=>{pinned=false;setOpen(false);if(restoreFocus)trigger.focus()};
+    host.addEventListener('pointerenter',event=>{if(event.pointerType==='mouse')setOpen(true)});
+    host.addEventListener('pointerleave',event=>{if(event.pointerType==='mouse'&&!pinned)setOpen(false)});
+    trigger.addEventListener('click',()=>{
+      if(pinned){dismiss();return}
+      pinned=true;setOpen(true);
+    });
+    closeButton.addEventListener('click',()=>dismiss(true));
+    host.addEventListener('keydown',event=>{if(event.key==='Escape'&&!popup.hidden){event.preventDefault();dismiss(true)}});
+    document.addEventListener('pointerdown',event=>{if(!host.contains(event.target)&&!popup.hidden)dismiss()});
+    host.addEventListener('focusout',event=>{if(!pinned&&!host.contains(event.relatedTarget))setOpen(false)});
+  })();
+  </script>
+
 </body>
 </html>
