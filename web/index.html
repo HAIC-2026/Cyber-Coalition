@@ -390,6 +390,23 @@ html{scroll-padding-top:var(--pinned-h,124px)}
   }
   @media(max-width:390px){.dashboard-estimates{grid-template-columns:1fr}.dashboard-estimate{min-height:0}}
 </style>
+<style>
+  /* Keep hero and section navigation as centered cards, with the bathymetry image visible around them. */
+  .hero{padding:22px 0;background:transparent}
+  .hero>.wrap{max-width:1220px;margin:0 auto;padding:26px 32px;border:1px solid rgba(214,224,229,.88);border-radius:16px;background:rgba(255,255,255,.87);box-shadow:0 12px 30px rgba(16,38,56,.12);backdrop-filter:blur(3px)}
+  .hero .crumb{display:inline-flex;align-items:center;margin:0 0 8px;padding:5px 10px;border:1px solid #c8e3df;border-radius:999px;background:rgba(229,245,243,.92);letter-spacing:.08em}
+  .hero h1{max-width:920px;font-size:clamp(34px,4vw,50px)}
+  .hero .scope-row{margin-top:14px}
+  .hero .notice{margin-top:16px}
+  .nav{padding:10px 0;background:transparent;border-bottom:0}
+  .nav .wrap{padding:12px 14px;border:1px solid rgba(214,224,229,.92);border-radius:13px;background:rgba(255,255,255,.9);box-shadow:0 8px 22px rgba(16,38,56,.12);backdrop-filter:blur(3px)}
+  @media(max-width:600px){
+    .hero{padding:14px 0}
+    .hero>.wrap{margin:0 12px;padding:18px;background:rgba(255,255,255,.9)}
+    .nav{padding:8px 0}
+    .nav .wrap{margin:0 12px;padding:10px;grid-template-columns:repeat(2,minmax(0,1fr))}
+  }
+</style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to planning workbench</a>
@@ -445,7 +462,7 @@ html{scroll-padding-top:var(--pinned-h,124px)}
 <section class="hero"><div class="wrap">
     <div class="crumb">Mass care · Emergency assistance · Housing · Human services</div>
     <h1>Evidence into a coordinated plan.</h1>    <p>Cyber Coalition’s proposed Common Operational Framework connects public aggregate evidence and synthetic partner inputs to hazard-specific coverage, CMIST planning considerations, source review, resource questions, and human-reviewed coordination. It frames a statewide four-hazard design and a bounded fictional Kapolei hurricane pilot. This static workbench is not operational, and the pilot does not prove statewide hazard coverage.</p>
-    <div class="scope-row"><span class="tag">Statewide framework: all Hawaiʻi counties/islands</span><span class="tag">First demonstrator: Kapolei / Leeward Oʻahu</span><span class="tag">Four-hazard baseline: earthquake scope question recorded</span></div>
+    <div class="scope-row"><span class="tag">Statewide framework: all Hawaiʻi counties/islands</span><span class="tag">First demonstrator: Kapolei / Leeward Oʻahu</span><span class="tag">Four-hazard baseline: hurricane · wildfire · tsunami · flood</span></div>
     <div class="notice" role="note"><div class="notice-icon" aria-hidden="true">⚠</div><div><strong>Fictional Category 5 stress scenario · not a forecast, alert, or operational recommendation.</strong><p>The Saffir-Simpson category rates maximum sustained wind only. It does not describe storm surge, rainfall flooding, tornadoes, or local impacts. The scenario keeps those hazards and assumptions separate for review.</p></div></div>
   </div></section>
   <div class="wrap cmist-and-portal">
