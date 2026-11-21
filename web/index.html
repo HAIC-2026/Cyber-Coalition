@@ -446,14 +446,14 @@ html{scroll-padding-top:var(--pinned-h,124px)}
   }
 </style>
 <style>
-  /* Keep the three CMIST information columns intact and make End State a clear right-pointing arrow. */
+  /* Preserve the three CMIST information columns and point the outlined End State arrow east. */
   @media(min-width:901px){
     .cmist-plan-rows{grid-template-columns:minmax(150px,18%) repeat(3,minmax(0,1fr)) minmax(185px,.9fr)}
     .cmist-plan-end{grid-column:5;grid-row:3;min-width:0;min-height:110px}
     .cmist-plan .cmist-endstate-trigger{min-height:110px;padding:14px 38px 14px 12px;clip-path:polygon(0 0,calc(100% - 30px) 0,100% 50%,calc(100% - 30px) 100%,0 100%)}
     .cmist-plan .cmist-endstate-trigger::before,.cmist-plan .cmist-endstate-trigger::after{clip-path:polygon(0 0,calc(100% - 30px) 0,100% 50%,calc(100% - 30px) 100%,0 100%)}
   }
-  /* At narrower widths, stack the CMIST rows so the End State control cannot be clipped by implicit grid columns. */
+  /* Stack the matrix at narrower widths so the End State arrow remains fully visible. */
   @media(max-width:900px){
     .cmist-plan-rows{display:flex;flex-direction:column;gap:10px}
     .cmist-plan-row{display:grid;grid-template-columns:1fr;gap:8px;padding:8px;border:1px solid var(--cmist-edge);border-radius:12px;background:var(--cmist-bg)}
@@ -469,6 +469,8 @@ html{scroll-padding-top:var(--pinned-h,124px)}
     .cmist-plan .cmist-endstate-trigger{min-height:84px;padding:10px 34px 10px 10px}
     .cmist-plan .cmist-endstate-popup{width:min(538px,calc(100vw - 32px));max-height:55vh}
   }
+  /* Show the existing full Hawaiian Islands map once, at screen height, without tiled seams. */
+  body{background-color:#e8f1f6;background-image:linear-gradient(rgba(244,249,252,.80),rgba(244,249,252,.80)),url("assets/bathymetry-background.jpg");background-repeat:no-repeat,no-repeat;background-size:cover,auto 100vh;background-position:center,center center;background-attachment:fixed,fixed}
 </style>
 </head>
 <body>
