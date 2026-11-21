@@ -1,0 +1,6 @@
+hazard,nri_field,universe_461,matched_in_source,not_in_source,positive,zero,missing,invalid
+Hurricane,HRCN_RISKV,461,435,26,434,1,0,0
+Wildfire,WFIR_RISKV,461,435,26,304,131,0,0
+Tsunami,TSUN_RISKV,461,435,26,229,8,198,0
+"Flood, coastal",CFLD_RISKV,461,435,26,203,232,0,0
+"Flood, inland",IFLD_RISKV,461,435,26,433,2,0,0

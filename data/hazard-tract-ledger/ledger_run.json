@@ -1,0 +1,50 @@
+{
+  "script": "scripts/build_hazard_tract_ledger.py",
+  "script_version": "1.0",
+  "retrieved_utc": "2026-11-21T01:33:19Z",
+  "retrieved_hst": "2026-11-20T15:33:19-10:00",
+  "sources": {
+    "fema_nri_census_tracts": {
+      "query_url": "https://services.arcgis.com/XG15cJAlne2vxtgt/arcgis/rest/services/National_Risk_Index_Census_Tracts/FeatureServer/0/query?where=STATEFIPS%3D%2715%27&outFields=TRACTFIPS%2CSTCOFIPS%2CNRI_VER%2CHRCN_RISKV%2CHRCN_RISKR%2CWFIR_RISKV%2CWFIR_RISKR%2CTSUN_RISKV%2CTSUN_RISKR%2CCFLD_RISKV%2CCFLD_RISKR%2CIFLD_RISKV%2CIFLD_RISKR&returnGeometry=false&orderByFields=TRACTFIPS&resultRecordCount=2000&f=json",
+      "sha256_of_response": "efd4b47afc7cdb6c2f5353df1f7a6d1565b0a0627152c0ebe0fcc45ee5cb3529",
+      "records": 435,
+      "nri_version_values": [
+        "December 2025"
+      ]
+    },
+    "stategis_2020_census_tracts_layer31": {
+      "query_url": "https://geodata.hawaii.gov/arcgis/rest/services/Census/MapServer/31/query?where=1%3D1&outFields=geoid20&returnGeometry=false&resultRecordCount=1000&f=json",
+      "sha256_of_response": "2750ceb48b49d2de80d0ed6e330a1f2d0c5870e991d7dd62acf1df34ca1ed9c6",
+      "records": 435
+    }
+  },
+  "tract_id_reconciliation": {
+    "nri_records": 435,
+    "nri_distinct_geoids": 435,
+    "nri_duplicate_geoids": [],
+    "nri_malformed_geoids": [],
+    "nri_unrecognised_county_fips": [],
+    "stategis_layer31_records": 435,
+    "stategis_layer31_distinct_geoids": 435,
+    "intersection": 435,
+    "only_in_nri": [],
+    "only_in_stategis": [],
+    "universe_count_per_evidence_register": 461,
+    "universe_reretrieved_here": false,
+    "census_only_tracts_not_evaluated": 26,
+    "census_only_geoids_enumerated_here": false
+  },
+  "class_definitions": {
+    "positive": "NRI <hazard>_RISKV is numeric and greater than 0",
+    "zero": "NRI <hazard>_RISKV is numeric and equal to 0",
+    "missing": "NRI <hazard>_RISKV is null (the tract is in the source layer but has no value)",
+    "invalid": "NRI <hazard>_RISKV is non-numeric, negative or not finite",
+    "not_in_source": "the 461 universe minus tracts present in the source layer; these GEOIDs are not enumerated here"
+  },
+  "limits": [
+    "Modeled risk from a national dataset; not a hazard footprint, overlay or AFN measure.",
+    "FEMA terms for the NRI state it is for planning purposes only and not a substitute for localized risk assessment.",
+    "'zero' and the NRI rating labels are reported as the source gives them; their meaning has not been checked against the NRI technical documentation in this run.",
+    "The 461 universe and the 26 Census-only tracts come from docs/EVIDENCE_REGISTER.md and were not re-retrieved."
+  ]
+}

@@ -1,0 +1,27 @@
+hazard,nri_rating_as_reported,tracts
+Hurricane,Very Low,349
+Hurricane,Relatively Low,85
+Hurricane,No Rating,1
+Wildfire,No Rating,131
+Wildfire,Relatively Moderate,110
+Wildfire,Relatively Low,87
+Wildfire,Relatively High,70
+Wildfire,Very Low,32
+Wildfire,Very High,5
+Tsunami,Not Applicable,198
+Tsunami,Relatively Moderate,92
+Tsunami,Relatively Low,79
+Tsunami,Very Low,51
+Tsunami,No Rating,8
+Tsunami,Relatively High,7
+"Flood, coastal",No Rating,232
+"Flood, coastal",Relatively Low,121
+"Flood, coastal",Very Low,47
+"Flood, coastal",Relatively Moderate,32
+"Flood, coastal",Relatively High,3
+"Flood, inland",Relatively Moderate,139
+"Flood, inland",Relatively High,123
+"Flood, inland",Relatively Low,77
+"Flood, inland",Very High,66
+"Flood, inland",Very Low,28
+"Flood, inland",No Rating,2

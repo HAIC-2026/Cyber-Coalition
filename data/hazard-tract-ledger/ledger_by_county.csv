@@ -1,0 +1,26 @@
+hazard,county_fips,county,tracts,positive,zero,missing,invalid
+Hurricane,15001,Hawaii County,43,43,0,0,0
+Hurricane,15003,Honolulu County,328,328,0,0,0
+Hurricane,15005,Kalawao County,1,1,0,0,0
+Hurricane,15007,Kauai County,18,18,0,0,0
+Hurricane,15009,Maui County,45,44,1,0,0
+Wildfire,15001,Hawaii County,43,43,0,0,0
+Wildfire,15003,Honolulu County,328,200,128,0,0
+Wildfire,15005,Kalawao County,1,1,0,0,0
+Wildfire,15007,Kauai County,18,18,0,0,0
+Wildfire,15009,Maui County,45,42,3,0,0
+Tsunami,15001,Hawaii County,43,25,1,17,0
+Tsunami,15003,Honolulu County,328,157,2,169,0
+Tsunami,15005,Kalawao County,1,1,0,0,0
+Tsunami,15007,Kauai County,18,15,1,2,0
+Tsunami,15009,Maui County,45,31,4,10,0
+"Flood, coastal",15001,Hawaii County,43,25,18,0,0
+"Flood, coastal",15003,Honolulu County,328,133,195,0,0
+"Flood, coastal",15005,Kalawao County,1,1,0,0,0
+"Flood, coastal",15007,Kauai County,18,15,3,0,0
+"Flood, coastal",15009,Maui County,45,29,16,0,0
+"Flood, inland",15001,Hawaii County,43,43,0,0,0
+"Flood, inland",15003,Honolulu County,328,328,0,0,0
+"Flood, inland",15005,Kalawao County,1,1,0,0,0
+"Flood, inland",15007,Kauai County,18,17,1,0,0
+"Flood, inland",15009,Maui County,45,44,1,0,0
