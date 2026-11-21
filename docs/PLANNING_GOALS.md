@@ -17,11 +17,11 @@ The three goals follow the DHS challenge as summarized in `docs/PROJECT_SCOPE.md
 |---|---|
 | Statement | Hazard-specific AFN vulnerability maps for hurricane, wildfire, tsunami and flood, for every county, reaching all census tracts |
 | Baseline (repository, 2026-11-21) | No AFN-by-hazard tract map is produced by this repository. The CMIST aggregate estimate method is a draft and "nothing in this method has been run" (`docs/CMIST_ESTIMATION_METHOD.md`). |
-| Interim indicator (not the result) | Hazard-side modeled-risk values exist for 435 of the 461 tracts for each hazard (`data/hazard-tract-ledger/`). This is an input to the goal. It is not an AFN measure and not the goal's result. |
+| Interim indicator (not the result) | Hazard-side values exist for 435 of the 461 tracts for each hazard: FEMA NRI modeled risk for all four, plus the project's DFIRM flood overlay (`data/hazard-tract-ledger/`). This is an input to the goal. It is not an AFN measure and not the goal's result. |
 | Target (source-reported) | 100% of census tracts, every county, per `docs/PROJECT_SCOPE.md` (challenge PDF pp. 5-7) |
 | Method (proposed) | For each hazard, count tracts that have both (a) a valid hazard value or overlay result and (b) an AFN estimate from the documented CMIST method that a reviewer has examined, and divide by the 461 official tracts. Report positive, zero, missing, invalid and not-evaluated counts separately for every hazard, and list the tracts not evaluated. Keep modeled risk, hazard overlays and the fictional scenario assumptions in separate columns. |
 | Result | *Not measured.* |
-| Known limits | 26 tracts are not in the risk source and their GEOIDs are not yet enumerated. Overlay measures (tsunami zones, DFIRM) are not yet in the ledger. ZIP-level emPOWER counts must not be allocated to tracts arbitrarily (`data/README.md`). |
+| Known limits | 26 tracts are in neither the NRI nor the project's DFIRM overlay and are not evaluated; they are listed in `data/hazard-tract-ledger/census_only_tracts_not_evaluated.csv`. Only flood has an overlay row in the ledger (the project's own DFIRM result, read and not recomputed); tsunami, hurricane and wildfire have modeled risk only. ZIP-level emPOWER counts must not be allocated to tracts arbitrarily (`data/README.md`). |
 
 ## Goal 2: CMIST needs estimates reviewed for reasonableness by authorized partners
 

@@ -22,7 +22,7 @@ csv_rows = list(csv.DictReader(open("data/hazard-tract-ledger/ledger_summary.csv
 problems = []
 if len(page_rows) != len(csv_rows):
     problems.append("row count page=%d csv=%d" % (len(page_rows), len(csv_rows)))
-cols = ["hazard", "nri_field", "matched_in_source", "positive", "zero", "missing", "invalid", "not_in_source"]
+cols = ["hazard", "measure_type", "source_field", "matched_in_source", "positive", "zero", "missing", "invalid", "not_in_source"]
 for p, c in zip(page_rows, csv_rows):
     for name, val in zip(cols, p):
         if str(c[name]) != val:
