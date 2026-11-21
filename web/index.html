@@ -306,6 +306,25 @@ html{scroll-padding-top:var(--pinned-h,124px)}
 .dashboard-pinned .dashboard-estimates>.dashboard-estimate{flex:0 0 148px;scroll-snap-align:start}
 }
 </style>
+<style>
+/* End State: a full-width arrow under the five CMIST rows. The statement stays hidden until hover, click or keyboard activation. */
+.cmist-plan{grid-template-columns:minmax(0,1fr)}
+.cmist-plan .cmist-plan-end{align-self:stretch;min-height:0;padding:0;border:0;border-radius:0;background:transparent;pointer-events:none}
+.cmist-plan .cmist-endstate-trigger,.cmist-plan .cmist-endstate-popup,.cmist-plan .cmist-plan-end.is-open::after{pointer-events:auto}
+.cmist-plan .cmist-endstate-trigger{position:relative;isolation:isolate;display:block;width:100%;min-height:118px;padding:16px 18px 54px;border-radius:0;background:transparent;text-align:center;clip-path:polygon(0 0,100% 0,100% 40%,50% 100%,0 40%)}
+.cmist-plan .cmist-endstate-trigger::before,.cmist-plan .cmist-endstate-trigger::after{content:"";position:absolute;z-index:-1;clip-path:polygon(0 0,100% 0,100% 40%,50% 100%,0 40%)}
+.cmist-plan .cmist-endstate-trigger::before{inset:0;background:#6fa9ad}
+.cmist-plan .cmist-endstate-trigger::after{inset:3px 3px 5px;background:linear-gradient(100deg,#c5e9f6 0%,#c3eadf 38%,#d3efd6 68%,#e4f4d3 100%)}
+.cmist-plan .cmist-endstate-trigger:hover{background:transparent}
+.cmist-plan .cmist-endstate-trigger:hover::after{filter:brightness(.95) saturate(1.15)}
+.cmist-plan .cmist-endstate-trigger:focus-visible{outline:0}
+.cmist-plan .cmist-endstate-trigger:focus-visible::before{background:#055f64}
+.cmist-plan .cmist-endstate-trigger:focus-visible::after{inset:6px 6px 8px}
+.cmist-plan .cmist-endstate-trigger strong{font-size:20px}
+.cmist-plan .cmist-endstate-trigger span{max-width:560px;margin:4px auto 0}
+.cmist-plan .cmist-endstate-popup{top:calc(100% + 8px);left:50%;right:auto;transform:translateX(-50%);width:min(580px,calc(100vw - 40px))}
+@media(max-width:700px){.cmist-plan .cmist-endstate-trigger{min-height:150px;padding:14px 12px 74px}.cmist-plan .cmist-endstate-trigger strong{font-size:18px}.cmist-plan .cmist-endstate-popup{width:min(580px,calc(100vw - 52px))}}
+</style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to planning workbench</a>
