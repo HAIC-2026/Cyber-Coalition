@@ -1,6 +1,6 @@
-## Open the planning demonstrator
+## Cyber Coalition app
 
-[Open the live planning demonstrator](https://haic-2026.github.io/Cyber-Coalition/) · [Review the source HTML](web/index.html) · [Open the ArcGIS reference map](https://hawaiihub.maps.arcgis.com/home/item.html?id=d7b64dfd6e5a4e7589be7bcfbe355ad0)
+[Open the Cyber Coalition app](https://haic-2026.github.io/Cyber-Coalition/) · [Review the source HTML](web/index.html) · [Open the ArcGIS reference map](https://hawaiihub.maps.arcgis.com/home/item.html?id=d7b64dfd6e5a4e7589be7bcfbe355ad0)
 
 > Fictional Kapolei hurricane scenario; synthetic examples only. This is a planning demonstrator, not live stakeholder intake or an operational service.
 
@@ -14,9 +14,9 @@ A Part 2 AI-Developed Planning and Improvement Challenge project exploring how p
 
 | Open the work | Review the evidence |
 |---|---|
-| [Open live planning demonstrator](https://haic-2026.github.io/Cyber-Coalition/) · [Source](web/index.html) · [ArcGIS reference map](https://hawaiihub.maps.arcgis.com/home/item.html?id=d7b64dfd6e5a4e7589be7bcfbe355ad0) | [Evidence register](docs/EVIDENCE_REGISTER.md) · [Scope](docs/PROJECT_SCOPE.md) · [POA&M alignment](docs/POAM_ALIGNMENT.md) |
+| [Open the Cyber Coalition app](https://haic-2026.github.io/Cyber-Coalition/) · [Source](web/index.html) · [ArcGIS reference map](https://hawaiihub.maps.arcgis.com/home/item.html?id=d7b64dfd6e5a4e7589be7bcfbe355ad0) | [Evidence register](docs/EVIDENCE_REGISTER.md) · [Scope](docs/PROJECT_SCOPE.md) · [POA&M alignment](docs/POAM_ALIGNMENT.md) |
 
-> **Demonstrator boundary:** The HTML is a static planning concept using a fictional Kapolei hurricane scenario and synthetic partner inputs. It is not an operational system or live stakeholder intake. Entries remain in the current browser session and disappear on reload. There is no live ArcGIS integration, protected submission service, or confirmation that resources are available. The public GitHub Pages demonstrator is available at [Open the live planning workbench](https://haic-2026.github.io/Cyber-Coalition/). It remains a static concept with synthetic inputs, no live ArcGIS integration, no protected submission service, and no confirmation that resources are available.
+> **Demonstrator boundary:** The HTML is a static planning concept using a fictional Kapolei hurricane scenario and synthetic partner inputs. It is not an operational system or live stakeholder intake. Entries remain in the current browser session and disappear on reload. There is no live ArcGIS integration, protected submission service, or confirmation that resources are available. The public GitHub Pages demonstrator is available at [Open the Cyber Coalition app](https://haic-2026.github.io/Cyber-Coalition/). It remains a static concept with synthetic inputs, no live ArcGIS integration, no protected submission service, and no confirmation that resources are available.
 
 ## The planning idea
 
