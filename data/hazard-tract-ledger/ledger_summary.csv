@@ -1,0 +1,7 @@
+hazard,measure_type,source_field,universe_461,matched_in_source,not_in_source,positive,zero,missing,invalid
+Hurricane,"Modeled risk (FEMA NRI, December 2025)",HRCN_RISKV,461,435,26,434,1,0,0
+Wildfire,"Modeled risk (FEMA NRI, December 2025)",WFIR_RISKV,461,435,26,304,131,0,0
+Tsunami,"Modeled risk (FEMA NRI, December 2025)",TSUN_RISKV,461,435,26,229,8,198,0
+"Flood, coastal","Modeled risk (FEMA NRI, December 2025)",CFLD_RISKV,461,435,26,203,232,0,0
+"Flood, inland","Modeled risk (FEMA NRI, December 2025)",IFLD_RISKV,461,435,26,433,2,0,0
+"Flood, SFHA overlay","Overlay (project DFIRM result, read-only)",sfha_tf='T' area (project DFIRM result),461,435,26,306,129,0,0
