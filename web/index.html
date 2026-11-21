@@ -164,7 +164,7 @@
     .dashboard-estimate:nth-child(4) .dashboard-estimate-value{color:#cf7110}
     .dashboard-estimate-value .secondary{color:#1c5ec6}
     .dashboard-estimate-value small{font-size:11px;font-weight:700;color:#52626d;white-space:normal}
-    .dashboard-estimate-caption{grid-column:1/-1;color:#5a6a75;font-size:10px;line-height:1.3}
+    .dashboard-estimate-caption{grid-column:1/-1;color:#5a6a75;font-size:12px;line-height:1.35}
     .dashboard-context{margin:10px 0 0;padding:10px 12px;display:flex;justify-content:space-around;gap:8px;flex-wrap:wrap;border-radius:8px;background:#eaf2f8;color:#304758;font-size:11px}
     .dashboard-context strong{color:#142d43}
     .dashboard-portal{max-width:1364px;margin:16px auto 0;border:1px solid #d7e0e7;border-radius:11px;background:#fff;box-shadow:0 4px 12px rgba(20,47,66,.06);overflow:hidden}
@@ -191,12 +191,12 @@
 
 .brand-islands{width:100%;height:100%;display:block;color:#fff}.dashboard-brand-mark{background:transparent!important;box-shadow:none!important;border-radius:0!important}.dashboard-portal{margin:18px 0;background:#c90b0b;color:white;border-radius:14px;overflow:hidden}.dashboard-portal>summary{display:flex;align-items:center;gap:18px;padding:18px 24px;cursor:pointer;list-style:none}.dashboard-portal>summary::-webkit-details-marker{display:none}.dashboard-portal>summary strong{display:block;font-size:clamp(20px,3vw,34px)}.dashboard-portal>summary small{display:block;font-size:16px}.dashboard-portal .assistance-portal{margin:0;border-radius:0;color:var(--ink);background:white}.portal-icon{font-size:44px;font-weight:800}
     /* Five consistent Running Estimates cards, aligned at desktop width. */
-    .dashboard-estimates{grid-template-columns:repeat(5,minmax(0,1fr));align-items:stretch}
-    .dashboard-estimates>.dashboard-estimate{height:100%;min-width:0;grid-template-columns:36px minmax(0,1fr);padding:12px 10px;gap:7px}
-    .dashboard-estimates .dashboard-estimate-icon{width:34px;height:34px}
-    .dashboard-estimates .dashboard-estimate-icon svg{width:32px;height:32px}
-    .dashboard-estimates .dashboard-estimate-label{min-height:40px;font-size:12px;overflow-wrap:anywhere}
-    .dashboard-estimates .dashboard-estimate-value{font-size:clamp(23px,2.5vw,35px);overflow-wrap:anywhere;white-space:normal}
+    .dashboard-estimates{grid-template-columns:repeat(4,minmax(0,1fr));align-items:stretch}
+    .dashboard-estimates>.dashboard-estimate{height:100%;min-width:0;min-height:180px;grid-template-columns:46px minmax(0,1fr);padding:17px 15px;gap:9px}
+    .dashboard-estimates .dashboard-estimate-icon{width:42px;height:42px}
+    .dashboard-estimates .dashboard-estimate-icon svg{width:40px;height:40px}
+    .dashboard-estimates .dashboard-estimate-label{min-height:46px;font-size:15px;overflow-wrap:anywhere}
+    .dashboard-estimates .dashboard-estimate-value{font-size:clamp(29px,3vw,44px);overflow-wrap:anywhere;white-space:normal}
     .dashboard-estimate.shelters-estimate{grid-template-rows:auto auto auto 1fr}
     .shelters-estimate .dashboard-estimate-icon{color:#176b82}
     .shelters-estimate .shelter-counts{grid-column:1/-1;display:flex;justify-content:space-between;gap:4px;font-weight:750;font-size:11px;color:#304758}
@@ -327,13 +327,68 @@ html{scroll-padding-top:var(--pinned-h,124px)}
 @media(max-width:700px){.cmist-plan .cmist-endstate-trigger{min-height:150px;padding:14px 12px 74px}.cmist-plan .cmist-endstate-trigger strong{font-size:18px}.cmist-plan .cmist-endstate-popup{width:min(580px,calc(100vw - 52px))}}
 </style>
 <style>
-  .refuge-map-reference{display:grid;grid-template-columns:minmax(250px,.8fr) minmax(0,1.2fr);gap:18px;align-items:center;margin:16px 0 0;padding:16px;border:1px solid var(--line);border-radius:12px;background:#fff;box-shadow:0 5px 16px rgba(14,52,76,.12)}
-  .refuge-map-reference h3{margin:0 0 8px;color:var(--navy);font-size:18px}
-  .refuge-map-reference p:not(.eyebrow){margin:0 0 12px;color:var(--muted);font-size:13px}
-  .refuge-map-open{display:inline-flex;align-items:center;gap:6px;font-weight:750}
+  .refuge-map-reference{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:16px;align-items:center;margin:14px 0 20px;padding:14px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.96);box-shadow:0 5px 16px rgba(14,52,76,.12)}
+  .refuge-map-reference h3{margin:0 0 6px;color:var(--navy);font-size:16px}
+  .refuge-map-reference p:not(.eyebrow){margin:0 0 8px;color:var(--muted);font-size:12px}
+  .refuge-map-reference .eyebrow{margin:0 0 4px}
+  .refuge-map-open{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:750}
   .refuge-map-shot{display:block;overflow:hidden;border:1px solid var(--line);border-radius:9px;background:#102638}
-  .refuge-map-shot img{display:block;width:100%;height:auto;max-height:340px;object-fit:contain}
-  @media(max-width:700px){.refuge-map-reference{grid-template-columns:1fr}.refuge-map-shot img{max-height:260px}}
+  .refuge-map-shot img{display:block;width:100%;height:165px;object-fit:cover}
+  .cmist-plan{display:block}
+  .cmist-plan-rows{position:relative;display:grid;grid-template-columns:minmax(150px,18%) repeat(4,minmax(0,1fr));grid-template-rows:repeat(5,minmax(150px,auto));gap:8px;align-items:stretch}
+  .cmist-plan-row,.cmist-plan-steps{display:contents}
+  .cmist-plan-category{background:var(--cmist-bg);border:1px solid var(--cmist-edge);border-radius:10px}
+    .cmist-plan-row:nth-child(1) .cmist-plan-category{grid-column:1;grid-row:1}
+  .cmist-plan-row:nth-child(1) .cmist-plan-arrow:nth-child(1){grid-column:2;grid-row:1}
+  .cmist-plan-row:nth-child(1) .cmist-plan-arrow:nth-child(2){grid-column:3;grid-row:1}
+  .cmist-plan-row:nth-child(1) .cmist-plan-arrow:nth-child(3){grid-column:5;grid-row:1}
+  .cmist-plan-row:nth-child(2) .cmist-plan-category{grid-column:1;grid-row:2}
+  .cmist-plan-row:nth-child(2) .cmist-plan-arrow:nth-child(1){grid-column:2;grid-row:2}
+  .cmist-plan-row:nth-child(2) .cmist-plan-arrow:nth-child(2){grid-column:3;grid-row:2}
+  .cmist-plan-row:nth-child(2) .cmist-plan-arrow:nth-child(3){grid-column:5;grid-row:2}
+  .cmist-plan-row:nth-child(3) .cmist-plan-category{grid-column:1;grid-row:3}
+  .cmist-plan-row:nth-child(3) .cmist-plan-arrow:nth-child(1){grid-column:2;grid-row:3}
+  .cmist-plan-row:nth-child(3) .cmist-plan-arrow:nth-child(2){grid-column:3;grid-row:3}
+  .cmist-plan-row:nth-child(3) .cmist-plan-arrow:nth-child(3){grid-column:5;grid-row:3}
+  .cmist-plan-row:nth-child(4) .cmist-plan-category{grid-column:1;grid-row:4}
+  .cmist-plan-row:nth-child(4) .cmist-plan-arrow:nth-child(1){grid-column:2;grid-row:4}
+  .cmist-plan-row:nth-child(4) .cmist-plan-arrow:nth-child(2){grid-column:3;grid-row:4}
+  .cmist-plan-row:nth-child(4) .cmist-plan-arrow:nth-child(3){grid-column:5;grid-row:4}
+  .cmist-plan-row:nth-child(5) .cmist-plan-category{grid-column:1;grid-row:5}
+  .cmist-plan-row:nth-child(5) .cmist-plan-arrow:nth-child(1){grid-column:2;grid-row:5}
+  .cmist-plan-row:nth-child(5) .cmist-plan-arrow:nth-child(2){grid-column:3;grid-row:5}
+  .cmist-plan-row:nth-child(5) .cmist-plan-arrow:nth-child(3){grid-column:5;grid-row:5}
+  .cmist-plan-end{grid-column:4;grid-row:1 / span 5;align-self:stretch;position:relative;min-width:0;display:flex;align-items:center;justify-content:center;border:1px solid #72aab0;border-radius:10px 10px 0 0;background:linear-gradient(160deg,#c5e9f6,#c7edf1 25%,#d0f1ea 50%,#ddf3df 75%,#e7f5db);clip-path:polygon(0 0,100% 0,100% calc(100% - 24px),50% 100%,0 calc(100% - 24px));padding:10px 7px 32px;z-index:3}
+  .cmist-plan-end.is-open::after{content:"";position:absolute;left:0;right:0;top:100%;height:12px}
+  .cmist-endstate-trigger{padding:12px 5px}
+  .cmist-endstate-trigger strong{font-size:17px}
+  .cmist-endstate-trigger span{font-size:11px;line-height:1.35}
+  .cmist-endstate-popup{right:calc(100% + 8px);left:auto;width:min(538px,calc(100vw - 40px));padding:22px}
+  .cmist-endstate-popup p:not(.cmist-endstate-proposed){font-size:17.5px;line-height:1.55}
+  @media(max-width:900px){
+    .dashboard-estimates{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .cmist-plan-rows{grid-template-columns:1fr;grid-template-rows:auto;gap:10px}
+    .cmist-plan-row{display:grid;grid-template-columns:1fr;gap:8px;padding:8px;border:1px solid var(--cmist-edge);border-radius:12px;background:var(--cmist-bg)}
+    .cmist-plan-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+    .cmist-plan-category,.cmist-plan-arrow{grid-column:1!important;grid-row:auto!important}
+    .cmist-plan-category{border:0;background:transparent}
+    .cmist-plan-end{grid-column:1;grid-row:auto;min-height:110px;clip-path:polygon(0 0,calc(100% - 22px) 0,100% 50%,calc(100% - 22px) 100%,0 100%);padding:10px}
+    .cmist-endstate-popup{right:auto;left:calc(100% + 8px)}
+  }
+  @media(max-width:700px){
+    .refuge-map-reference{grid-template-columns:1fr}
+    .refuge-map-shot img{height:auto;max-height:190px;object-fit:contain}
+    .cmist-plan-steps{grid-template-columns:1fr}
+    .cmist-plan-end{min-height:90px}
+    .cmist-endstate-popup{right:0;left:auto;width:min(538px,calc(100vw - 52px));max-height:55vh}
+  }
+  @media(max-width:620px){
+    .dashboard-estimate{min-height:160px;padding:13px;grid-template-columns:42px minmax(0,1fr);gap:7px}
+    .dashboard-estimate-icon,.dashboard-estimate-icon svg{width:38px;height:38px}
+    .dashboard-estimate-label{min-height:44px;font-size:13px}
+    .dashboard-estimate-value{font-size:clamp(27px,6vw,34px)}
+  }
+  @media(max-width:390px){.dashboard-estimates{grid-template-columns:1fr}.dashboard-estimate{min-height:0}}
 </style>
 </head>
 <body>
@@ -361,26 +416,15 @@ html{scroll-padding-top:var(--pinned-h,124px)}
   </section>
   <section class="dashboard-running" aria-labelledby="running-estimates-title">
     <div class="dashboard-running-head"><h2 id="running-estimates-title">▮ Running Estimates</h2></div>
-    <p class="dashboard-demo-note"><strong>Public Oʻahu resource context + synthetic exercise inputs.</strong> Honolulu EMS unit counts and potential hurricane refuge areas are linked to public sources. Hurricane-call, CBO/volunteer, and assistance-intake figures are synthetic scenario assumptions, not live reports or operational status.</p>
+    <p class="dashboard-demo-note"><strong>Public Oʻahu resource context + synthetic exercise inputs.</strong> Honolulu EMS unit counts are linked to public sources. Hurricane-call, CBO/volunteer, and assistance-intake figures are synthetic scenario assumptions, not live reports or operational status.</p>
     <div class="dashboard-estimates">
       <article class="dashboard-estimate"><span class="dashboard-estimate-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h3l2 5-2 1.5a15 15 0 0 0 5.5 5.5L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/><path d="M14 5a5 5 0 0 1 5 5M14 2a8 8 0 0 1 8 8"/></svg></span><div><div class="dashboard-estimate-label">Hurricane 911 Calls</div><div class="dashboard-estimate-value">128</div></div><div class="dashboard-estimate-caption">Synthetic Category 5 tabletop assumption · not a historical hurricane average</div></article>
       <article class="dashboard-estimate"><span class="dashboard-estimate-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7h12v11H3zM15 11h4l3 3v4h-7z"/><path d="M7 7V4h7v3M18 11v3h4M8 18a2 2 0 1 0 4 0M17 18a2 2 0 1 0 4 0M7 11h4M9 9v4"/></svg></span><div><div class="dashboard-estimate-label">Honolulu EMS Ambulance Units</div><div class="dashboard-estimate-value">23</div></div><div class="dashboard-estimate-caption">Oʻahu · 4 districts · availability unknown · <a href="https://emergencyservices.honolulu.gov/emergency-medical-services/ems-unit-locations/" target="_blank" rel="noopener noreferrer">source</a></div></article>
       <article class="dashboard-estimate"><span class="dashboard-estimate-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><div><div class="dashboard-estimate-label">Community-Based Organizations</div><div class="dashboard-estimate-value">15 <span class="secondary">/ 230</span></div></div><div class="dashboard-estimate-caption">Synthetic partner / volunteer scenario values · current roster unverified</div></article>
       <article class="dashboard-estimate"><span class="dashboard-estimate-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 4H5a2 2 0 0 0-2 2v15h18V6a2 2 0 0 0-2-2h-3M8 2h8v4H8zM7 12l1.5 1.5L11 11M13 13h4M7 18l1.5 1.5L11 17M13 19h4"/></svg></span><div><div class="dashboard-estimate-label">Community Assistance Intake</div><div class="dashboard-estimate-value">45 <span class="secondary">/ 187</span></div></div><div class="dashboard-estimate-caption">Synthetic reports / people represented · no real submissions</div></article>
-      <article class="dashboard-estimate shelters-estimate" id="shelters-estimate" aria-label="38 potential Oʻahu hurricane refuge areas; current openings and capacity unknown"><span class="dashboard-estimate-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 20V4M3 16h18v4M6 13V8h7v5M13 13V9h6a2 2 0 0 1 2 2v2"/></svg></span><div><div class="dashboard-estimate-label">Oʻahu Refuge Areas</div><div class="dashboard-estimate-value">38</div></div><div class="shelter-counts"><span>Open now: Unknown</span><span>Capacity: Unconfirmed</span></div><div class="shelter-meta"><span class="shelter-state">Potential hurricane refuge areas</span><br>Honolulu DEM public inventory · checked Nov 21, 2026<br><a href="https://www.arcgis.com/apps/webappviewer/index.html?id=14fad086020b4bc8acfcf2e3f79d4329" target="_blank" rel="noopener noreferrer">Open interactive ArcGIS map</a> · <a href="https://www.honolulu.gov/hurricaneevac" target="_blank" rel="noopener noreferrer">Honolulu DEM refuge information</a></div></article>
-    </div>
+      </div>
   </section>
-  <section class="refuge-map-reference" aria-labelledby="refuge-map-reference-title">
-    <div class="refuge-map-reference-copy">
-      <p class="eyebrow">Public map reference · Oʻahu</p>
-      <h3 id="refuge-map-reference-title">Potential Hurricane Refuge Areas</h3>
-      <p>Honolulu DEM’s ArcGIS viewer maps 38 potential refuge locations across Oʻahu. Use it as a geographic planning reference; it does not confirm current openings, capacity, accessibility, or operational availability.</p>
-      <a class="refuge-map-open" href="https://www.arcgis.com/apps/webappviewer/index.html?id=14fad086020b4bc8acfcf2e3f79d4329" target="_blank" rel="noopener noreferrer">Open interactive ArcGIS map <span aria-hidden="true">↗</span></a>
-    </div>
-    <a class="refuge-map-shot" href="https://www.arcgis.com/apps/webappviewer/index.html?id=14fad086020b4bc8acfcf2e3f79d4329" target="_blank" rel="noopener noreferrer" aria-label="Open the interactive Potential Hurricane Refuge Area map in ArcGIS">
-      <img src="assets/potential-hurricane-refuge-area-oahu.svg" alt="Screenshot of the Potential Hurricane Refuge Area ArcGIS map showing listed sites across Oʻahu on satellite imagery" loading="lazy">
-    </a>
-  </section>
+  
   </div>
   <div class="dashboard-overview dashboard-overview-rest">
   <div class="dashboard-reference"><p class="dashboard-reference-note">Reference values transcribed from the supplied screenshot</p>
@@ -414,7 +458,7 @@ html{scroll-padding-top:var(--pinned-h,124px)}
 <div class="cmist-plan-row cmist-tone-3"><div class="cmist-plan-category"><span class="cmist-plan-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2"/><path d="M12 8v6m-5-3 5 2 5-2M9 21l3-7 3 7"/></svg></span><strong>I — Independence</strong></div><div class="cmist-plan-steps"><section class="cmist-plan-arrow" aria-label="Priorities for Independence"><h3>Priorities</h3><ul><li>Ensure people with access and functional needs (AFN) have resources to maintain independence.</li></ul></section><section class="cmist-plan-arrow" aria-label="Objectives for Independence"><h3>Objectives</h3><ul><li>Minimize unnecessary relocation of individuals with AFN.</li></ul></section><section class="cmist-plan-arrow" aria-label="Resources for Independence"><h3>Resources</h3><ul><li>Mobility devices and assistive medical equipment.</li><li>Service animals and related accommodations.</li><li>Oʻahu SPCA (candidate animal-welfare resource; no confirmed partnership or commitment).</li><li>Emergency and long-term shelters.</li></ul></section></div></div>
 <div class="cmist-plan-row cmist-tone-4"><div class="cmist-plan-category"><span class="cmist-plan-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 8 4v6c0 5-3.3 8-8 10-4.7-2-8-5-8-10V6l8-4Z"/><path d="m8.5 12 2.3 2.3 4.8-5"/></svg></span><strong>S — Support &amp; Safety</strong></div><div class="cmist-plan-steps"><section class="cmist-plan-arrow" aria-label="Priorities for Support &amp; Safety"><h3>Priorities</h3><ul><li>Keep individuals with AFN safe while respecting consent, dignity, and autonomy.</li></ul></section><section class="cmist-plan-arrow" aria-label="Objectives for Support &amp; Safety"><h3>Objectives</h3><ul><li>Provide person-centered assistance based on individual preferences.</li><li>Prepare staff for trauma, dementia, memory impairment, and behavioral health needs.</li><li>Robust social and medical staffing.</li><li>Ensure ADA-accessible facilities.</li><li>Provide language interpretation and accessible communication.</li></ul></section><section class="cmist-plan-arrow" aria-label="Resources for Support &amp; Safety"><h3>Resources</h3><p class="cmist-awaiting">Resources to be identified.</p></section></div></div>
 <div class="cmist-plan-row cmist-tone-5"><div class="cmist-plan-category"><span class="cmist-plan-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M5 17H3V9h3l3-4h5v12h-5M14 11h4l3 4v2h-2"/></svg></span><strong>T — Transportation</strong></div><div class="cmist-plan-steps"><section class="cmist-plan-arrow" aria-label="Priorities for Transportation"><h3>Priorities</h3><ul><li>Prioritize at-risk areas with road-access or communications disruptions.</li><li>Identify communities with limited transportation access.</li></ul></section><section class="cmist-plan-arrow" aria-label="Objectives for Transportation"><h3>Objectives</h3><ul><li>Coordinate transportation resource partners.</li><li>Assess roads and alternate access routes.</li><li>Plan rotary-wing rescue or evacuation when ground access is unavailable.</li></ul></section><section class="cmist-plan-arrow" aria-label="Resources for Transportation"><h3>Resources</h3><ul><li>Transportation agencies and response partners.</li><li>Rotary-wing aircraft and qualified rescue teams.</li><li>Accessible ground transportation.</li><li>TheBus (Da Bus) — public transit coordination, subject to availability and operating conditions.</li><li>Title 10 federal military support, subject to authorization and availability.</li></ul></section></div></div>
-</div><div class="cmist-plan-end" id="cmist-endstate"><button type="button" class="cmist-endstate-trigger" id="cmist-endstate-trigger" aria-expanded="false" aria-controls="cmist-endstate-popup"><strong>End State</strong><span>Proposed. Hover or click to read the full planning statement</span></button><div class="cmist-endstate-popup" id="cmist-endstate-popup" role="region" aria-labelledby="cmist-endstate-popup-title" hidden><div class="cmist-endstate-popup-header"><strong id="cmist-endstate-popup-title">End State (proposed)</strong><button type="button" class="cmist-endstate-close" id="cmist-endstate-close" aria-label="Close End State">Close</button></div><p class="cmist-endstate-proposed">Proposed planning end state. Not a confirmed or achieved operational status.</p><p>Primary Emergency Operations Centers are established, with response operations centers on standby. Communication channels are operational, and partner telecommunications vendors are deployed to the most severely affected areas lacking communications. Time-sensitive health risks are addressed. People with access and functional needs (AFN) are supported with compassion and dignity and, when evacuation is necessary, transported to appropriate evacuation shelters or medical facilities.</p></div></div></div><p class="small muted cmist-plan-source">Circular category illustrations are original, simplified symbols inspired by the <a href="https://content.govdelivery.com/accounts/CODHSEM/bulletins/37875d5" target="_blank" rel="noopener noreferrer">Colorado DHSEM CMIST resource newsletter</a>.</p></article>
+<div class="cmist-plan-end" id="cmist-endstate"><button type="button" class="cmist-endstate-trigger" id="cmist-endstate-trigger" aria-expanded="false" aria-controls="cmist-endstate-popup"><strong>End State</strong><span>Proposed. Hover or click to read the full planning statement</span></button><div class="cmist-endstate-popup" id="cmist-endstate-popup" role="region" aria-labelledby="cmist-endstate-popup-title" hidden><div class="cmist-endstate-popup-header"><strong id="cmist-endstate-popup-title">End State (proposed)</strong><button type="button" class="cmist-endstate-close" id="cmist-endstate-close" aria-label="Close End State">Close</button></div><p class="cmist-endstate-proposed">Proposed planning end state. Not a confirmed or achieved operational status.</p><p>Primary Emergency Operations Centers are established, with response operations centers on standby. Communication channels are operational, and partner telecommunications vendors are deployed to the most severely affected areas lacking communications. Time-sensitive health risks are addressed. People with access and functional needs (AFN) are supported with compassion and dignity and, when evacuation is necessary, transported to appropriate evacuation shelters or medical facilities.</p></div></div></div></div><p class="small muted cmist-plan-source">Circular category illustrations are original, simplified symbols inspired by the <a href="https://content.govdelivery.com/accounts/CODHSEM/bulletins/37875d5" target="_blank" rel="noopener noreferrer">Colorado DHSEM CMIST resource newsletter</a>.</p></article>
 
 <section class="card assistance-portal" id="emergency-assistance-portal" aria-labelledby="assistance-title">
   <div class="eyebrow">Simulated public assistance intake</div>
@@ -657,6 +701,18 @@ html{scroll-padding-top:var(--pinned-h,124px)}
     <section class="page" role="tabpanel" id="panel-resources" aria-labelledby="tab-resources" tabindex="0">
       <div class="section-head"><div><div class="eyebrow">Local and commercial response resources</div><h2>Emergency and Medical Resources</h2><p>Planning categories for ESF-6 coordination. Three evidence levels are kept separate: <strong>mapped facilities</strong> (a location appears in a source layer), <strong>estimated resources</strong> (a modeled or reported quantity with a stated source), and <strong>verified operational availability</strong> (confirmed by the owning agency for a stated time).</p></div></div>
       <div class="callout warn"><strong>Reported planning figures are not live capacity.</strong> Previous resource-count references are included as provisional, dated claims, not verified present-day deployed units. Community assignment, staffing, asset identity and availability remain unknown.</div>
+      <section class="refuge-map-reference" aria-labelledby="refuge-map-reference-title">
+        <div class="refuge-map-reference-copy">
+          <p class="eyebrow">Oʻahu · public planning reference</p>
+          <h3 id="refuge-map-reference-title">Potential Hurricane Refuge Areas — 38 locations</h3>
+          <p>Potential locations only; current opening, capacity, accessibility, and availability are unconfirmed.</p>
+          <a class="refuge-map-open" href="https://www.arcgis.com/apps/webappviewer/index.html?id=14fad086020b4bc8acfcf2e3f79d4329" target="_blank" rel="noopener noreferrer">Open interactive ArcGIS map <span aria-hidden="true">↗</span></a>
+          <span class="small muted">Source: Honolulu DEM</span>
+        </div>
+        <a class="refuge-map-shot" href="https://www.arcgis.com/apps/webappviewer/index.html?id=14fad086020b4bc8acfcf2e3f79d4329" target="_blank" rel="noopener noreferrer" aria-label="Open the interactive Potential Hurricane Refuge Area map in ArcGIS">
+          <img src="assets/potential-hurricane-refuge-area-oahu.svg" alt="Map-only satellite view of Oʻahu with potential hurricane refuge locations" loading="lazy">
+        </a>
+      </section>
       <div class="table-wrap"><table><thead><tr><th>Category</th><th>Mapped facilities</th><th>Estimated resources</th><th>Verified operational availability</th><th>GIS / evidence crosswalk</th></tr></thead><tbody><tr><td><strong>Ambulances</strong></td><td>24 published EMS unit-location rows (not geocoded in this prototype).</td><td><strong>23 Oʻahu EMS ambulance units reported by Honolulu EMS</strong>, across 4 districts; 24 location rows require reconciliation.</td><td><span class="label unknown">Not verified</span></td><td><a href="https://emergencyservices.honolulu.gov/emergency-medical-services/ems-unit-locations/" target="_blank" rel="noopener noreferrer">Honolulu Emergency Services Department — EMS Unit Locations</a>. Agency describes all 23 ambulance units as advanced life support (ALS); listing entries do not establish independently available ambulances, staffing or current dispatch status.</td></tr><tr><td><strong>Fire engines</strong></td><td>No station or apparatus data loaded.</td><td>None entered</td><td><span class="label unknown">Not verified</span></td><td>Needs county fire department confirmation; wildfire scenarios depend on it.</td></tr><tr><td><strong>Police stations</strong></td><td>No station layer loaded.</td><td>None entered</td><td><span class="label unknown">Not verified</span></td><td>Locations need an authoritative public source; staffing and posture are not shown.</td></tr><tr><td><strong>Trauma centers</strong></td><td>Kapolei OHCA extract is a licensed-facility QA set and does not designate trauma centers.</td><td>None entered</td><td><span class="label unknown">Not verified</span></td><td>Trauma designation must come from the designating authority; do not infer it from the OHCA layer.</td></tr><tr><td><strong>Medical aircraft</strong></td><td>None mapped.</td><td>None entered</td><td><span class="label unknown">Not verified</span></td><td>Air ambulance bases and fleets need operator confirmation; availability varies with weather and tasking.</td></tr></tbody></table></div>
       <div class="callout" style="margin-top:16px"><strong>Crosswalk.</strong> Mapped facilities would be added as ArcGIS reference layers with owner, vintage, and licensing recorded. The synthetic coordination queue can reference these categories, but its records are not inventory or confirmed commitments. Hazard scope: hurricane, wildfire, tsunami, flood; the Kapolei/Leeward Oʻahu hurricane demonstrator is unchanged.</div>
 
