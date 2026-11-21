@@ -395,7 +395,17 @@ html{scroll-padding-top:var(--pinned-h,124px)}
   .hero{padding:22px 0;background:transparent}
   .hero>.wrap{max-width:1220px;margin:0 auto;padding:26px 32px;border:1px solid rgba(214,224,229,.88);border-radius:16px;background:rgba(255,255,255,.74);box-shadow:0 14px 34px rgba(16,38,56,.2);backdrop-filter:blur(2px)}
   .hero .crumb{display:inline-flex;align-items:center;margin:0 0 8px;padding:5px 10px;border:1px solid #c8e3df;border-radius:999px;background:rgba(229,245,243,.92);letter-spacing:.08em}
-  .hero h1{max-width:920px;font-size:clamp(34px,4vw,50px)}
+  .hero h1{max-width:920px;font-size:clamp(34px,4vw,50px)}.hero-panel{padding:clamp(20px,3vw,34px);border:1px solid rgba(255,255,255,.82);border-radius:18px;background:rgba(249,252,253,.84);box-shadow:0 18px 46px rgba(16,38,56,.16)}
+.hero-intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(230px,.34fr);gap:clamp(18px,3vw,34px);align-items:center}
+.hero h1{max-width:800px}
+.hero-lede{max-width:820px!important}
+.hero-team-callout{padding:18px 20px;border:1px solid rgba(164,222,216,.4);border-radius:14px;background:linear-gradient(145deg,#123249,#1e4c5e);color:#edf7f8;box-shadow:0 10px 24px rgba(16,38,56,.2)}
+.hero-team-callout .team-eyebrow{display:block;color:#a6ded8;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+.hero-team-callout strong{display:block;margin-top:7px;color:#fff;font-size:clamp(40px,5vw,56px);line-height:1}
+.hero-team-callout .team-years{display:block;margin-top:5px;color:#e8f5f6;font-weight:750}
+.hero-team-callout p{margin:11px 0 0;color:#d1e4e8;font-size:13px;line-height:1.45}
+.hero-team-callout small{display:block;margin-top:9px;color:#a6ded8;font-size:11px}
+@media(max-width:760px){.hero-panel{padding:20px}.hero-intro{grid-template-columns:1fr}.hero-team-callout{display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:center}.hero-team-callout strong{grid-row:span 2;margin:0}.hero-team-callout .team-years{margin-top:0}.hero-team-callout p,.hero-team-callout small{grid-column:1/-1}}
   .hero .scope-row{margin-top:14px}
   .hero .notice{margin-top:16px}
   .nav{padding:10px 0;background:transparent;border-bottom:0}
@@ -534,9 +544,21 @@ html{scroll-padding-top:var(--pinned-h,124px)}
   <p class="dashboard-background-note">Background image supplied by the team · illustrative bathymetry only, not operational GIS data.</p>
 </div>
 
-<section class="hero"><div class="wrap">
-    <div class="crumb">Mass care · Emergency assistance · Housing · Human services</div>
-    <h1>Evidence into a coordinated plan.</h1>    <p>Cyber Coalition’s proposed Common Operational Framework connects public aggregate evidence and synthetic partner inputs to hazard-specific coverage, CMIST planning considerations, source review, resource questions, and human-reviewed coordination. It frames a statewide four-hazard design and a bounded fictional Kapolei hurricane pilot. This static workbench is not operational, and the pilot does not prove statewide hazard coverage.</p>
+<section class="hero"><div class="wrap hero-panel">
+    <div class="hero-intro">
+      <div>
+        <div class="crumb">Mass care · Emergency assistance · Housing · Human services</div>
+        <h1>From public evidence to human-reviewed mass care.</h1>
+        <p class="hero-lede">Cyber Coalition’s proposed Common Operational Framework connects public aggregate evidence and clearly labeled synthetic partner inputs to hazard-specific coverage, CMIST planning, candidate resources, and human-reviewed coordination. It frames a statewide four-hazard design through a fictional Kapolei / Leeward Oʻahu stress test. This static workbench is not operational and does not establish statewide AFN coverage.</p>
+      </div>
+      <aside class="hero-team-callout" aria-label="Cyber Coalition team experience">
+        <span class="team-eyebrow">Cyber Coalition</span>
+        <strong>100+</strong>
+        <span class="team-years">years of combined federal service</span>
+        <p>Experience across targeting, direct and indirect operations, logistics, tactical and digital communications, and command and control.</p>
+        <small>Department of War retirees</small>
+      </aside>
+    </div>
     <div class="scope-row"><span class="tag">Statewide framework: all Hawaiʻi counties/islands</span><span class="tag">First demonstrator: Kapolei / Leeward Oʻahu</span><span class="tag">Four-hazard baseline: hurricane · wildfire · tsunami · flood</span></div>
     <div class="notice" role="note"><div class="notice-icon" aria-hidden="true">⚠</div><div><strong>Fictional Category 5 stress scenario · not a forecast, alert, or operational recommendation.</strong><p>The Saffir-Simpson category rates maximum sustained wind only. It does not describe storm surge, rainfall flooding, tornadoes, or local impacts. The scenario keeps those hazards and assumptions separate for review.</p></div></div>
   </div></section>
