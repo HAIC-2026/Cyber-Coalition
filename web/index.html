@@ -191,7 +191,7 @@
 
 .brand-islands{width:100%;height:100%;display:block;color:#fff}.dashboard-brand-mark{background:transparent!important;box-shadow:none!important;border-radius:0!important}.dashboard-portal{margin:18px 0;background:#c90b0b;color:white;border-radius:14px;overflow:hidden}.dashboard-portal>summary{display:flex;align-items:center;gap:18px;padding:18px 24px;cursor:pointer;list-style:none}.dashboard-portal>summary::-webkit-details-marker{display:none}.dashboard-portal>summary strong{display:block;font-size:clamp(20px,3vw,34px)}.dashboard-portal>summary small{display:block;font-size:16px}.dashboard-portal .assistance-portal{margin:0;border-radius:0;color:var(--ink);background:white}.portal-icon{font-size:44px;font-weight:800}
     /* Five consistent Running Estimates cards, aligned at desktop width. */
-    .dashboard-estimates{grid-template-columns:repeat(4,minmax(0,1fr));align-items:stretch}
+    .dashboard-estimates{grid-template-columns:repeat(5,minmax(0,1fr));align-items:stretch}
     .dashboard-estimates>.dashboard-estimate{height:100%;min-width:0;min-height:180px;grid-template-columns:46px minmax(0,1fr);padding:17px 15px;gap:9px}
     .dashboard-estimates .dashboard-estimate-icon{width:42px;height:42px}
     .dashboard-estimates .dashboard-estimate-icon svg{width:40px;height:40px}
@@ -341,24 +341,24 @@ html{scroll-padding-top:var(--pinned-h,124px)}
     .cmist-plan-row:nth-child(1) .cmist-plan-category{grid-column:1;grid-row:1}
   .cmist-plan-row:nth-child(1) .cmist-plan-arrow:nth-child(1){grid-column:2;grid-row:1}
   .cmist-plan-row:nth-child(1) .cmist-plan-arrow:nth-child(2){grid-column:3;grid-row:1}
-  .cmist-plan-row:nth-child(1) .cmist-plan-arrow:nth-child(3){grid-column:5;grid-row:1}
+  .cmist-plan-row:nth-child(1) .cmist-plan-arrow:nth-child(3){grid-column:4;grid-row:1}
   .cmist-plan-row:nth-child(2) .cmist-plan-category{grid-column:1;grid-row:2}
   .cmist-plan-row:nth-child(2) .cmist-plan-arrow:nth-child(1){grid-column:2;grid-row:2}
   .cmist-plan-row:nth-child(2) .cmist-plan-arrow:nth-child(2){grid-column:3;grid-row:2}
-  .cmist-plan-row:nth-child(2) .cmist-plan-arrow:nth-child(3){grid-column:5;grid-row:2}
+  .cmist-plan-row:nth-child(2) .cmist-plan-arrow:nth-child(3){grid-column:4;grid-row:2}
   .cmist-plan-row:nth-child(3) .cmist-plan-category{grid-column:1;grid-row:3}
   .cmist-plan-row:nth-child(3) .cmist-plan-arrow:nth-child(1){grid-column:2;grid-row:3}
   .cmist-plan-row:nth-child(3) .cmist-plan-arrow:nth-child(2){grid-column:3;grid-row:3}
-  .cmist-plan-row:nth-child(3) .cmist-plan-arrow:nth-child(3){grid-column:5;grid-row:3}
+  .cmist-plan-row:nth-child(3) .cmist-plan-arrow:nth-child(3){grid-column:4;grid-row:3}
   .cmist-plan-row:nth-child(4) .cmist-plan-category{grid-column:1;grid-row:4}
   .cmist-plan-row:nth-child(4) .cmist-plan-arrow:nth-child(1){grid-column:2;grid-row:4}
   .cmist-plan-row:nth-child(4) .cmist-plan-arrow:nth-child(2){grid-column:3;grid-row:4}
-  .cmist-plan-row:nth-child(4) .cmist-plan-arrow:nth-child(3){grid-column:5;grid-row:4}
+  .cmist-plan-row:nth-child(4) .cmist-plan-arrow:nth-child(3){grid-column:4;grid-row:4}
   .cmist-plan-row:nth-child(5) .cmist-plan-category{grid-column:1;grid-row:5}
   .cmist-plan-row:nth-child(5) .cmist-plan-arrow:nth-child(1){grid-column:2;grid-row:5}
   .cmist-plan-row:nth-child(5) .cmist-plan-arrow:nth-child(2){grid-column:3;grid-row:5}
-  .cmist-plan-row:nth-child(5) .cmist-plan-arrow:nth-child(3){grid-column:5;grid-row:5}
-  .cmist-plan-end{grid-column:4;grid-row:1 / span 5;align-self:stretch;position:relative;min-width:0;display:flex;align-items:center;justify-content:center;border:1px solid #72aab0;border-radius:10px 10px 0 0;background:linear-gradient(160deg,#c5e9f6,#c7edf1 25%,#d0f1ea 50%,#ddf3df 75%,#e7f5db);clip-path:polygon(0 0,100% 0,100% calc(100% - 24px),50% 100%,0 calc(100% - 24px));padding:10px 7px 32px;z-index:3}
+  .cmist-plan-row:nth-child(5) .cmist-plan-arrow:nth-child(3){grid-column:4;grid-row:5}
+  .cmist-plan-end{grid-column:5;grid-row:3;align-self:center;position:relative;min-width:0;height:100px;display:flex;align-items:center;justify-content:center;border:1px solid #72aab0;border-radius:10px;background:linear-gradient(160deg,#d0f1ea,#ddf3df);clip-path:polygon(0 0,calc(100% - 20px) 0,100% 50%,calc(100% - 20px) 100%,0 100%);padding:8px 24px 8px 8px;z-index:3}
   .cmist-plan-end.is-open::after{content:"";position:absolute;left:0;right:0;top:100%;height:12px}
   .cmist-endstate-trigger{padding:12px 5px}
   .cmist-endstate-trigger strong{font-size:17px}
@@ -389,6 +389,61 @@ html{scroll-padding-top:var(--pinned-h,124px)}
     .dashboard-estimate-value{font-size:clamp(27px,6vw,34px)}
   }
   @media(max-width:390px){.dashboard-estimates{grid-template-columns:1fr}.dashboard-estimate{min-height:0}}
+</style>
+<style>
+  /* Keep hero and section navigation as centered cards, with the bathymetry image visible around them. */
+  .hero{padding:22px 0;background:transparent}
+  .hero>.wrap{max-width:1220px;margin:0 auto;padding:26px 32px;border:1px solid rgba(214,224,229,.88);border-radius:16px;background:rgba(255,255,255,.74);box-shadow:0 14px 34px rgba(16,38,56,.2);backdrop-filter:blur(2px)}
+  .hero .crumb{display:inline-flex;align-items:center;margin:0 0 8px;padding:5px 10px;border:1px solid #c8e3df;border-radius:999px;background:rgba(229,245,243,.92);letter-spacing:.08em}
+  .hero h1{max-width:920px;font-size:clamp(34px,4vw,50px)}
+  .hero .scope-row{margin-top:14px}
+  .hero .notice{margin-top:16px}
+  .nav{padding:10px 0;background:transparent;border-bottom:0}
+  .nav .wrap{padding:12px 14px;border:1px solid rgba(214,224,229,.92);border-radius:13px;background:rgba(255,255,255,.7);border-color:rgba(171,195,207,.92);box-shadow:0 10px 24px rgba(16,38,56,.2);backdrop-filter:blur(2px)}
+  .nav button{background:rgba(255,255,255,.68);backdrop-filter:blur(1px);border-color:rgba(171,195,207,.9);box-shadow:0 2px 6px rgba(16,38,56,.07)}
+  .nav button:hover{background:rgba(240,247,247,.78);border-color:var(--teal)}
+  .nav button[aria-selected="true"]{background:rgba(234,247,245,.84);border-color:var(--teal)}
+  @media(max-width:600px){
+    .hero{padding:14px 0}
+    .hero>.wrap{margin:0 12px;padding:18px;background:rgba(255,255,255,.78)}
+    .nav{padding:8px 0}
+    .nav .wrap{margin:0 12px;padding:10px;grid-template-columns:repeat(2,minmax(0,1fr))}
+  }
+</style>
+<style>
+  /* Center the fixed dashboard below the unchanged masthead; enlarge its five cards by about 25% and keep the background visible. */
+  .dashboard-pinned{width:calc(100% - 32px);max-width:1420px;margin:0 auto;padding:8px 16px 10px;background:rgba(238,244,248,.62);border:1px solid rgba(171,195,207,.8);border-radius:14px;box-shadow:0 8px 20px rgba(10,40,64,.17);backdrop-filter:blur(2px)}
+  .dashboard-pinned .dashboard-timebar{width:100%;max-width:none;margin:0 auto 7px;background:linear-gradient(120deg,rgba(18,62,104,.84),rgba(8,39,73,.84));border-color:rgba(40,102,148,.82);box-shadow:none}
+  .dashboard-pinned .dashboard-timebox{min-height:0;padding:5px 16px;gap:12px}
+  .dashboard-pinned .dashboard-time-label{font-size:12.5px}
+  .dashboard-pinned .dashboard-time-value{font-size:clamp(21px,2.5vw,27.5px)}
+  .dashboard-running{max-width:none;margin:0 auto;padding:9px 16px 3px}
+  .dashboard-running-head{margin-bottom:9px}
+  .dashboard-running-head h2{font-size:16px}
+  .dashboard-demo-note{background:rgba(255,246,223,.74);backdrop-filter:blur(1px);font-size:12.5px;padding:3px 10px}
+  .dashboard-estimate{background:linear-gradient(150deg,rgba(255,255,255,.76),rgba(247,250,252,.64));border-color:rgba(185,201,210,.78);backdrop-filter:blur(2px)}
+  .dashboard-pinned .dashboard-estimates{gap:8px}
+  .dashboard-pinned .dashboard-estimates>.dashboard-estimate{padding:6px 10px;gap:0 8px}
+  .dashboard-pinned .dashboard-estimate-icon,.dashboard-pinned .dashboard-estimate-icon svg{width:28px;height:28px}
+  .dashboard-pinned .dashboard-estimates .dashboard-estimate-label{font-size:13px;line-height:1.25}
+  .dashboard-pinned .dashboard-estimates .dashboard-estimate-value{font-size:clamp(20px,2.25vw,25px);line-height:1.15}
+  @media(max-width:900px){
+    .dashboard-pinned{width:calc(100% - 24px);padding:7px 12px 9px}
+    .dashboard-running{padding:8px 12px 3px}
+    .dashboard-pinned .dashboard-estimate-icon,.dashboard-pinned .dashboard-estimate-icon svg{width:25px;height:25px}
+    .dashboard-pinned .dashboard-estimates .dashboard-estimate-label{font-size:12px}
+  }
+  @media(max-width:620px){
+    .dashboard-pinned{width:calc(100% - 16px);padding:6px 9px 8px}
+    .dashboard-running{padding:7px 9px 3px}
+    .dashboard-pinned .dashboard-timebox{padding:5px 9px;gap:7px}
+    .dashboard-pinned .dashboard-time-label{font-size:10.5px}
+    .dashboard-pinned .dashboard-time-value{font-size:18px}
+    .dashboard-pinned .dashboard-estimates>.dashboard-estimate{flex-basis:180px;padding:5px 9px}
+    .dashboard-pinned .dashboard-estimate-icon,.dashboard-pinned .dashboard-estimate-icon svg{width:24px;height:24px}
+    .dashboard-pinned .dashboard-estimates .dashboard-estimate-label{font-size:11.5px}
+    .dashboard-pinned .dashboard-estimates .dashboard-estimate-value{font-size:19px}
+  }
 </style>
 </head>
 <body>
@@ -422,6 +477,7 @@ html{scroll-padding-top:var(--pinned-h,124px)}
       <article class="dashboard-estimate"><span class="dashboard-estimate-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7h12v11H3zM15 11h4l3 3v4h-7z"/><path d="M7 7V4h7v3M18 11v3h4M8 18a2 2 0 1 0 4 0M17 18a2 2 0 1 0 4 0M7 11h4M9 9v4"/></svg></span><div><div class="dashboard-estimate-label">Honolulu EMS Ambulance Units</div><div class="dashboard-estimate-value">23</div></div><div class="dashboard-estimate-caption">Oʻahu · 4 districts · availability unknown · <a href="https://emergencyservices.honolulu.gov/emergency-medical-services/ems-unit-locations/" target="_blank" rel="noopener noreferrer">source</a></div></article>
       <article class="dashboard-estimate"><span class="dashboard-estimate-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><div><div class="dashboard-estimate-label">Community-Based Organizations</div><div class="dashboard-estimate-value">15 <span class="secondary">/ 230</span></div></div><div class="dashboard-estimate-caption">Synthetic partner / volunteer scenario values · current roster unverified</div></article>
       <article class="dashboard-estimate"><span class="dashboard-estimate-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 4H5a2 2 0 0 0-2 2v15h18V6a2 2 0 0 0-2-2h-3M8 2h8v4H8zM7 12l1.5 1.5L11 11M13 13h4M7 18l1.5 1.5L11 17M13 19h4"/></svg></span><div><div class="dashboard-estimate-label">Community Assistance Intake</div><div class="dashboard-estimate-value">45 <span class="secondary">/ 187</span></div></div><div class="dashboard-estimate-caption">Synthetic reports / people represented · no real submissions</div></article>
+      <article class="dashboard-estimate shelters-estimate" id="shelters-estimate" aria-label="38 potential Oʻahu hurricane refuge areas; current openings and capacity unknown"><span class="dashboard-estimate-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 20V4M3 16h18v4M6 13V8h7v5M13 13V9h6a2 2 0 0 1 2 2v2"/></svg></span><div><div class="dashboard-estimate-label">Oʻahu Refuge Areas</div><div class="dashboard-estimate-value">38</div></div><div class="shelter-counts"><span>Open now: Unknown</span><span>Capacity: Unconfirmed</span></div><div class="shelter-meta"><span class="shelter-state">Potential hurricane refuge areas</span><br>Honolulu DEM public inventory · checked Nov 21, 2026<br><a href="https://www.arcgis.com/apps/webappviewer/index.html?id=14fad086020b4bc8acfcf2e3f79d4329" target="_blank" rel="noopener noreferrer">Open interactive ArcGIS map</a> · <a href="https://www.honolulu.gov/hurricaneevac" target="_blank" rel="noopener noreferrer">Honolulu DEM refuge information</a></div></article>
       </div>
   </section>
   
@@ -444,7 +500,7 @@ html{scroll-padding-top:var(--pinned-h,124px)}
 <section class="hero"><div class="wrap">
     <div class="crumb">Mass care · Emergency assistance · Housing · Human services</div>
     <h1>Evidence into a coordinated plan.</h1>    <p>Cyber Coalition’s proposed Common Operational Framework connects public aggregate evidence and synthetic partner inputs to hazard-specific coverage, CMIST planning considerations, source review, resource questions, and human-reviewed coordination. It frames a statewide four-hazard design and a bounded fictional Kapolei hurricane pilot. This static workbench is not operational, and the pilot does not prove statewide hazard coverage.</p>
-    <div class="scope-row"><span class="tag">Statewide framework: all Hawaiʻi counties/islands</span><span class="tag">First demonstrator: Kapolei / Leeward Oʻahu</span><span class="tag">Four-hazard baseline: earthquake scope question recorded</span></div>
+    <div class="scope-row"><span class="tag">Statewide framework: all Hawaiʻi counties/islands</span><span class="tag">First demonstrator: Kapolei / Leeward Oʻahu</span><span class="tag">Four-hazard baseline: hurricane · wildfire · tsunami · flood</span></div>
     <div class="notice" role="note"><div class="notice-icon" aria-hidden="true">⚠</div><div><strong>Fictional Category 5 stress scenario · not a forecast, alert, or operational recommendation.</strong><p>The Saffir-Simpson category rates maximum sustained wind only. It does not describe storm surge, rainfall flooding, tornadoes, or local impacts. The scenario keeps those hazards and assumptions separate for review.</p></div></div>
   </div></section>
   <div class="wrap cmist-and-portal">
