@@ -445,6 +445,31 @@ html{scroll-padding-top:var(--pinned-h,124px)}
     .dashboard-pinned .dashboard-estimates .dashboard-estimate-value{font-size:19px}
   }
 </style>
+<style>
+  /* Keep the three CMIST information columns intact and make End State a clear right-pointing arrow. */
+  @media(min-width:901px){
+    .cmist-plan-rows{grid-template-columns:minmax(150px,18%) repeat(3,minmax(0,1fr)) minmax(185px,.9fr)}
+    .cmist-plan-end{grid-column:5;grid-row:3;min-width:0;min-height:110px}
+    .cmist-plan .cmist-endstate-trigger{min-height:110px;padding:14px 38px 14px 12px;clip-path:polygon(0 0,calc(100% - 30px) 0,100% 50%,calc(100% - 30px) 100%,0 100%)}
+    .cmist-plan .cmist-endstate-trigger::before,.cmist-plan .cmist-endstate-trigger::after{clip-path:polygon(0 0,calc(100% - 30px) 0,100% 50%,calc(100% - 30px) 100%,0 100%)}
+  }
+  /* At narrower widths, stack the CMIST rows so the End State control cannot be clipped by implicit grid columns. */
+  @media(max-width:900px){
+    .cmist-plan-rows{display:flex;flex-direction:column;gap:10px}
+    .cmist-plan-row{display:grid;grid-template-columns:1fr;gap:8px;padding:8px;border:1px solid var(--cmist-edge);border-radius:12px;background:var(--cmist-bg)}
+    .cmist-plan-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+    .cmist-plan-category,.cmist-plan-arrow{grid-column:auto!important;grid-row:auto!important}
+    .cmist-plan-end{display:block;grid-column:auto;grid-row:auto;align-self:stretch;width:100%;height:auto;min-height:96px;padding:0}
+    .cmist-plan .cmist-endstate-trigger{min-height:96px;padding:12px 38px 12px 14px;clip-path:polygon(0 0,calc(100% - 30px) 0,100% 50%,calc(100% - 30px) 100%,0 100%)}
+    .cmist-plan .cmist-endstate-trigger::before,.cmist-plan .cmist-endstate-trigger::after{clip-path:polygon(0 0,calc(100% - 30px) 0,100% 50%,calc(100% - 30px) 100%,0 100%)}
+    .cmist-plan .cmist-endstate-popup{top:calc(100% + 8px);left:50%;right:auto;transform:translateX(-50%);width:min(538px,calc(100vw - 40px))}
+  }
+  @media(max-width:700px){
+    .cmist-plan-steps{grid-template-columns:1fr}
+    .cmist-plan .cmist-endstate-trigger{min-height:84px;padding:10px 34px 10px 10px}
+    .cmist-plan .cmist-endstate-popup{width:min(538px,calc(100vw - 32px));max-height:55vh}
+  }
+</style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to planning workbench</a>
