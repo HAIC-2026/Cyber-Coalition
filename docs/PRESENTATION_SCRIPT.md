@@ -1,42 +1,61 @@
-# Presentation Day Script — Draft
+# Four-Minute Presentation and Demo Script
 
-**Format constraint (2026 Judging Criteria):** 6 minutes total — 2 min presentation, 2 min live demo, 2 min Q&A. Presentation + demo are cut off at the 4-minute mark; Q&A ends at 2 minutes. Judges score 0 for any of the four Presentation Judging categories the talk does not explicitly cover: **Requirements, Originality & Design, Utility & Impact, Presentation & Delivery.** This draft is written so each category is addressed in a specific, identifiable passage — the bracketed tags are for team rehearsal only and should not be read aloud.
+**Timing:** Four minutes for the presentation and live demo. Q&A follows separately.  
+**Demo path:** Home Mass Care card → Coverage & audit → Emergency and Medical Resources → Workflow / intake.
 
-Team: confirm presenter and backup, rehearse against a visible timer, and cut content rather than run over — a strong unfinished answer during Q&A beats losing a category to the clock.
+## 0:00–1:45 — Opening and purpose
 
----
+**Show:** Home Mass Care card. Point to the headline, the 100+ years team callout, and the fictional-scenario notice.
 
-## Minute 0:00–0:30 — Opening + problem framing **[Requirements]**
+**Say:**
 
-"We're Cyber Coalition, presenting [state your HAIC-registered team name if it differs from the project name]. The DHS ESF-6 challenge asks for hazard-specific AFN vulnerability maps across hurricane, wildfire, tsunami, and flood, for 100% of census tracts statewide. We built a bounded, evidence-led method to get there — starting with one real, defensible pilot instead of a shortcut to statewide claims we can't back up."
+“We are Cyber Coalition, a team of Department of War retirees with more than 100 years of combined federal service. Our experience spans targeting, direct and indirect operations, logistics, tactical and digital communications, and command and control.
 
-## Minute 0:30–1:15 — What we built and why it's different **[Originality & Design]**
+“Our aim is a clearer path from public evidence to human-reviewed mass-care planning. The card summarizes our proposed Common Operational Framework: it connects public aggregate evidence and clearly labeled synthetic partner inputs to hazard-specific coverage, CMIST planning, resource questions, and human-reviewed coordination. The framework is designed around hurricane, wildfire, tsunami, and flood planning. Today’s walkthrough uses one fictional, local stress-test scenario in Kapolei and Leeward Oʻahu.
 
-"Our planning workflow runs Map → Model → Match → Human Review. Every number in it is tagged — source finding, inference, assumption, or open question — so a reviewer always knows what's verified and what isn't. That's the innovation: most AI planning tools hide their uncertainty. Ours surfaces it on purpose. For example, our ArcGIS tract reconciliation shows 435 of 461 Census tracts matched — and we show the 26 that didn't, with the reason why, instead of rounding up to 100%."
+“This workbench makes evidence and uncertainty visible. It is a static planning prototype—not an operational system. It does not establish statewide AFN coverage, confirm current services, or make decisions. AI can help organize evidence and draft options; people verify sources, needs, safety, capacity, and authority.”
 
-## Minute 1:15–2:00 — Who it helps and what changes **[Utility & Impact]**
+## 1:45–2:25 — Question 1: Where are populations and hazard data represented?
 
-"This gives county and state planners something they don't have today: a single evidence trail connecting CMIST needs — communication, health, independence, support, transportation — to actual candidate resources, for a specific scenario, with every gap labeled instead of assumed away. For our Kapolei hurricane pilot, that means a planner can see which facilities have license data, which status fields are undefined, and what still needs confirmation — before anyone relies on it operationally."
+**Show:** Coverage & audit; point to the tract-ID checkpoint and hazard ledger.
 
-## Minute 2:00–4:00 — Live demo **[Requirements + Originality & Design + Utility & Impact, reinforced visually]**
+**Say:**
 
-Suggested walkthrough (adjust to whatever's actually working live — test this exact path beforehand):
-1. Open the live planning demonstrator — show the Coverage & audit tab with the 435/461 tract checkpoint and the four-hazard evidence boundaries.
-2. Switch to the ArcGIS reference map (now public — confirm the link opens cleanly, logged out, before you're on stage) and show one reconciled layer (e.g., the OHCA facility crosswalk or the SFHA/flood overlay).
-3. Point out one deliberately-labeled "unknown" (e.g., the undefined operational-status field) — this is a feature of the method, not a gap to hide. Say so explicitly.
+“This is a statewide geography reconciliation: 435 of 461 official 2020 Census tract IDs appear in both candidate layers. That is an ID match, not a count or map of people with access and functional needs. The ledger separates hazard measures. FEMA’s values are modeled long-term risk, not the footprint or effects of this fictional event. The prototype does not yet measure statewide AFN coverage.”
 
-## Minute 4:00–6:00 — Q&A **[Presentation & Delivery, demonstrated throughout]**
+## 2:25–3:10 — Question 2: What needs and resources can be identified?
 
-Anticipated questions and how to answer without overclaiming:
-- *"Is this statewide yet?"* → "No — this is a bounded Kapolei pilot that proves the method. Statewide is design intent, not a current claim, and we say so in the repo."
-- *"What happens to the 26 unmatched tracts?"* → "They're zero-population/zero-housing in the 2020 Census count, which doesn't mean zero need — we flag that distinction explicitly rather than resolving it for them."
-- *"Who verifies the AI's output?"* → "A human, always. The system never issues alerts, assigns resources, or makes eligibility calls — it prepares evidence for a person to decide."
+**Show:** Emergency and Medical Resources; point to the refuge map and EMS rows, then the Project Status card.
 
----
+**Say:**
 
-**Presentation & Delivery checklist (self-score before rehearsal):**
-- [ ] Stays inside 4:00 for talk + demo, tested with a timer
-- [ ] States the team's HAIC-registered name if "Cyber Coalition" differs from it
-- [ ] Explicitly names all four hazards and the CMIST dimensions at least once
-- [ ] Demo path tested logged-out, same-day, on the actual presentation device/network
-- [ ] Backup screenshots/video ready in case live ArcGIS or GitHub Pages is unreachable in the room
+“The Oʻahu map shows 38 potential hurricane refuge locations. It does not tell us which are open, accessible, suitable, or how much capacity they have. The EMS figures also need careful reading: 23 reported ambulance units and 24 roster locations are different counts, not confirmed available vehicles. Here the status card keeps shelter capacity and site accessibility unknown, and statewide completeness and forecast-to-plan benefit not yet measured. We leave those values open until evidence supports an update.”
+
+## 3:10–3:50 — Question 3: How are needs coordinated and reviewed?
+
+**Show:** Workflow, then the tabletop inject and synthetic intake/coordination queue.
+
+**Say:**
+
+“The tabletop uses fictional injects, including an eight-hour power interruption, to surface questions for human review. A simulated aggregate need can be entered into the queue; it is not sent to responders or matched to a real service. The State plan documents a county-to-state request pathway, which we represent here as a planning workflow. This prototype is not connected to WebEOC, dispatch, or partner systems.”
+
+## 3:50–4:00 — Close
+
+**Say:**
+
+“The prototype demonstrates an evidence-linked planning path with uncertainty and human review visible. Validated AFN estimates, confirmed resource capacity, measured time savings, and operational integration require additional data, review, and agency coordination.”
+
+## Q&A reminders (outside the four-minute script)
+
+- **“Is the 435 of 461 figure for Kapolei?”** No. It is statewide tract-ID reconciliation; Kapolei is the fictional local scenario.
+- **“Why are 26 IDs outside the candidate layers?”** The reviewed Census inventory records zero 2020 population and housing for them. Do not infer a cause or call them a coverage gap.
+- **“Are the 38 refuge sites open or available?”** They are potential locations; current opening, capacity, accessibility, and suitability are not established.
+- **“Does the demo submit requests or dispatch resources?”** No. Intake and coordination examples are synthetic and remain in the browser session; the workflow is not operational.
+
+## Rehearsal checks
+
+- Keep the spoken walk-through in the order Question 1 → Question 2 → Question 3.
+- Say “statewide” next to the 435/461 figure; keep it separate from the Kapolei scenario.
+- Keep synthetic calls, intake, CBO figures, and scenario injects labeled synthetic.
+- Do not replace “Unknown” or “Not yet measured” without new, reviewed evidence.
+- If time is short, preserve the three answers and the explicit limits; skip secondary detail.
