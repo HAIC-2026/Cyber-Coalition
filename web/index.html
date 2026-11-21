@@ -410,6 +410,23 @@ html{scroll-padding-top:var(--pinned-h,124px)}
     .nav .wrap{margin:0 12px;padding:10px;grid-template-columns:repeat(2,minmax(0,1fr))}
   }
 </style>
+<style>
+  /* Keep the fixed dashboard band centered and translucent over the bathymetry map. */
+  .dashboard-pinned{width:calc(100% - 32px);max-width:1420px;margin:0 auto;padding:6px 14px 8px;background:rgba(238,244,248,.62);border:1px solid rgba(171,195,207,.8);border-radius:14px;box-shadow:0 8px 20px rgba(10,40,64,.17);backdrop-filter:blur(2px)}
+  .dashboard-pinned .dashboard-timebar{width:100%;max-width:none;margin:0 auto 6px;background:linear-gradient(120deg,rgba(18,62,104,.84),rgba(8,39,73,.84));border-color:rgba(40,102,148,.82);box-shadow:none}
+  .dashboard-running{max-width:none;margin:0 auto;padding:8px 14px 2px}
+  .dashboard-running-head{margin-bottom:8px}
+  .dashboard-demo-note{background:rgba(255,246,223,.74);backdrop-filter:blur(1px)}
+  .dashboard-estimate{background:linear-gradient(150deg,rgba(255,255,255,.76),rgba(247,250,252,.64));border-color:rgba(185,201,210,.78);backdrop-filter:blur(2px)}
+  @media(max-width:900px){
+    .dashboard-pinned{width:calc(100% - 24px);padding:6px 10px 8px}
+    .dashboard-running{padding:8px 10px 2px}
+  }
+  @media(max-width:620px){
+    .dashboard-pinned{width:calc(100% - 16px);padding:5px 8px 7px}
+    .dashboard-running{padding:7px 8px 2px}
+  }
+</style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to planning workbench</a>
