@@ -411,20 +411,38 @@ html{scroll-padding-top:var(--pinned-h,124px)}
   }
 </style>
 <style>
-  /* Keep the fixed dashboard band centered and translucent over the bathymetry map. */
-  .dashboard-pinned{width:calc(100% - 32px);max-width:1420px;margin:0 auto;padding:6px 14px 8px;background:rgba(238,244,248,.62);border:1px solid rgba(171,195,207,.8);border-radius:14px;box-shadow:0 8px 20px rgba(10,40,64,.17);backdrop-filter:blur(2px)}
-  .dashboard-pinned .dashboard-timebar{width:100%;max-width:none;margin:0 auto 6px;background:linear-gradient(120deg,rgba(18,62,104,.84),rgba(8,39,73,.84));border-color:rgba(40,102,148,.82);box-shadow:none}
-  .dashboard-running{max-width:none;margin:0 auto;padding:8px 14px 2px}
-  .dashboard-running-head{margin-bottom:8px}
-  .dashboard-demo-note{background:rgba(255,246,223,.74);backdrop-filter:blur(1px)}
+  /* Center the fixed dashboard below the unchanged masthead; enlarge its five cards by about 25% and keep the background visible. */
+  .dashboard-pinned{width:calc(100% - 32px);max-width:1420px;margin:0 auto;padding:8px 16px 10px;background:rgba(238,244,248,.62);border:1px solid rgba(171,195,207,.8);border-radius:14px;box-shadow:0 8px 20px rgba(10,40,64,.17);backdrop-filter:blur(2px)}
+  .dashboard-pinned .dashboard-timebar{width:100%;max-width:none;margin:0 auto 7px;background:linear-gradient(120deg,rgba(18,62,104,.84),rgba(8,39,73,.84));border-color:rgba(40,102,148,.82);box-shadow:none}
+  .dashboard-pinned .dashboard-timebox{min-height:0;padding:5px 16px;gap:12px}
+  .dashboard-pinned .dashboard-time-label{font-size:12.5px}
+  .dashboard-pinned .dashboard-time-value{font-size:clamp(21px,2.5vw,27.5px)}
+  .dashboard-running{max-width:none;margin:0 auto;padding:9px 16px 3px}
+  .dashboard-running-head{margin-bottom:9px}
+  .dashboard-running-head h2{font-size:16px}
+  .dashboard-demo-note{background:rgba(255,246,223,.74);backdrop-filter:blur(1px);font-size:12.5px;padding:3px 10px}
   .dashboard-estimate{background:linear-gradient(150deg,rgba(255,255,255,.76),rgba(247,250,252,.64));border-color:rgba(185,201,210,.78);backdrop-filter:blur(2px)}
+  .dashboard-pinned .dashboard-estimates{gap:8px}
+  .dashboard-pinned .dashboard-estimates>.dashboard-estimate{padding:6px 10px;gap:0 8px}
+  .dashboard-pinned .dashboard-estimate-icon,.dashboard-pinned .dashboard-estimate-icon svg{width:28px;height:28px}
+  .dashboard-pinned .dashboard-estimates .dashboard-estimate-label{font-size:13px;line-height:1.25}
+  .dashboard-pinned .dashboard-estimates .dashboard-estimate-value{font-size:clamp(20px,2.25vw,25px);line-height:1.15}
   @media(max-width:900px){
-    .dashboard-pinned{width:calc(100% - 24px);padding:6px 10px 8px}
-    .dashboard-running{padding:8px 10px 2px}
+    .dashboard-pinned{width:calc(100% - 24px);padding:7px 12px 9px}
+    .dashboard-running{padding:8px 12px 3px}
+    .dashboard-pinned .dashboard-estimate-icon,.dashboard-pinned .dashboard-estimate-icon svg{width:25px;height:25px}
+    .dashboard-pinned .dashboard-estimates .dashboard-estimate-label{font-size:12px}
   }
   @media(max-width:620px){
-    .dashboard-pinned{width:calc(100% - 16px);padding:5px 8px 7px}
-    .dashboard-running{padding:7px 8px 2px}
+    .dashboard-pinned{width:calc(100% - 16px);padding:6px 9px 8px}
+    .dashboard-running{padding:7px 9px 3px}
+    .dashboard-pinned .dashboard-timebox{padding:5px 9px;gap:7px}
+    .dashboard-pinned .dashboard-time-label{font-size:10.5px}
+    .dashboard-pinned .dashboard-time-value{font-size:18px}
+    .dashboard-pinned .dashboard-estimates>.dashboard-estimate{flex-basis:180px;padding:5px 9px}
+    .dashboard-pinned .dashboard-estimate-icon,.dashboard-pinned .dashboard-estimate-icon svg{width:24px;height:24px}
+    .dashboard-pinned .dashboard-estimates .dashboard-estimate-label{font-size:11.5px}
+    .dashboard-pinned .dashboard-estimates .dashboard-estimate-value{font-size:19px}
   }
 </style>
 </head>
