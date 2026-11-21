@@ -191,7 +191,7 @@
 
 .brand-islands{width:100%;height:100%;display:block;color:#fff}.dashboard-brand-mark{background:transparent!important;box-shadow:none!important;border-radius:0!important}.dashboard-portal{margin:18px 0;background:#c90b0b;color:white;border-radius:14px;overflow:hidden}.dashboard-portal>summary{display:flex;align-items:center;gap:18px;padding:18px 24px;cursor:pointer;list-style:none}.dashboard-portal>summary::-webkit-details-marker{display:none}.dashboard-portal>summary strong{display:block;font-size:clamp(20px,3vw,34px)}.dashboard-portal>summary small{display:block;font-size:16px}.dashboard-portal .assistance-portal{margin:0;border-radius:0;color:var(--ink);background:white}.portal-icon{font-size:44px;font-weight:800}
     /* Five consistent Running Estimates cards, aligned at desktop width. */
-    .dashboard-estimates{grid-template-columns:repeat(4,minmax(0,1fr));align-items:stretch}
+    .dashboard-estimates{grid-template-columns:repeat(5,minmax(0,1fr));align-items:stretch}
     .dashboard-estimates>.dashboard-estimate{height:100%;min-width:0;min-height:180px;grid-template-columns:46px minmax(0,1fr);padding:17px 15px;gap:9px}
     .dashboard-estimates .dashboard-estimate-icon{width:42px;height:42px}
     .dashboard-estimates .dashboard-estimate-icon svg{width:40px;height:40px}
@@ -341,24 +341,24 @@ html{scroll-padding-top:var(--pinned-h,124px)}
     .cmist-plan-row:nth-child(1) .cmist-plan-category{grid-column:1;grid-row:1}
   .cmist-plan-row:nth-child(1) .cmist-plan-arrow:nth-child(1){grid-column:2;grid-row:1}
   .cmist-plan-row:nth-child(1) .cmist-plan-arrow:nth-child(2){grid-column:3;grid-row:1}
-  .cmist-plan-row:nth-child(1) .cmist-plan-arrow:nth-child(3){grid-column:5;grid-row:1}
+  .cmist-plan-row:nth-child(1) .cmist-plan-arrow:nth-child(3){grid-column:4;grid-row:1}
   .cmist-plan-row:nth-child(2) .cmist-plan-category{grid-column:1;grid-row:2}
   .cmist-plan-row:nth-child(2) .cmist-plan-arrow:nth-child(1){grid-column:2;grid-row:2}
   .cmist-plan-row:nth-child(2) .cmist-plan-arrow:nth-child(2){grid-column:3;grid-row:2}
-  .cmist-plan-row:nth-child(2) .cmist-plan-arrow:nth-child(3){grid-column:5;grid-row:2}
+  .cmist-plan-row:nth-child(2) .cmist-plan-arrow:nth-child(3){grid-column:4;grid-row:2}
   .cmist-plan-row:nth-child(3) .cmist-plan-category{grid-column:1;grid-row:3}
   .cmist-plan-row:nth-child(3) .cmist-plan-arrow:nth-child(1){grid-column:2;grid-row:3}
   .cmist-plan-row:nth-child(3) .cmist-plan-arrow:nth-child(2){grid-column:3;grid-row:3}
-  .cmist-plan-row:nth-child(3) .cmist-plan-arrow:nth-child(3){grid-column:5;grid-row:3}
+  .cmist-plan-row:nth-child(3) .cmist-plan-arrow:nth-child(3){grid-column:4;grid-row:3}
   .cmist-plan-row:nth-child(4) .cmist-plan-category{grid-column:1;grid-row:4}
   .cmist-plan-row:nth-child(4) .cmist-plan-arrow:nth-child(1){grid-column:2;grid-row:4}
   .cmist-plan-row:nth-child(4) .cmist-plan-arrow:nth-child(2){grid-column:3;grid-row:4}
-  .cmist-plan-row:nth-child(4) .cmist-plan-arrow:nth-child(3){grid-column:5;grid-row:4}
+  .cmist-plan-row:nth-child(4) .cmist-plan-arrow:nth-child(3){grid-column:4;grid-row:4}
   .cmist-plan-row:nth-child(5) .cmist-plan-category{grid-column:1;grid-row:5}
   .cmist-plan-row:nth-child(5) .cmist-plan-arrow:nth-child(1){grid-column:2;grid-row:5}
   .cmist-plan-row:nth-child(5) .cmist-plan-arrow:nth-child(2){grid-column:3;grid-row:5}
-  .cmist-plan-row:nth-child(5) .cmist-plan-arrow:nth-child(3){grid-column:5;grid-row:5}
-  .cmist-plan-end{grid-column:4;grid-row:3;align-self:center;position:relative;min-width:0;height:100px;display:flex;align-items:center;justify-content:center;border:1px solid #72aab0;border-radius:10px 10px 0 0;background:linear-gradient(160deg,#d0f1ea,#ddf3df);clip-path:polygon(0 0,100% 0,100% calc(100% - 20px),50% 100%,0 calc(100% - 20px));padding:8px 6px 24px;z-index:3}
+  .cmist-plan-row:nth-child(5) .cmist-plan-arrow:nth-child(3){grid-column:4;grid-row:5}
+  .cmist-plan-end{grid-column:5;grid-row:3;align-self:center;position:relative;min-width:0;height:100px;display:flex;align-items:center;justify-content:center;border:1px solid #72aab0;border-radius:10px;background:linear-gradient(160deg,#d0f1ea,#ddf3df);clip-path:polygon(0 0,calc(100% - 20px) 0,100% 50%,calc(100% - 20px) 100%,0 100%);padding:8px 24px 8px 8px;z-index:3}
   .cmist-plan-end.is-open::after{content:"";position:absolute;left:0;right:0;top:100%;height:12px}
   .cmist-endstate-trigger{padding:12px 5px}
   .cmist-endstate-trigger strong{font-size:17px}
@@ -422,6 +422,7 @@ html{scroll-padding-top:var(--pinned-h,124px)}
       <article class="dashboard-estimate"><span class="dashboard-estimate-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7h12v11H3zM15 11h4l3 3v4h-7z"/><path d="M7 7V4h7v3M18 11v3h4M8 18a2 2 0 1 0 4 0M17 18a2 2 0 1 0 4 0M7 11h4M9 9v4"/></svg></span><div><div class="dashboard-estimate-label">Honolulu EMS Ambulance Units</div><div class="dashboard-estimate-value">23</div></div><div class="dashboard-estimate-caption">Oʻahu · 4 districts · availability unknown · <a href="https://emergencyservices.honolulu.gov/emergency-medical-services/ems-unit-locations/" target="_blank" rel="noopener noreferrer">source</a></div></article>
       <article class="dashboard-estimate"><span class="dashboard-estimate-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></span><div><div class="dashboard-estimate-label">Community-Based Organizations</div><div class="dashboard-estimate-value">15 <span class="secondary">/ 230</span></div></div><div class="dashboard-estimate-caption">Synthetic partner / volunteer scenario values · current roster unverified</div></article>
       <article class="dashboard-estimate"><span class="dashboard-estimate-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 4H5a2 2 0 0 0-2 2v15h18V6a2 2 0 0 0-2-2h-3M8 2h8v4H8zM7 12l1.5 1.5L11 11M13 13h4M7 18l1.5 1.5L11 17M13 19h4"/></svg></span><div><div class="dashboard-estimate-label">Community Assistance Intake</div><div class="dashboard-estimate-value">45 <span class="secondary">/ 187</span></div></div><div class="dashboard-estimate-caption">Synthetic reports / people represented · no real submissions</div></article>
+      <article class="dashboard-estimate shelters-estimate" id="shelters-estimate" aria-label="38 potential Oʻahu hurricane refuge areas; current openings and capacity unknown"><span class="dashboard-estimate-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 20V4M3 16h18v4M6 13V8h7v5M13 13V9h6a2 2 0 0 1 2 2v2"/></svg></span><div><div class="dashboard-estimate-label">Oʻahu Refuge Areas</div><div class="dashboard-estimate-value">38</div></div><div class="shelter-counts"><span>Open now: Unknown</span><span>Capacity: Unconfirmed</span></div><div class="shelter-meta"><span class="shelter-state">Potential hurricane refuge areas</span><br>Honolulu DEM public inventory · checked Nov 21, 2026<br><a href="https://www.arcgis.com/apps/webappviewer/index.html?id=14fad086020b4bc8acfcf2e3f79d4329" target="_blank" rel="noopener noreferrer">Open interactive ArcGIS map</a> · <a href="https://www.honolulu.gov/hurricaneevac" target="_blank" rel="noopener noreferrer">Honolulu DEM refuge information</a></div></article>
       </div>
   </section>
   
