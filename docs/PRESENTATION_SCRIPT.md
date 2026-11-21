@@ -1,15 +1,17 @@
 # Four-Minute Presentation and Demo Script
 
 **Timing:** Four minutes for the presentation and live demo. Q&A follows separately.  
-**Demo path:** Overview → Coverage & audit → Emergency and Medical Resources → Workflow / intake.
+**Demo path:** Home Mass Care card → Coverage & audit → Emergency and Medical Resources → Workflow / intake.
 
 ## 0:00–1:45 — Opening and purpose
 
 **Say:**
+**Show:** Home Mass Care card. Point to the headline, the 100+ years team callout, and the fictional-scenario notice.
+
 
 “We are Cyber Coalition, a team of Department of War retirees with more than 100 years of combined federal service. Our experience spans targeting, direct and indirect operations, logistics, tactical and digital communications, and command and control.
 
-“We propose a Common Operational Framework that connects public aggregate evidence and clearly labeled synthetic partner inputs to hazard-specific coverage, CMIST planning, resource questions, and human-reviewed coordination. The framework is designed around hurricane, wildfire, tsunami, and flood planning. Today’s walkthrough uses one fictional, local stress-test scenario in Kapolei and Leeward Oʻahu.
+“Our aim is a clearer path from public evidence to human-reviewed mass-care planning. The card summarizes our proposed Common Operational Framework: it connects public aggregate evidence and clearly labeled synthetic partner inputs to hazard-specific coverage, CMIST planning, resource questions, and human-reviewed coordination. The framework is designed around hurricane, wildfire, tsunami, and flood planning. Today’s walkthrough uses one fictional, local stress-test scenario in Kapolei and Leeward Oʻahu.
 
 “This workbench makes evidence and uncertainty visible. It is a static planning prototype—not an operational system. It does not establish statewide AFN coverage, confirm current services, or make decisions. AI can help organize evidence and draft options; people verify sources, needs, safety, capacity, and authority.”
 
