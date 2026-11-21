@@ -472,6 +472,12 @@ html{scroll-padding-top:var(--pinned-h,124px)}
   /* Show the existing full Hawaiian Islands map once, at screen height, without tiled seams. */
   body{background-color:#e8f1f6;background-image:linear-gradient(rgba(244,249,252,.80),rgba(244,249,252,.80)),url("assets/bathymetry-background.jpg");background-repeat:no-repeat,no-repeat;background-size:cover,auto 100vh;background-position:center,center center;background-attachment:fixed,fixed}
 </style>
+<style>
+  /* Fill the viewport with one sharp islands image; retain the fixed brand banner. */
+  body{background-color:#e8f1f6;background-image:linear-gradient(rgba(244,249,252,.62),rgba(244,249,252,.62)),url("assets/bathymetry-background.jpg");background-repeat:no-repeat,no-repeat;background-size:cover,cover;background-position:center center,center center;background-attachment:fixed,fixed}
+  /* Keep translucent surfaces, but remove the blur that softens the map underneath them. */
+  .dashboard-pinned,.dashboard-pinned .dashboard-timebar,.dashboard-running,.dashboard-demo-note,.dashboard-estimate,.hero>.wrap,.nav .wrap,.nav button{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+</style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to planning workbench</a>
