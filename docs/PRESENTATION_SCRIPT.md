@@ -5,9 +5,9 @@
 
 ## 0:00–1:45 — Opening and purpose
 
-**Say:**
 **Show:** Home Mass Care card. Point to the headline, the 100+ years team callout, and the fictional-scenario notice.
 
+**Say:**
 
 “We are Cyber Coalition, a team of Department of War retirees with more than 100 years of combined federal service. Our experience spans targeting, direct and indirect operations, logistics, tactical and digital communications, and command and control.
 
