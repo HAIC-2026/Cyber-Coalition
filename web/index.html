@@ -263,6 +263,49 @@ body{min-height:100vh;background-color:#e8f1f6;background-image:linear-gradient(
 .assistance-demo-result{margin-top:16px;padding:15px;border:1px solid #8ac5bd;border-left:5px solid var(--teal);border-radius:10px;background:#eaf7f5;color:#183b43}.assistance-demo-result h3{margin:0 0 6px;color:#123d4d;font-size:17px}.assistance-demo-result p{margin:5px 0}.assistance-demo-result ul{margin:8px 0 0;padding-left:20px}
 @media(max-width:620px){.dashboard-portal-link{padding:13px;gap:10px}.dashboard-portal-link .portal-icon{font-size:34px}.dashboard-portal-link .portal-summary-copy strong{font-size:17px}.assistance-actions{align-items:stretch}.assistance-actions button{flex:1 1 180px}}
 </style>
+<style>
+/* Pinned dashboard: the DTG band and Running Estimates stay in view while scrolling, compacted so more content shows below. */
+html{scroll-padding-top:var(--pinned-h,124px)}
+.dashboard-pinned{position:sticky;top:0;z-index:60;padding:4px 0 5px;background:rgba(238,244,248,.97);border-bottom:2px solid rgba(0,207,232,.55);box-shadow:0 6px 16px rgba(10,40,64,.18)}
+.dashboard-pinned .dashboard-timebar{width:calc(100% - 32px);max-width:1364px;margin:0 auto;border-radius:9px;box-shadow:none}
+.dashboard-pinned .dashboard-timebox{min-height:0;padding:4px 14px;gap:10px}
+.dashboard-pinned .dashboard-timebox>div{display:flex;align-items:baseline;flex-wrap:wrap;gap:0 10px}
+.dashboard-pinned .dashboard-timebox,.dashboard-pinned .dashboard-estimate{position:relative}
+.dashboard-pinned .dashboard-time-icon{width:24px;height:24px;flex:0 0 24px}
+.dashboard-pinned .dashboard-time-label{font-size:10px;letter-spacing:.06em}
+.dashboard-pinned .dashboard-time-value{margin:0;font-size:clamp(17px,2vw,22px);line-height:1.1}
+.dashboard-pinned .dashboard-time-note,.dashboard-pinned .dashboard-estimate-caption,.dashboard-pinned .shelter-counts,.dashboard-pinned .shelter-occupancy-bar{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.dashboard-pinned .dashboard-running{display:flex;flex-wrap:wrap;align-items:baseline;gap:3px 10px;max-width:1396px;margin:0 auto;padding:5px 16px 0}
+.dashboard-pinned .dashboard-running-head{margin:0}
+.dashboard-pinned .dashboard-running-head h2{margin:0;font-size:13px;letter-spacing:0}
+.dashboard-pinned .dashboard-running-head h2::after{display:none}
+.dashboard-pinned .dashboard-demo-note{margin:0;padding:2px 8px;font-size:11px;line-height:1.3;border-radius:5px}
+.dashboard-pinned .dashboard-running>*{min-width:0}
+.dashboard-pinned .dashboard-estimates{flex:0 0 100%;max-width:100%;min-width:0;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;margin-top:2px}
+.dashboard-pinned .dashboard-estimates>.dashboard-estimate{height:auto;min-height:0;padding:3px 8px;gap:0 6px;grid-template-columns:24px minmax(0,1fr);align-items:center;border-top-width:2px;border-radius:8px;box-shadow:none}
+.dashboard-pinned .dashboard-estimate-icon{width:22px;height:22px}
+.dashboard-pinned .dashboard-estimate-icon svg{width:22px;height:22px}
+.dashboard-pinned .dashboard-estimates .dashboard-estimate-label{min-height:0;font-size:10.5px;line-height:1.2}
+.dashboard-pinned .dashboard-estimates .dashboard-estimate-value{font-size:clamp(16px,1.8vw,20px);line-height:1.1;white-space:nowrap}
+.dashboard-pinned .shelters-estimate .shelter-meta{grid-column:1/-1;max-height:1.3em;overflow:hidden;font-size:9.5px;line-height:1.3}
+.dashboard-reference{width:calc(100% - 32px);max-width:1364px;margin:8px auto 0;display:flex;flex-wrap:wrap;gap:2px 16px;justify-content:space-between;align-items:baseline}
+.dashboard-reference-note{margin:0;color:#5a6c78;font-size:11px}
+.dashboard-reference .dashboard-context{margin:0}
+@media(max-width:700px){
+.dashboard-pinned .dashboard-timebar{grid-template-columns:1fr 1fr}
+.dashboard-pinned .dashboard-timebox{padding:4px 8px;gap:6px}
+.dashboard-pinned .dashboard-timebox>div{display:block}
+.dashboard-pinned .dashboard-running-head{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.dashboard-pinned .dashboard-time-icon{display:none}
+.dashboard-pinned .dashboard-time-label{font-size:9px}
+.dashboard-pinned .dashboard-time-value{font-size:16px}
+.dashboard-pinned .dashboard-running{padding:4px 10px 0}
+.dashboard-pinned .dashboard-running-head h2{font-size:12px}
+.dashboard-pinned .dashboard-demo-note{font-size:10px}
+.dashboard-pinned .dashboard-estimates{display:flex;grid-template-columns:none;overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:3px;-webkit-overflow-scrolling:touch}
+.dashboard-pinned .dashboard-estimates>.dashboard-estimate{flex:0 0 148px;scroll-snap-align:start}
+}
+</style>
 </head>
 <body>
   <a class="skip" href="#main">Skip to planning workbench</a>
@@ -275,6 +318,8 @@ body{min-height:100vh;background-color:#e8f1f6;background-image:linear-gradient(
       <div class="dashboard-demo-flag"><strong>DEMONSTRATION ONLY</strong><span>Exercise / Planning Use · Not for Real-World Emergency Reporting</span></div>
     </div>
   </header>
+  </div>
+  <div class="dashboard-pinned" id="dashboard-pinned">
   <section class="dashboard-timebar" aria-label="Static scenario time reference">
     <div class="dashboard-timebox">
       <svg class="dashboard-time-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18M7 14h3M7 17h7"/></svg>
@@ -286,7 +331,7 @@ body{min-height:100vh;background-color:#e8f1f6;background-image:linear-gradient(
     </div>
   </section>
   <section class="dashboard-running" aria-labelledby="running-estimates-title">
-    <div class="dashboard-running-head"><h2 id="running-estimates-title">▮ Running Estimates</h2><p>Reference values transcribed from the supplied screenshot</p></div>
+    <div class="dashboard-running-head"><h2 id="running-estimates-title">▮ Running Estimates</h2></div>
     <p class="dashboard-demo-note"><strong>Static demonstration figures only.</strong> These values are not live, verified, or connected to an operational reporting system.</p>
     <div class="dashboard-estimates">
       <article class="dashboard-estimate"><span class="dashboard-estimate-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 4h3l2 5-2 1.5a15 15 0 0 0 5.5 5.5L15 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/><path d="M14 5a5 5 0 0 1 5 5M14 2a8 8 0 0 1 8 8"/></svg></span><div><div class="dashboard-estimate-label">911 Calls Received</div><div class="dashboard-estimate-value">128</div></div><div class="dashboard-estimate-caption">Illustrative scenario count · not live calls</div></article>
@@ -295,8 +340,12 @@ body{min-height:100vh;background-color:#e8f1f6;background-image:linear-gradient(
       <article class="dashboard-estimate"><span class="dashboard-estimate-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 4H5a2 2 0 0 0-2 2v15h18V6a2 2 0 0 0-2-2h-3M8 2h8v4H8zM7 12l1.5 1.5L11 11M13 13h4M7 18l1.5 1.5L11 17M13 19h4"/></svg></span><div><div class="dashboard-estimate-label">Public Assistance Reporting</div><div class="dashboard-estimate-value">45 <span class="secondary">/ 187</span></div></div><div class="dashboard-estimate-caption">Reports submitted / persons affected · illustrative</div></article>
       <article class="dashboard-estimate shelters-estimate" id="shelters-estimate" aria-label="Shelter bed availability, awaiting verification"><span class="dashboard-estimate-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 20V4M3 16h18v4M6 13V8h7v5M13 13V9h6a2 2 0 0 1 2 2v2"/></svg></span><div><div class="dashboard-estimate-label">Shelters</div><div class="dashboard-estimate-value">—</div></div><div class="shelter-counts"><span>Filled: —</span><span>Vacant: —</span></div><div class="shelter-occupancy-bar" role="img" aria-label="Shelter bed occupancy: unknown"></div><div class="shelter-meta"><span class="shelter-state">Occupancy: awaiting verification</span><br>Last verified: Not available · HST<br>Capacity: Not confirmed</div></article>
     </div>
-    <div class="dashboard-context"><span><strong>Operational Area:</strong> Oʻahu</span><span><strong>Operational Period:</strong> H+00 · reference only</span><span><strong>Reference Timestamp:</strong> 191247 NOV 26 HST</span></div>
   </section>
+  </div>
+  <div class="dashboard-overview dashboard-overview-rest">
+  <div class="dashboard-reference"><p class="dashboard-reference-note">Reference values transcribed from the supplied screenshot</p>
+  <div class="dashboard-context"><span><strong>Operational Area:</strong> Oʻahu</span><span><strong>Operational Period:</strong> H+00 · reference only</span><span><strong>Reference Timestamp:</strong> 191247 NOV 26 HST</span></div>
+  </div>
 
   <section class="dashboard-portal" aria-label="Emergency assistance demo intake"><a class="dashboard-portal-link" href="#emergency-assistance-portal"><span class="portal-icon" aria-hidden="true">＋</span><span class="portal-summary-copy"><strong>Emergency Assistance Submission Portal</strong><small>Click to jump to the simulated intake form</small></span><span class="portal-summary-chevron" aria-hidden="true">↓</span></a></section>
 
@@ -868,5 +917,11 @@ body{min-height:100vh;background-color:#e8f1f6;background-image:linear-gradient(
   })();
   </script>
 
+<script>
+// Keep anchor jumps (portal link, skip link, tabs) from landing underneath the pinned dashboard.
+(()=>{const bar=document.getElementById('dashboard-pinned');if(!bar)return;
+const set=()=>document.documentElement.style.setProperty('--pinned-h',Math.ceil(bar.getBoundingClientRect().height)+8+'px');
+set();window.addEventListener('resize',set);if(window.ResizeObserver)new ResizeObserver(set).observe(bar);})();
+</script>
 </body>
 </html>
